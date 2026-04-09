@@ -415,6 +415,29 @@ class AppLocalizations {
         ?? _localizedValues['en']![key]
         ?? key;
   }
+
+  /// Returns the localized meal name based on the current locale.
+  /// Falls back to English name if the localized name is null or empty.
+  String mealName(Map<String, dynamic> meal) {
+    final lang = locale.languageCode;
+    String? localized;
+    switch (lang) {
+      case 'ta':
+        localized = meal['name_tamil'] as String?;
+        break;
+      case 'ml':
+        localized = meal['name_malayalam'] as String?;
+        break;
+      case 'kn':
+        localized = meal['name_kannada'] as String?;
+        break;
+      case 'te':
+        localized = meal['name_telugu'] as String?;
+        break;
+    }
+    if (localized != null && localized.isNotEmpty) return localized;
+    return meal['name'] ?? 'Meal';
+  }
 }
 
 class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

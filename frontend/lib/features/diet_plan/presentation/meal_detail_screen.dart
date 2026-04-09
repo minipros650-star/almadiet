@@ -5,6 +5,7 @@ import '../../../core/utils/responsive.dart';
 import '../../../core/widgets/loading_animations.dart';
 import '../../../core/widgets/meal_image.dart';
 import '../../../core/utils/api_client.dart';
+import '../../../core/localization/app_localizations.dart';
 
 class MealDetailScreen extends ConsumerStatefulWidget {
   final String mealId;
@@ -83,7 +84,7 @@ class _MealDetailScreenState extends ConsumerState<MealDetailScreen> with Single
           pinned: true,
           stretch: true,
           flexibleSpace: FlexibleSpaceBar(
-            title: Text(_meal!['name'] ?? '', style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700, shadows: [Shadow(blurRadius: 8, color: Colors.black45)]), maxLines: 1, overflow: TextOverflow.ellipsis),
+            title: Text(AppLocalizations.of(context).mealName(_meal!), style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700, shadows: [Shadow(blurRadius: 8, color: Colors.black45)]), maxLines: 1, overflow: TextOverflow.ellipsis),
             background: MealHeroImage(
               imageUrl: _meal!['image_url'] as String?,
               height: 260,

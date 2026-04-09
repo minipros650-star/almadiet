@@ -200,7 +200,7 @@ class _MealCard extends StatelessWidget {
               MealImage(imageUrl: meal['image_url'] as String?, width: 50, height: 50, borderRadius: 15, placeholderColor: color.withValues(alpha: 0.1)),
               const SizedBox(width: 14),
               Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text(meal['name'] ?? '', style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 14), maxLines: 1, overflow: TextOverflow.ellipsis),
+                Text(AppLocalizations.of(context).mealName(meal), style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 14), maxLines: 1, overflow: TextOverflow.ellipsis),
                 const SizedBox(height: 4),
                 Row(children: [
                   Flexible(child: Text('${meal['calories'] ?? '-'} cal', style: TextStyle(fontSize: 12, color: AppColors.textSecondary), overflow: TextOverflow.ellipsis)),

@@ -366,7 +366,7 @@ class _MealTile extends StatelessWidget {
             MealImage(imageUrl: meal['image_url'] as String?, width: 44, height: 44, borderRadius: 13),
             const SizedBox(width: 14),
             Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Text(meal['name'] ?? 'Meal', style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600), maxLines: 1, overflow: TextOverflow.ellipsis),
+              Text(AppLocalizations.of(context).mealName(meal), style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600), maxLines: 1, overflow: TextOverflow.ellipsis),
               Text('${meal['calories'] ?? '-'} cal  •  ${meal['region'] ?? ''}', style: TextStyle(fontSize: 12, color: AppColors.textSecondary)),
             ])),
             const Icon(Icons.chevron_right, color: AppColors.textHint, size: 20),
