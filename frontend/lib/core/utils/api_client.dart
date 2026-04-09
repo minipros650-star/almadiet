@@ -5,13 +5,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 String _getBaseUrl() {
-  // Physical Android device: use host machine's LAN IP
-  // Android emulator: would use 10.0.2.2
-  // All other platforms: use localhost
-  if (!kIsWeb && Platform.isAndroid) {
-    return 'http://127.0.0.1:8000';
-  }
-  return 'http://localhost:8000';
+  // Use the live Render URL for all platforms!
+  // NOTE: If your Render URL has extra numbers/letters at the end (e.g. almadiet-api-x7b2.onrender.com),
+  // you must update this string exactly!
+  return 'https://almadiet-api.onrender.com';
 }
 
 class ApiClient {
