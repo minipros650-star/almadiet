@@ -7,7 +7,7 @@ String _getBaseUrl() {
   // Use the live Render URL for all platforms!
   // NOTE: If your Render URL has extra numbers/letters at the end (e.g. almadiet-api-x7b2.onrender.com),
   // you must update this string exactly!
-  return 'https://almadiet-api.onrender.com';
+  return 'https://almadiet.onrender.com';
 }
 
 class ApiClient {
