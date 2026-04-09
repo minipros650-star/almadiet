@@ -1,0 +1,6039 @@
+[
+    {
+        "id": "SI001",
+        "name": {
+            "english": "Sprouted Ragi (Finger Millet) Idli",
+            "tamil": "முளைகட்டிய கேழ்வரகு இட்லி",
+            "malayalam": "മുളപ്പിച്ച റാഗി ഇഡ്ഡലി",
+            "kannada": "ಮೊಳಕೆ ಬರಿಸಿದ ರಾಗಿ ಇಡ್ಲಿ",
+            "telugu": "మొలకెత్తిన రాగి ఇడ్లీ"
+        },
+        "region": "Karnataka / South India",
+        "meal_type": "Breakfast",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Sprouted ragi flour",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Urad dal",
+                "quantity": "1/4 cup"
+            },
+            {
+                "name": "Fenugreek seeds",
+                "quantity": "1/2 tsp"
+            },
+            {
+                "name": "Salt",
+                "quantity": "Minimal"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 210,
+            "protein_g": 6,
+            "carbohydrates_g": 42,
+            "fat_g": 1.5,
+            "fiber_g": 4,
+            "iron_mg": 3.2,
+            "calcium_mg": 115,
+            "folate_mcg": 35,
+            "vitamin_c_mg": 2
+        },
+        "serving_size": "3 idlis",
+        "preparation_time_minutes": 20,
+        "benefits": [
+            "High calcium for fetal bone development",
+            "Iron helps prevent maternal anemia",
+            "Easy to digest"
+        ],
+        "who_alignment": "Aligns with WHO maternal micronutrient guidelines for calcium and iron.",
+        "cautions": "Ensure hygienic fermentation.",
+        "best_time_to_eat": "8:30 AM"
+    },
+    {
+        "id": "SI002",
+        "name": {
+            "english": "Whole Moong Dal Dosa (Pesarattu)",
+            "tamil": "பாசிப்பருப்பு தோசை",
+            "malayalam": "ചെറുപയർ ദോശ",
+            "kannada": "ಹೆಸರು ಬೇಳೆ ದೋಸೆ",
+            "telugu": "పెసరట్టు"
+        },
+        "region": "Andhra Pradesh",
+        "meal_type": "Breakfast",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Green moong dal",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Ginger",
+                "quantity": "1 inch"
+            },
+            {
+                "name": "Cumin seeds",
+                "quantity": "1 tsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 240,
+            "protein_g": 12,
+            "carbohydrates_g": 38,
+            "fat_g": 5,
+            "fiber_g": 6,
+            "iron_mg": 2.8,
+            "calcium_mg": 45,
+            "folate_mcg": 140,
+            "vitamin_c_mg": 4
+        },
+        "serving_size": "2 dosas",
+        "preparation_time_minutes": 15,
+        "benefits": [
+            "Superior plant protein for fetal growth",
+            "High folate for neural tube safety",
+            "Ginger aids nausea"
+        ],
+        "who_alignment": "Meets WHO recommendations for high folate intake in early pregnancy.",
+        "cautions": "Limit oil during frying to avoid heartburn.",
+        "best_time_to_eat": "8:30 AM"
+    },
+    {
+        "id": "SI003",
+        "name": {
+            "english": "Kerala Kanji with Coconut Milk",
+            "tamil": "கேரள கஞ்சி தேங்காய் பால் உடன்",
+            "malayalam": "കഞ്ഞി തേങ്ങപ്പാലോടെ",
+            "kannada": "ಕೇರಳ ಗಂಜಿ ತೆಂಗಿನ ಹಾಲಿನೊಂದಿಗೆ",
+            "telugu": "కేరళ గంజి కొబ్బరి పాలతో"
+        },
+        "region": "Kerala",
+        "meal_type": "Breakfast / Dinner",
+        "trimester": [
+            "First"
+        ],
+        "ingredients": [
+            {
+                "name": "Matta rice",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Coconut milk",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Ginger",
+                "quantity": "Small piece"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 280,
+            "protein_g": 5,
+            "carbohydrates_g": 52,
+            "fat_g": 7,
+            "fiber_g": 2,
+            "iron_mg": 1.8,
+            "calcium_mg": 30,
+            "folate_mcg": 22,
+            "vitamin_c_mg": 5
+        },
+        "serving_size": "400 ml",
+        "preparation_time_minutes": 25,
+        "benefits": [
+            "Highly hydrating",
+            "Ginger combats morning sickness",
+            "Gentle on inflamed stomach"
+        ],
+        "who_alignment": "Ginger is a WHO-recognized non-pharmacological treatment for nausea.",
+        "cautions": "Keep salt low to prevent edema.",
+        "best_time_to_eat": "8:00 PM"
+    },
+    {
+        "id": "SI004",
+        "name": {
+            "english": "Moringa (Drumstick) Leaves Soup",
+            "tamil": "முருங்கை கீரை சூப்",
+            "malayalam": "മുരിങ്ങയില സൂപ്പ്",
+            "kannada": "ನುಗ್ಗೆ ಸೊಪ್ಪಿನ ಸೂಪ್",
+            "telugu": "మునగాకు సూప్"
+        },
+        "region": "Tamil Nadu",
+        "meal_type": "Mid-Morning Snack",
+        "trimester": [
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Moringa leaves",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Shallots",
+                "quantity": "5"
+            },
+            {
+                "name": "Black pepper",
+                "quantity": "1/2 tsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 65,
+            "protein_g": 3,
+            "carbohydrates_g": 10,
+            "fat_g": 1,
+            "fiber_g": 3,
+            "iron_mg": 4.5,
+            "calcium_mg": 185,
+            "folate_mcg": 40,
+            "vitamin_c_mg": 50
+        },
+        "serving_size": "250 ml",
+        "preparation_time_minutes": 15,
+        "benefits": [
+            "Superfood iron levels",
+            "Dramatically boosts immunity",
+            "High calcium for maternal bone health"
+        ],
+        "who_alignment": "Directly addresses WHO goal of reducing maternal anemia prevalence.",
+        "cautions": "Wash leaves multiple times to ensure no grit/parasites.",
+        "best_time_to_eat": "11:00 AM"
+    },
+    {
+        "id": "SI005",
+        "name": {
+            "english": "Bisi Bele Bath (Lentil Veggie Rice)",
+            "tamil": "பிசிபேளா பாத்",
+            "malayalam": "ബിസിബേള ബാത്ത്",
+            "kannada": "ಬಿಸಿ ಬೇಳೆ ಬಾತ್",
+            "telugu": "బిసి బేలే బాత్"
+        },
+        "region": "Karnataka",
+        "meal_type": "Lunch",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Rice",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Toor dal",
+                "quantity": "1/4 cup"
+            },
+            {
+                "name": "Carrots/Beans",
+                "quantity": "1 cup"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 350,
+            "protein_g": 11,
+            "carbohydrates_g": 58,
+            "fat_g": 8,
+            "fiber_g": 7,
+            "iron_mg": 3.0,
+            "calcium_mg": 60,
+            "folate_mcg": 85,
+            "vitamin_c_mg": 25
+        },
+        "serving_size": "300g",
+        "preparation_time_minutes": 40,
+        "benefits": [
+            "Balanced macronutrients",
+            "Vitamin A for fetal eye health",
+            "Sustained energy release"
+        ],
+        "who_alignment": "Meets standards for nutrient-dense balanced maternal meals.",
+        "cautions": "Avoid excess spice to prevent late-pregnancy reflux.",
+        "best_time_to_eat": "1:30 PM"
+    },
+    {
+        "id": "SI006",
+        "name": {
+            "english": "Black Chickpea Sundal",
+            "tamil": "கருப்பு சுண்டல்",
+            "malayalam": "കറുത്ത കടല ചുണ്ടൽ",
+            "kannada": "ಕಪ್ಪು ಕಡಲೆಕಾಳು ಉಸಲಿ",
+            "telugu": "నల్ల శనగల గుగ్గిళ్ళు"
+        },
+        "region": "Tamil Nadu",
+        "meal_type": "Snack",
+        "trimester": [
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Soaked chickpeas",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Coconut",
+                "quantity": "2 tbsp"
+            },
+            {
+                "name": "Curry leaves",
+                "quantity": "1 sprig"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 190,
+            "protein_g": 9,
+            "carbohydrates_g": 28,
+            "fat_g": 6,
+            "fiber_g": 8,
+            "iron_mg": 2.5,
+            "calcium_mg": 55,
+            "folate_mcg": 115,
+            "vitamin_c_mg": 3
+        },
+        "serving_size": "150g",
+        "preparation_time_minutes": 20,
+        "benefits": [
+            "Regulates blood sugar",
+            "Prevents constipation",
+            "High folate snack"
+        ],
+        "who_alignment": "Promotes leguminous protein intake per WHO dietary guidelines.",
+        "cautions": "Soak for 12 hours to prevent bloating.",
+        "best_time_to_eat": "4:30 PM"
+    },
+    {
+        "id": "SI007",
+        "name": {
+            "english": "Curd Rice with Pomegranate",
+            "tamil": "தயிர் சாதம்",
+            "malayalam": "തൈര് സാദം",
+            "kannada": "ಮೊಸರನ್ನ",
+            "telugu": "పెరుగు అన్నం"
+        },
+        "region": "South India",
+        "meal_type": "Lunch / Dinner",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Soft rice",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Fresh curd",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Pomegranate",
+                "quantity": "2 tbsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 260,
+            "protein_g": 7,
+            "carbohydrates_g": 45,
+            "fat_g": 5,
+            "fiber_g": 2,
+            "iron_mg": 1.2,
+            "calcium_mg": 180,
+            "folate_mcg": 25,
+            "vitamin_c_mg": 8
+        },
+        "serving_size": "300g",
+        "preparation_time_minutes": 10,
+        "benefits": [
+            "Probiotics for gut health",
+            "Cooling effect",
+            "Calcium boost"
+        ],
+        "who_alignment": "Safe pasteurized dairy is a key WHO calcium source.",
+        "cautions": "Use fresh curd only; avoid very sour curd if acidic.",
+        "best_time_to_eat": "1:30 PM"
+    },
+    {
+        "id": "SI008",
+        "name": {
+            "english": "Palak Pappu (Spinach Dal)",
+            "tamil": "கீரை பருப்பு",
+            "malayalam": "ചീര പരിപ്പ്",
+            "kannada": "ಪಾಲಕ್ ತೊವ್ವೆ",
+            "telugu": "పాలకూర పప్పు"
+        },
+        "region": "Andhra Pradesh",
+        "meal_type": "Lunch Side",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Spinach",
+                "quantity": "2 cups"
+            },
+            {
+                "name": "Toor dal",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Garlic",
+                "quantity": "3 cloves"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 180,
+            "protein_g": 10,
+            "carbohydrates_g": 28,
+            "fat_g": 3,
+            "fiber_g": 8,
+            "iron_mg": 3.8,
+            "calcium_mg": 90,
+            "folate_mcg": 180,
+            "vitamin_c_mg": 18
+        },
+        "serving_size": "200 ml",
+        "preparation_time_minutes": 25,
+        "benefits": [
+            "Folate powerhouse",
+            "Iron rich",
+            "Garlic helps blood pressure"
+        ],
+        "who_alignment": "Supports WHO prenatal folate supplementation goals via food.",
+        "cautions": "Ensure spinach is cooked thoroughly.",
+        "best_time_to_eat": "1:00 PM"
+    },
+    {
+        "id": "SI009",
+        "name": {
+            "english": "Beetroot Carrot Poriyal",
+            "tamil": "பீட்ரூட் பொரியல்",
+            "malayalam": "ബീറ്റ്റൂട്ട് തോരൻ",
+            "kannada": "ಬೀಟ್ರೂಟ್ ಪಲ್ಯ",
+            "telugu": "బీట్‌రూట్ వేపుడు"
+        },
+        "region": "Tamil Nadu",
+        "meal_type": "Lunch Side",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Beetroot",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Carrot",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Coconut oil",
+                "quantity": "1 tsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 120,
+            "protein_g": 2,
+            "carbohydrates_g": 15,
+            "fat_g": 6,
+            "fiber_g": 4,
+            "iron_mg": 1.5,
+            "calcium_mg": 35,
+            "folate_mcg": 60,
+            "vitamin_c_mg": 10
+        },
+        "serving_size": "150g",
+        "preparation_time_minutes": 15,
+        "benefits": [
+            "Improves hemoglobin",
+            "Rich in nitrates for blood flow",
+            "Beta-carotene source"
+        ],
+        "who_alignment": "Encourages red/yellow vegetable intake for Vitamin A.",
+        "cautions": "May cause pink urine (harmless).",
+        "best_time_to_eat": "1:00 PM"
+    },
+    {
+        "id": "SI010",
+        "name": {
+            "english": "Roasted Gram Sesame Laddu",
+            "tamil": "எள்ளு உருண்டை",
+            "malayalam": "എള്ള് ലഡ്ഡു",
+            "kannada": "ಎಳ್ಳು ಉಂಡೆ",
+            "telugu": "నువ్వుల లడ్డు"
+        },
+        "region": "South India",
+        "meal_type": "Snack",
+        "trimester": [
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Sesame seeds",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Jaggery",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Roasted gram",
+                "quantity": "1/2 cup"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 160,
+            "protein_g": 4,
+            "carbohydrates_g": 22,
+            "fat_g": 6,
+            "fiber_g": 2,
+            "iron_mg": 2.2,
+            "calcium_mg": 65,
+            "folate_mcg": 15,
+            "vitamin_c_mg": 0
+        },
+        "serving_size": "35g",
+        "preparation_time_minutes": 20,
+        "benefits": [
+            "Massive calcium",
+            "Energy booster",
+            "Iron from jaggery"
+        ],
+        "who_alignment": "Nutrient-dense energy intake for 3rd trimester caloric needs.",
+        "cautions": "High sugar; consume only one per day.",
+        "best_time_to_eat": "4:00 PM"
+    },
+    {
+        "id": "SI011",
+        "name": {
+            "english": "Steamed Fish Moilee",
+            "tamil": "மீன் மொய்லி",
+            "malayalam": "ഫിഷ് മോളി",
+            "kannada": "ಫಿಶ್ ಮೊಯ್ಲಿ",
+            "telugu": "ఫిష్ మోయిలీ"
+        },
+        "region": "Kerala",
+        "meal_type": "Lunch",
+        "trimester": [
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Seer Fish",
+                "quantity": "150g"
+            },
+            {
+                "name": "Coconut milk",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Turmeric",
+                "quantity": "1/2 tsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 320,
+            "protein_g": 22,
+            "carbohydrates_g": 6,
+            "fat_g": 24,
+            "fiber_g": 1,
+            "iron_mg": 1.5,
+            "calcium_mg": 40,
+            "folate_mcg": 10,
+            "vitamin_c_mg": 4
+        },
+        "serving_size": "1 bowl",
+        "preparation_time_minutes": 30,
+        "benefits": [
+            "Omega-3 DHA for brain",
+            "Lean protein",
+            "Low mercury choice"
+        ],
+        "who_alignment": "WHO supports fish intake for brain development (DHA/EPA).",
+        "cautions": "Ensure fish is cooked to 145°F internal temp.",
+        "best_time_to_eat": "1:30 PM"
+    },
+    {
+        "id": "SI012",
+        "name": {
+            "english": "Sardine (Mathi) Peera",
+            "tamil": "மத்தி பீரா",
+            "malayalam": "മത്തി പീര",
+            "kannada": "ಮತ್ತಿ ಮೀನು ಪೀರಾ",
+            "telugu": "మత్తి చేపల పీరా"
+        },
+        "region": "Kerala",
+        "meal_type": "Lunch Side",
+        "trimester": [
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Sardines",
+                "quantity": "200g"
+            },
+            {
+                "name": "Grated coconut",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Kudampuli",
+                "quantity": "2 pcs"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 250,
+            "protein_g": 20,
+            "carbohydrates_g": 8,
+            "fat_g": 16,
+            "fiber_g": 3,
+            "iron_mg": 2.6,
+            "calcium_mg": 350,
+            "folate_mcg": 12,
+            "vitamin_c_mg": 3
+        },
+        "serving_size": "150g",
+        "preparation_time_minutes": 25,
+        "benefits": [
+            "Safest low-mercury fish",
+            "Bone health calcium",
+            "Rich in DHA"
+        ],
+        "who_alignment": "Emphasizes small fish for calcium and brain fats.",
+        "cautions": "Watch for small bones.",
+        "best_time_to_eat": "1:00 PM"
+    },
+    {
+        "id": "SI013",
+        "name": {
+            "english": "Idiyappam with Veg Stew",
+            "tamil": "இடியாப்பம் ஸ்டியூ",
+            "malayalam": "ഇടിയപ്പവും സ്റ്റ്യൂവും",
+            "kannada": "ಇಡಿಯಪ್ಪಂ ವೆಜ್ ಸ್ಟ್ಯೂ",
+            "telugu": "ఇడియప్పం వెజ్ స్ట్యూ"
+        },
+        "region": "Kerala",
+        "meal_type": "Breakfast",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Rice flour",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Potato/Peas",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Coconut milk",
+                "quantity": "1/2 cup"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 310,
+            "protein_g": 6,
+            "carbohydrates_g": 55,
+            "fat_g": 8,
+            "fiber_g": 5,
+            "iron_mg": 1.9,
+            "calcium_mg": 45,
+            "folate_mcg": 40,
+            "vitamin_c_mg": 15
+        },
+        "serving_size": "3 idiyappam",
+        "preparation_time_minutes": 35,
+        "benefits": [
+            "Steamed/Light",
+            "Gentle on stomach",
+            "Energy rich"
+        ],
+        "who_alignment": "Meets standards for safe, easily digestible energy.",
+        "cautions": "Avoid excess coconut milk if weight gain is a concern.",
+        "best_time_to_eat": "8:30 AM"
+    },
+    {
+        "id": "SI014",
+        "name": {
+            "english": "Bottle Gourd Dal (Sorakkai Kootu)",
+            "tamil": "சுரைக்காய் கூட்டு",
+            "malayalam": "ചുരയ്ക്ക പരിപ്പ്",
+            "kannada": "ಸೋರೆಕಾಯಿ ಕೂಟು",
+            "telugu": "సొరకాయ పప్పు"
+        },
+        "region": "Tamil Nadu",
+        "meal_type": "Lunch Side",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Bottle Gourd",
+                "quantity": "1.5 cups"
+            },
+            {
+                "name": "Moong Dal",
+                "quantity": "1/2 cup"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 140,
+            "protein_g": 8,
+            "carbohydrates_g": 22,
+            "fat_g": 2,
+            "fiber_g": 6,
+            "iron_mg": 2.1,
+            "calcium_mg": 35,
+            "folate_mcg": 90,
+            "vitamin_c_mg": 8
+        },
+        "serving_size": "200g",
+        "preparation_time_minutes": 25,
+        "benefits": [
+            "Highly hydrating",
+            "Reduces edema",
+            "Mild/Alkaline"
+        ],
+        "who_alignment": "Encourages high water-content vegetables.",
+        "cautions": "Taste before cooking; discard if bitter.",
+        "best_time_to_eat": "1:00 PM"
+    },
+    {
+        "id": "SI015",
+        "name": {
+            "english": "Amla Juice with Honey",
+            "tamil": "நெல்லிக்காய் சாறு",
+            "malayalam": "നെല്ലിക്ക ജ്യൂസ്",
+            "kannada": "ನೆಲ್ಲಿಕಾಯಿ ಜ್ಯೂಸ್",
+            "telugu": "ఉసిరికాయ రసం"
+        },
+        "region": "South India",
+        "meal_type": "Beverage",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Fresh Amla",
+                "quantity": "1"
+            },
+            {
+                "name": "Honey",
+                "quantity": "1 tsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 40,
+            "protein_g": 0.5,
+            "carbohydrates_g": 10,
+            "fat_g": 0,
+            "fiber_g": 1.5,
+            "iron_mg": 0.3,
+            "calcium_mg": 15,
+            "folate_mcg": 0,
+            "vitamin_c_mg": 150
+        },
+        "serving_size": "200 ml",
+        "preparation_time_minutes": 5,
+        "benefits": [
+            "Extreme Vit C",
+            "Aids iron absorption",
+            "Immunity boost"
+        ],
+        "who_alignment": "Vitamin C is essential for iron uptake from grains.",
+        "cautions": "Drink after food if prone to acidity.",
+        "best_time_to_eat": "10:30 AM"
+    },
+    {
+        "id": "SI016",
+        "name": {
+            "english": "Oats Vegetable Upma",
+            "tamil": "ஓட்ஸ் உப்புமா",
+            "malayalam": "ഓട്സ് ഉപ്പുമാവ്",
+            "kannada": "ಓಟ್ಸ್ ಉಪ್ಪಿಟ್ಟು",
+            "telugu": "ఓట్స్ ఉప్మా"
+        },
+        "region": "Modern South",
+        "meal_type": "Breakfast",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Rolled Oats",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Carrot/Beans",
+                "quantity": "1/2 cup"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 220,
+            "protein_g": 8,
+            "carbohydrates_g": 35,
+            "fat_g": 5,
+            "fiber_g": 6,
+            "iron_mg": 2.5,
+            "calcium_mg": 40,
+            "folate_mcg": 30,
+            "vitamin_c_mg": 12
+        },
+        "serving_size": "300g",
+        "preparation_time_minutes": 15,
+        "benefits": [
+            "Sugar control",
+            "Fiber rich",
+            "Heart healthy"
+        ],
+        "who_alignment": "Prevents Gestational Diabetes through whole grains.",
+        "cautions": "Avoid instant flavored oats with preservatives.",
+        "best_time_to_eat": "8:30 AM"
+    },
+    {
+        "id": "SI017",
+        "name": {
+            "english": "Wheat Dosa",
+            "tamil": "கோதுமை தோசை",
+            "malayalam": "ഗോതമ്പ് ദോശ",
+            "kannada": "ಗೋಧಿ ದೋಸೆ",
+            "telugu": "గోధుమ దోశ"
+        },
+        "region": "South India",
+        "meal_type": "Breakfast",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Whole wheat flour",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Curd",
+                "quantity": "2 tbsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 180,
+            "protein_g": 6,
+            "carbohydrates_g": 34,
+            "fat_g": 2,
+            "fiber_g": 5,
+            "iron_mg": 2.0,
+            "calcium_mg": 30,
+            "folate_mcg": 45,
+            "vitamin_c_mg": 0
+        },
+        "serving_size": "2 dosas",
+        "preparation_time_minutes": 10,
+        "benefits": [
+            "Complex carbs",
+            "Prevents constipation",
+            "Fast preparation"
+        ],
+        "who_alignment": "WHO promotes whole grain use over refined flour.",
+        "cautions": "Do not eat if gluten intolerant.",
+        "best_time_to_eat": "8:30 AM"
+    },
+    {
+        "id": "SI018",
+        "name": {
+            "english": "Millet Pongal (Thinai)",
+            "tamil": "தினை பொங்கல்",
+            "malayalam": "തിന പൊങ്കൽ",
+            "kannada": "ನವಣೆ ಪೊಂಗಲ್",
+            "telugu": "కొర్రల పొంగలి"
+        },
+        "region": "Tamil Nadu",
+        "meal_type": "Breakfast",
+        "trimester": [
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Foxtail Millet",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Moong dal",
+                "quantity": "1/4 cup"
+            },
+            {
+                "name": "Black pepper",
+                "quantity": "1/2 tsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 280,
+            "protein_g": 10,
+            "carbohydrates_g": 48,
+            "fat_g": 4,
+            "fiber_g": 7,
+            "iron_mg": 3.5,
+            "calcium_mg": 45,
+            "folate_mcg": 55,
+            "vitamin_c_mg": 2
+        },
+        "serving_size": "250g",
+        "preparation_time_minutes": 25,
+        "benefits": [
+            "Low GI",
+            "Iron rich",
+            "Highly nutritious"
+        ],
+        "who_alignment": "Aligns with indigenous crop promotion for nutrition.",
+        "cautions": "Wash millets thoroughly.",
+        "best_time_to_eat": "8:30 AM"
+    },
+    {
+        "id": "SI019",
+        "name": {
+            "english": "Ridge Gourd Kootu (Peerkangai)",
+            "tamil": "பீர்கங்காய் கூட்டு",
+            "malayalam": "പീച്ചിങ്ങ കൂട്ട്",
+            "kannada": "ಹೀರೆಕಾಯಿ ಕೂಟು",
+            "telugu": "బీరకాయ కూర"
+        },
+        "region": "Tamil Nadu",
+        "meal_type": "Lunch Side",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Ridge Gourd",
+                "quantity": "2 cups"
+            },
+            {
+                "name": "Moong dal",
+                "quantity": "1/2 cup"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 130,
+            "protein_g": 7,
+            "carbohydrates_g": 18,
+            "fat_g": 3,
+            "fiber_g": 5,
+            "iron_mg": 1.8,
+            "calcium_mg": 40,
+            "folate_mcg": 80,
+            "vitamin_c_mg": 12
+        },
+        "serving_size": "200g",
+        "preparation_time_minutes": 20,
+        "benefits": [
+            "Hydrating",
+            "Fiber rich",
+            "Easy on gut"
+        ],
+        "who_alignment": "Promotes high fiber to prevent pregnancy constipation.",
+        "cautions": "Cook well to soften skins.",
+        "best_time_to_eat": "1:00 PM"
+    },
+    {
+        "id": "SI020",
+        "name": {
+            "english": "Curried Moong Sprouts Salad",
+            "tamil": "பாசிப்பருப்பு சுண்டல்",
+            "malayalam": "ചെറുപയർ സാലഡ്",
+            "kannada": "ಹೆಸರುಕಾಳು ಸಲಾಡ್",
+            "telugu": "మొలకల సలాడ్"
+        },
+        "region": "South India",
+        "meal_type": "Snack",
+        "trimester": [
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Sprouted moong",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Lemon juice",
+                "quantity": "1 tsp"
+            },
+            {
+                "name": "Cucumber",
+                "quantity": "1/2 cup"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 150,
+            "protein_g": 10,
+            "carbohydrates_g": 22,
+            "fat_g": 1,
+            "fiber_g": 5,
+            "iron_mg": 2.2,
+            "calcium_mg": 30,
+            "folate_mcg": 160,
+            "vitamin_c_mg": 25
+        },
+        "serving_size": "150g",
+        "preparation_time_minutes": 10,
+        "benefits": [
+            "Raw enzymes",
+            "Protein boost",
+            "Vitamin C"
+        ],
+        "who_alignment": "WHO warns about raw sprouts; MUST be lightly steamed for safety.",
+        "cautions": "Always steam/boil sprouts for 5 mins to kill pathogens.",
+        "best_time_to_eat": "4:30 PM"
+    },
+    {
+        "id": "SI021",
+        "name": {
+            "english": "Ragi Mudde (Millet Balls)",
+            "tamil": "கேழ்வரகு களி",
+            "malayalam": "റാഗി മുദ്ദെ",
+            "kannada": "ರಾಗಿ ಮುದ್ದೆ",
+            "telugu": "రాగి ముద్ద"
+        },
+        "region": "Karnataka",
+        "meal_type": "Lunch",
+        "trimester": [
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Ragi flour",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Water",
+                "quantity": "2 cups"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 320,
+            "protein_g": 7,
+            "carbohydrates_g": 68,
+            "fat_g": 2,
+            "fiber_g": 11,
+            "iron_mg": 3.9,
+            "calcium_mg": 340,
+            "folate_mcg": 18,
+            "vitamin_c_mg": 0
+        },
+        "serving_size": "1 ball (150g)",
+        "preparation_time_minutes": 20,
+        "benefits": [
+            "Massive calcium",
+            "Energy for labor",
+            "Diabetic friendly"
+        ],
+        "who_alignment": "Super-source of calcium for fetal skeleton.",
+        "cautions": "Eat with plenty of water/liquid curry.",
+        "best_time_to_eat": "1:30 PM"
+    },
+    {
+        "id": "SI022",
+        "name": {
+            "english": "Coconut Water with Tender Coconut",
+            "tamil": "இளநீர்",
+            "malayalam": "കരിക്ക്",
+            "kannada": "ಎಳನೀರು",
+            "telugu": "కొబ్బరి నీళ్లు"
+        },
+        "region": "South India",
+        "meal_type": "Beverage",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Tender coconut",
+                "quantity": "1"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 50,
+            "protein_g": 1,
+            "carbohydrates_g": 10,
+            "fat_g": 0.5,
+            "fiber_g": 2,
+            "iron_mg": 0.5,
+            "calcium_mg": 25,
+            "folate_mcg": 5,
+            "vitamin_c_mg": 5
+        },
+        "serving_size": "250 ml",
+        "preparation_time_minutes": 2,
+        "benefits": [
+            "Electrolyte balance",
+            "Reduces heartburn",
+            "Prevents UTI"
+        ],
+        "who_alignment": "Natural oral rehydration fluid.",
+        "cautions": "Drink fresh; do not store opened.",
+        "best_time_to_eat": "11:00 AM"
+    },
+    {
+        "id": "SI023",
+        "name": {
+            "english": "Yam Stir Fry (Chena Mezhukkupuratti)",
+            "tamil": "கருணைக்கிழங்கு வறுவல்",
+            "malayalam": "ചേന മെഴുക്കുപുരട്ടി",
+            "kannada": "ಸುವರ್ಣ ಗೆಡ್ಡೆ ಪಲ್ಯ",
+            "telugu": "కంద వేపుడు"
+        },
+        "region": "Kerala",
+        "meal_type": "Lunch Side",
+        "trimester": [
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Elephant Foot Yam",
+                "quantity": "200g"
+            },
+            {
+                "name": "Turmeric",
+                "quantity": "1/2 tsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 160,
+            "protein_g": 3,
+            "carbohydrates_g": 30,
+            "fat_g": 4,
+            "fiber_g": 6,
+            "iron_mg": 1.5,
+            "calcium_mg": 50,
+            "folate_mcg": 20,
+            "vitamin_c_mg": 10
+        },
+        "serving_size": "150g",
+        "preparation_time_minutes": 25,
+        "benefits": [
+            "Hormone balance",
+            "High fiber",
+            "B-vitamins"
+        ],
+        "who_alignment": "Root vegetables provide safe energy density.",
+        "cautions": "Cook thoroughly with tamarind/lemon to avoid itching.",
+        "best_time_to_eat": "1:00 PM"
+    },
+    {
+        "id": "SI024",
+        "name": {
+            "english": "Snake Gourd Poriyal",
+            "tamil": "புடலங்காய் பொரியல்",
+            "malayalam": "പടവലങ്ങ തോരൻ",
+            "kannada": "ಪಡವಲಕಾಯಿ ಪಲ್ಯ",
+            "telugu": "పొట్లకాయ వేపుడు"
+        },
+        "region": "Tamil Nadu",
+        "meal_type": "Lunch Side",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Snake Gourd",
+                "quantity": "2 cups"
+            },
+            {
+                "name": "Moong dal",
+                "quantity": "2 tbsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 110,
+            "protein_g": 4,
+            "carbohydrates_g": 12,
+            "fat_g": 5,
+            "fiber_g": 4,
+            "iron_mg": 1.2,
+            "calcium_mg": 30,
+            "folate_mcg": 35,
+            "vitamin_c_mg": 8
+        },
+        "serving_size": "150g",
+        "preparation_time_minutes": 15,
+        "benefits": [
+            "Cooling",
+            "Weight management",
+            "Hydrating"
+        ],
+        "who_alignment": "Low calorie, nutrient-rich side for healthy weight gain.",
+        "cautions": "Remove seeds for better digestion.",
+        "best_time_to_eat": "1:00 PM"
+    },
+    {
+        "id": "SI025",
+        "name": {
+            "english": "Aval (Poha) with Roasted Nuts",
+            "tamil": "அவல் கிச்சடி",
+            "malayalam": "അവൽ ഉപ്പുമാവ്",
+            "kannada": "ಅವಲಕ್ಕಿ ಉಪ್ಪಿಟ್ಟು",
+            "telugu": "అటుకుల ఉప్మా"
+        },
+        "region": "South India",
+        "meal_type": "Breakfast / Snack",
+        "trimester": [
+            "First"
+        ],
+        "ingredients": [
+            {
+                "name": "Thick Aval",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Peanuts",
+                "quantity": "1 tbsp"
+            },
+            {
+                "name": "Turmeric",
+                "quantity": "1/2 tsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 250,
+            "protein_g": 6,
+            "carbohydrates_g": 45,
+            "fat_g": 6,
+            "fiber_g": 3,
+            "iron_mg": 4.0,
+            "calcium_mg": 25,
+            "folate_mcg": 30,
+            "vitamin_c_mg": 15
+        },
+        "serving_size": "250g",
+        "preparation_time_minutes": 10,
+        "benefits": [
+            "Fastest iron boost",
+            "Prevents nausea",
+            "Light energy"
+        ],
+        "who_alignment": "Iron-fortified or naturally iron-rich rice flakes.",
+        "cautions": "Use red aval (matta) for higher fiber.",
+        "best_time_to_eat": "8:30 AM"
+    },
+    {
+        "id": "SI026",
+        "name": {
+            "english": "Boiled Egg (Well Cooked)",
+            "tamil": "வேகவைத்த முட்டை",
+            "malayalam": "പുഴുങ്ങിയ മുട്ട",
+            "kannada": "ಬೇಯಿಸಿದ ಮೊಟ್ಟೆ",
+            "telugu": "ఉడికించిన గుడ్డు"
+        },
+        "region": "Universal",
+        "meal_type": "Breakfast / Snack",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Egg",
+                "quantity": "1"
+            },
+            {
+                "name": "Pepper",
+                "quantity": "Pinch"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 78,
+            "protein_g": 6.3,
+            "carbohydrates_g": 0.6,
+            "fat_g": 5,
+            "fiber_g": 0,
+            "iron_mg": 0.6,
+            "calcium_mg": 25,
+            "folate_mcg": 22,
+            "vitamin_c_mg": 0
+        },
+        "serving_size": "1 egg",
+        "preparation_time_minutes": 10,
+        "benefits": [
+            "Choline for brain",
+            "Highest protein quality",
+            "Vit D source"
+        ],
+        "who_alignment": "Crucial for fetal brain development (Choline).",
+        "cautions": "NEVER eat raw or runny yolks (Salmonella risk).",
+        "best_time_to_eat": "9:00 AM"
+    },
+    {
+        "id": "SI027",
+        "name": {
+            "english": "Lemon Rice (Chitranna)",
+            "tamil": "எலுமிச்சை சாதம்",
+            "malayalam": "നാരങ്ങ ചോറ്",
+            "kannada": "ಚಿತ್ರಾನ್ನ",
+            "telugu": "పులిహోర"
+        },
+        "region": "Karnataka / Tamil Nadu",
+        "meal_type": "Lunch",
+        "trimester": [
+            "First"
+        ],
+        "ingredients": [
+            {
+                "name": "Rice",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Lemon juice",
+                "quantity": "2 tbsp"
+            },
+            {
+                "name": "Peanuts",
+                "quantity": "1 tbsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 310,
+            "protein_g": 6,
+            "carbohydrates_g": 55,
+            "fat_g": 8,
+            "fiber_g": 2,
+            "iron_mg": 1.5,
+            "calcium_mg": 20,
+            "folate_mcg": 25,
+            "vitamin_c_mg": 30
+        },
+        "serving_size": "300g",
+        "preparation_time_minutes": 15,
+        "benefits": [
+            "Combats metallic taste",
+            "Vitamin C boost",
+            "Refreshing"
+        ],
+        "who_alignment": "Vitamin C aids non-heme iron absorption.",
+        "cautions": "Avoid if suffering from severe heartburn.",
+        "best_time_to_eat": "1:00 PM"
+    },
+    {
+        "id": "SI028",
+        "name": {
+            "english": "Avial (Mixed Veg with Coconut)",
+            "tamil": "அவியல்",
+            "malayalam": "അവിയൽ",
+            "kannada": "ಅವಿಯಲ್",
+            "telugu": "అవియల్"
+        },
+        "region": "Kerala",
+        "meal_type": "Lunch Side",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Mixed Veg (Carrot, Bean, Yam, Plantain)",
+                "quantity": "2 cups"
+            },
+            {
+                "name": "Coconut/Curd",
+                "quantity": "1/2 cup"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 180,
+            "protein_g": 4,
+            "carbohydrates_g": 18,
+            "fat_g": 12,
+            "fiber_g": 6,
+            "iron_mg": 2.0,
+            "calcium_mg": 60,
+            "folate_mcg": 50,
+            "vitamin_c_mg": 15
+        },
+        "serving_size": "200g",
+        "preparation_time_minutes": 30,
+        "benefits": [
+            "Multivitamin dish",
+            "Healthy fats",
+            "Diverse fiber"
+        ],
+        "who_alignment": "Supports WHO standard for dietary diversity.",
+        "cautions": "Use pasteurized curd.",
+        "best_time_to_eat": "1:30 PM"
+    },
+    {
+        "id": "SI029",
+        "name": {
+            "english": "Moong Dal Payasam",
+            "tamil": "பாசிப்பருப்பு பாயாசம்",
+            "malayalam": "പരിപ്പ് പായസം",
+            "kannada": "ಹೆಸರು ಬೇಳೆ ಪಾಯಸ",
+            "telugu": "పెసర పప్పు పాయసం"
+        },
+        "region": "South India",
+        "meal_type": "Dessert",
+        "trimester": [
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Moong Dal",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Jaggery",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Coconut milk",
+                "quantity": "1/2 cup"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 280,
+            "protein_g": 8,
+            "carbohydrates_g": 45,
+            "fat_g": 7,
+            "fiber_g": 3,
+            "iron_mg": 3.0,
+            "calcium_mg": 40,
+            "folate_mcg": 40,
+            "vitamin_c_mg": 0
+        },
+        "serving_size": "150 ml",
+        "preparation_time_minutes": 30,
+        "benefits": [
+            "Protein dessert",
+            "Iron boost",
+            "Satisfies cravings safely"
+        ],
+        "who_alignment": "Encourages jaggery over white sugar.",
+        "cautions": "Limit portion size to avoid sugar spikes.",
+        "best_time_to_eat": "2:00 PM"
+    },
+    {
+        "id": "SI030",
+        "name": {
+            "english": "Olan (Ash Gourd Stew)",
+            "tamil": "ஓலன்",
+            "malayalam": "ഓലൻ",
+            "kannada": "ಓಲನ್",
+            "telugu": "ఓలన్"
+        },
+        "region": "Kerala",
+        "meal_type": "Lunch Side",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Ash Gourd",
+                "quantity": "2 cups"
+            },
+            {
+                "name": "Cowpeas (Lobia)",
+                "quantity": "1/4 cup"
+            },
+            {
+                "name": "Coconut milk",
+                "quantity": "1/2 cup"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 140,
+            "protein_g": 5,
+            "carbohydrates_g": 14,
+            "fat_g": 8,
+            "fiber_g": 4,
+            "iron_mg": 1.5,
+            "calcium_mg": 45,
+            "folate_mcg": 30,
+            "vitamin_c_mg": 10
+        },
+        "serving_size": "150g",
+        "preparation_time_minutes": 25,
+        "benefits": [
+            "Highly alkaline",
+            "Reduces acidity",
+            "Hydrating"
+        ],
+        "who_alignment": "Meets guidelines for non-spicy, soothing vegetable dishes.",
+        "cautions": "Soak cowpeas overnight.",
+        "best_time_to_eat": "1:00 PM"
+    },
+    {
+        "id": "SI031",
+        "name": {
+            "english": "Thambuli (Cooling Yogurt Curry)",
+            "tamil": "தம்பூலி",
+            "malayalam": "തമ്പുളി",
+            "kannada": "ತಂಬುಳಿ",
+            "telugu": "తంబూలి"
+        },
+        "region": "Karnataka",
+        "meal_type": "Lunch Side",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Buttermilk/Curd",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Cumin/Pepper",
+                "quantity": "1/2 tsp"
+            },
+            {
+                "name": "Ginger",
+                "quantity": "small piece"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 90,
+            "protein_g": 4,
+            "carbohydrates_g": 8,
+            "fat_g": 4,
+            "fiber_g": 1,
+            "iron_mg": 0.8,
+            "calcium_mg": 120,
+            "folate_mcg": 15,
+            "vitamin_c_mg": 2
+        },
+        "serving_size": "150 ml",
+        "preparation_time_minutes": 10,
+        "benefits": [
+            "Digestion aid",
+            "Calcium rich",
+            "Body cooling"
+        ],
+        "who_alignment": "Promotes fermented dairy for gut flora.",
+        "cautions": "Use fresh curd only.",
+        "best_time_to_eat": "1:00 PM"
+    },
+    {
+        "id": "SI032",
+        "name": {
+            "english": "Steamed Sweet Potato",
+            "tamil": "சர்க்கரைவள்ளி கிழங்கு",
+            "malayalam": "മധുരക്കിഴങ്ങ് പുഴുങ്ങിയത്",
+            "kannada": "ಸಿಹಿಗೆಣಸು",
+            "telugu": "చిలకడదుంప"
+        },
+        "region": "Universal",
+        "meal_type": "Snack",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Sweet Potato",
+                "quantity": "200g"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 180,
+            "protein_g": 2,
+            "carbohydrates_g": 41,
+            "fat_g": 0.2,
+            "fiber_g": 6,
+            "iron_mg": 1.2,
+            "calcium_mg": 55,
+            "folate_mcg": 20,
+            "vitamin_c_mg": 40
+        },
+        "serving_size": "150g",
+        "preparation_time_minutes": 15,
+        "benefits": [
+            "Vit A (Beta-carotene)",
+            "No spikes in sugar",
+            "Fetal skin health"
+        ],
+        "who_alignment": "Excellent source of Vitamin A.",
+        "cautions": "Wash skin thoroughly before boiling.",
+        "best_time_to_eat": "4:00 PM"
+    },
+    {
+        "id": "SI033",
+        "name": {
+            "english": "Plantain Flower Poriyal (Vazhaipoo)",
+            "tamil": "வாழைப்பூ பொரியல்",
+            "malayalam": "വാഴപ്പൂ തോരൻ",
+            "kannada": "ಬಾಳೆಹೂವು ಪಲ್ಯ",
+            "telugu": "అరటి పువ్వు వేపుడు"
+        },
+        "region": "Tamil Nadu",
+        "meal_type": "Lunch Side",
+        "trimester": [
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Banana Flower",
+                "quantity": "2 cups"
+            },
+            {
+                "name": "Moong dal",
+                "quantity": "2 tbsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 140,
+            "protein_g": 5,
+            "carbohydrates_g": 20,
+            "fat_g": 5,
+            "fiber_g": 10,
+            "iron_mg": 3.5,
+            "calcium_mg": 45,
+            "folate_mcg": 40,
+            "vitamin_c_mg": 15
+        },
+        "serving_size": "150g",
+        "preparation_time_minutes": 40,
+        "benefits": [
+            "Extreme fiber",
+            "Prevents spotting",
+            "Rich iron"
+        ],
+        "who_alignment": "Addresses high-fiber dietary requirements.",
+        "cautions": "Time-consuming to clean; ensure thorough cleaning.",
+        "best_time_to_eat": "1:00 PM"
+    },
+    {
+        "id": "SI034",
+        "name": {
+            "english": "Spiced Buttermilk (Sambharam)",
+            "tamil": "நீர் மோர்",
+            "malayalam": "സംഭാരം",
+            "kannada": "ಮಜ್ಜಿಗೆ",
+            "telugu": "మజ్జిగ"
+        },
+        "region": "South India",
+        "meal_type": "Beverage",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Curd",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Water",
+                "quantity": "1.5 cups"
+            },
+            {
+                "name": "Ginger/Curry leaves",
+                "quantity": "small amount"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 60,
+            "protein_g": 3,
+            "carbohydrates_g": 5,
+            "fat_g": 3,
+            "fiber_g": 0,
+            "iron_mg": 0.5,
+            "calcium_mg": 100,
+            "folate_mcg": 10,
+            "vitamin_c_mg": 2
+        },
+        "serving_size": "250 ml",
+        "preparation_time_minutes": 5,
+        "benefits": [
+            "Hydration",
+            "Calcium",
+            "Easy digestion"
+        ],
+        "who_alignment": "Safe fluid intake with electrolytes.",
+        "cautions": "Avoid green chilies if heartburn is present.",
+        "best_time_to_eat": "11:30 AM"
+    },
+    {
+        "id": "SI035",
+        "name": {
+            "english": "Raw Banana Stir Fry",
+            "tamil": "வாழைக்காய் வறுவல்",
+            "malayalam": "വാഴയ്ക്ക തോരൻ",
+            "kannada": "ಬಾಳೆಕಾಯಿ ಪಲ್ಯ",
+            "telugu": "అరటికాయ వేపుడు"
+        },
+        "region": "South India",
+        "meal_type": "Lunch Side",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Raw Banana",
+                "quantity": "150g"
+            },
+            {
+                "name": "Pepper",
+                "quantity": "1/2 tsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 160,
+            "protein_g": 2,
+            "carbohydrates_g": 32,
+            "fat_g": 4,
+            "fiber_g": 5,
+            "iron_mg": 1.2,
+            "calcium_mg": 20,
+            "folate_mcg": 25,
+            "vitamin_c_mg": 12
+        },
+        "serving_size": "150g",
+        "preparation_time_minutes": 20,
+        "benefits": [
+            "Potassium for leg cramps",
+            "Resistance starch",
+            "Iron rich"
+        ],
+        "who_alignment": "Potassium is vital for preventing pregnancy-related leg cramps.",
+        "cautions": "Do not deep fry; only sauté or steam-fry.",
+        "best_time_to_eat": "1:00 PM"
+    },
+    {
+        "id": "SI036",
+        "name": {
+            "english": "Wheat Rava Upma",
+            "tamil": "கோதுமை ரவை உப்புமா",
+            "malayalam": "ഗോതമ്പ് റവ ഉപ്പുമാവ്",
+            "kannada": "ಗೋಧಿ ರವೆ ಉಪ್ಪಿಟ್ಟು",
+            "telugu": "గోధుమ రవ్వ ఉప్మా"
+        },
+        "region": "South India",
+        "meal_type": "Breakfast",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Broken Wheat (Dalia)",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Mixed Veg",
+                "quantity": "1/2 cup"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 240,
+            "protein_g": 9,
+            "carbohydrates_g": 42,
+            "fat_g": 5,
+            "fiber_g": 8,
+            "iron_mg": 3.0,
+            "calcium_mg": 40,
+            "folate_mcg": 55,
+            "vitamin_c_mg": 10
+        },
+        "serving_size": "250g",
+        "preparation_time_minutes": 20,
+        "benefits": [
+            "Long-lasting energy",
+            "Prevents constipation",
+            "Fullness"
+        ],
+        "who_alignment": "Meets standards for whole-grain fiber intake.",
+        "cautions": "Cook well; broken wheat can be hard to digest if undercooked.",
+        "best_time_to_eat": "8:30 AM"
+    },
+    {
+        "id": "SI037",
+        "name": {
+            "english": "Pumpkin Kootu",
+            "tamil": "பூசணிக்காய் கூட்டு",
+            "malayalam": "മത്തങ്ങ കറി",
+            "kannada": "ಕುಂಬಳಕಾಯಿ ಕೂಟು",
+            "telugu": "గుమ్మడికాయ కూర"
+        },
+        "region": "South India",
+        "meal_type": "Lunch Side",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Yellow Pumpkin",
+                "quantity": "2 cups"
+            },
+            {
+                "name": "Moong Dal",
+                "quantity": "1/4 cup"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 130,
+            "protein_g": 4,
+            "carbohydrates_g": 18,
+            "fat_g": 6,
+            "fiber_g": 4,
+            "iron_mg": 1.4,
+            "calcium_mg": 40,
+            "folate_mcg": 45,
+            "vitamin_c_mg": 25
+        },
+        "serving_size": "200g",
+        "preparation_time_minutes": 20,
+        "benefits": [
+            "Vit A source",
+            "Low sodium",
+            "Natural sweetness"
+        ],
+        "who_alignment": "Safe root/fleshy vegetable source.",
+        "cautions": "Do not discard seeds; they are nutrient-rich (if ground).",
+        "best_time_to_eat": "1:00 PM"
+    },
+    {
+        "id": "SI038",
+        "name": {
+            "english": "Pomegranate Arils",
+            "tamil": "மாதுளை",
+            "malayalam": "മാതളനാരങ്ങ",
+            "kannada": "ದಾಳಿಂಬೆ",
+            "telugu": "దానిమ్మ"
+        },
+        "region": "Universal",
+        "meal_type": "Snack",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Pomegranate",
+                "quantity": "1 cup"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 120,
+            "protein_g": 2,
+            "carbohydrates_g": 25,
+            "fat_g": 1,
+            "fiber_g": 5,
+            "iron_mg": 0.8,
+            "calcium_mg": 15,
+            "folate_mcg": 50,
+            "vitamin_c_mg": 15
+        },
+        "serving_size": "150g",
+        "preparation_time_minutes": 5,
+        "benefits": [
+            "Fetal brain development",
+            "Blood flow",
+            "Prevents preeclampsia"
+        ],
+        "who_alignment": "Antioxidant-rich fruit intake encouraged.",
+        "cautions": "Eat whole fruit rather than juice to get fiber.",
+        "best_time_to_eat": "11:00 AM"
+    },
+    {
+        "id": "SI039",
+        "name": {
+            "english": "Andhra Tomato Pappu",
+            "tamil": "தக்காளி பருப்பு",
+            "malayalam": "തക്കാളി പരിപ്പ് കറി",
+            "kannada": "ಟೊಮೆಟೊ ತೊವ್ವೆ",
+            "telugu": "టొమాటో పప్పు"
+        },
+        "region": "Andhra Pradesh",
+        "meal_type": "Lunch Side",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Toor Dal",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Tomato",
+                "quantity": "2 medium"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 190,
+            "protein_g": 11,
+            "carbohydrates_g": 26,
+            "fat_g": 4,
+            "fiber_g": 7,
+            "iron_mg": 2.5,
+            "calcium_mg": 30,
+            "folate_mcg": 110,
+            "vitamin_c_mg": 20
+        },
+        "serving_size": "200 ml",
+        "preparation_time_minutes": 25,
+        "benefits": [
+            "Lycopene source",
+            "High protein",
+            "Vit C boost"
+        ],
+        "who_alignment": "Protein-rich staple for maternal health.",
+        "cautions": "Keep chili levels low to avoid heartburn.",
+        "best_time_to_eat": "1:00 PM"
+    },
+    {
+        "id": "SI040",
+        "name": {
+            "english": "Roasted Makhana (Fox Nuts)",
+            "tamil": "தாமரை விதை",
+            "malayalam": "താമര വിത്ത്",
+            "kannada": "ಮಖಾನಾ",
+            "telugu": "మఖానా"
+        },
+        "region": "Universal",
+        "meal_type": "Snack",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Makhana",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Ghee",
+                "quantity": "1 tsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 110,
+            "protein_g": 3,
+            "carbohydrates_g": 20,
+            "fat_g": 2,
+            "fiber_g": 1.5,
+            "iron_mg": 1.1,
+            "calcium_mg": 60,
+            "folate_mcg": 10,
+            "vitamin_c_mg": 0
+        },
+        "serving_size": "30g",
+        "preparation_time_minutes": 10,
+        "benefits": [
+            "Low calorie",
+            "Calcium for baby",
+            "Safe snacking"
+        ],
+        "who_alignment": "Alternative to processed high-sodium snacks.",
+        "cautions": "Do not use pre-packaged flavored makhana with high MSG/Salt.",
+        "best_time_to_eat": "5:00 PM"
+    },
+    {
+        "id": "SI041",
+        "name": {
+            "english": "Kanchipuram Spiced Idli",
+            "tamil": "காஞ்சிபுரம் இட்லி",
+            "malayalam": "കാഞ്ചീപുരം ഇഡ്ഡലി",
+            "kannada": "ಕಾಂಚೀಪುರಂ ಇಡ್ಲಿ",
+            "telugu": "కంచిపురం ఇడ్లీ"
+        },
+        "region": "Tamil Nadu",
+        "meal_type": "Breakfast",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Rice & Urad Dal batter",
+                "quantity": "2 cups"
+            },
+            {
+                "name": "Dry ginger powder (Sukku)",
+                "quantity": "1/2 tsp"
+            },
+            {
+                "name": "Peppercorns",
+                "quantity": "1/2 tsp"
+            },
+            {
+                "name": "Cumin",
+                "quantity": "1/2 tsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 220,
+            "protein_g": 6,
+            "carbohydrates_g": 44,
+            "fat_g": 3,
+            "fiber_g": 2,
+            "iron_mg": 1.8,
+            "calcium_mg": 30,
+            "folate_mcg": 28,
+            "vitamin_c_mg": 0
+        },
+        "serving_size": "2 large idlis",
+        "preparation_time_minutes": 25,
+        "benefits": [
+            "Ginger and pepper aid in digestion",
+            "Prevents bloating",
+            "Fermented food supports gut microbiome"
+        ],
+        "who_alignment": "WHO supports ginger for pregnancy-related nausea and digestive comfort.",
+        "cautions": "Avoid if experiencing severe acidity; reduce pepper content.",
+        "best_time_to_eat": "8:30 AM"
+    },
+    {
+        "id": "SI042",
+        "name": {
+            "english": "Multi-Lentil Adai Dosa",
+            "tamil": "அடை தோசை",
+            "malayalam": "അട ദോശ",
+            "kannada": "ಅಡೈ ದೋಸೆ",
+            "telugu": "అడై దోశ"
+        },
+        "region": "Tamil Nadu",
+        "meal_type": "Breakfast / Dinner",
+        "trimester": [
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Toor, Chana, Moong, & Urad Dal",
+                "quantity": "1 cup total"
+            },
+            {
+                "name": "Rice",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Drumstick leaves",
+                "quantity": "1/4 cup"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 310,
+            "protein_g": 14,
+            "carbohydrates_g": 48,
+            "fat_g": 7,
+            "fiber_g": 9,
+            "iron_mg": 4.2,
+            "calcium_mg": 85,
+            "folate_mcg": 110,
+            "vitamin_c_mg": 15
+        },
+        "serving_size": "2 dosas",
+        "preparation_time_minutes": 20,
+        "benefits": [
+            "Very high plant protein for fetal growth",
+            "Iron-rich due to mixed dals and moringa leaves",
+            "Low glycemic index"
+        ],
+        "who_alignment": "Aligns with WHO guidelines for increasing vegetable and pulse protein intake.",
+        "cautions": "Requires thorough soaking to reduce anti-nutrients (phytates).",
+        "best_time_to_eat": "7:30 PM"
+    },
+    {
+        "id": "SI043",
+        "name": {
+            "english": "Ven Pongal with Black Pepper",
+            "tamil": "வெண் பொங்கல்",
+            "malayalam": "വെൺ പൊങ്കൽ",
+            "kannada": "ವೆನ್ ಪೊಂಗಲ್",
+            "telugu": "వెన్ పొంగల్"
+        },
+        "region": "Tamil Nadu",
+        "meal_type": "Breakfast",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Raw Rice",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Moong dal",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Ghee",
+                "quantity": "1 tbsp"
+            },
+            {
+                "name": "Whole black pepper",
+                "quantity": "1 tsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 340,
+            "protein_g": 9,
+            "carbohydrates_g": 55,
+            "fat_g": 9,
+            "fiber_g": 4,
+            "iron_mg": 2.5,
+            "calcium_mg": 40,
+            "folate_mcg": 60,
+            "vitamin_c_mg": 0
+        },
+        "serving_size": "250g",
+        "preparation_time_minutes": 30,
+        "benefits": [
+            "Easy to swallow and digest",
+            "Moong dal provides essential amino acids",
+            "Ghee aids in vitamin absorption"
+        ],
+        "who_alignment": "Energy-dense food recommended for maternal weight gain during 2nd/3rd trimesters.",
+        "cautions": "Limit ghee if diagnosed with gestational gallbladder issues.",
+        "best_time_to_eat": "8:30 AM"
+    },
+    {
+        "id": "SI044",
+        "name": {
+            "english": "Puttu with Kadala (Chickpea) Curry",
+            "tamil": "புட்டு கடலை கறி",
+            "malayalam": "പുട്ടും കടലയും",
+            "kannada": "ಪುಟ್ಟು ಮತ್ತು ಕಡಲೆ",
+            "telugu": "పుట్టు శనగల కూర"
+        },
+        "region": "Kerala",
+        "meal_type": "Breakfast",
+        "trimester": [
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Rice flour (steamed)",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Black Chickpeas",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Coconut",
+                "quantity": "2 tbsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 380,
+            "protein_g": 12,
+            "carbohydrates_g": 62,
+            "fat_g": 10,
+            "fiber_g": 11,
+            "iron_mg": 4.5,
+            "calcium_mg": 70,
+            "folate_mcg": 120,
+            "vitamin_c_mg": 5
+        },
+        "serving_size": "1 piece puttu + 1/2 cup curry",
+        "preparation_time_minutes": 40,
+        "benefits": [
+            "Black chickpeas are a top source of iron and folate",
+            "Steam-cooked rice is light",
+            "High fiber prevents constipation"
+        ],
+        "who_alignment": "Promotes intake of legumes for maternal iron and protein.",
+        "cautions": "Ensure chickpeas are soaked 12+ hours to prevent flatulence.",
+        "best_time_to_eat": "9:00 AM"
+    },
+    {
+        "id": "SI045",
+        "name": {
+            "english": "Andhra Dosakaya Pappu (Yellow Cucumber Dal)",
+            "tamil": "வெள்ளரிக்காய் பருப்பு",
+            "malayalam": "വെള്ളരിക്ക പരിപ്പ്",
+            "kannada": "ಸೌತೆಕಾಯಿ ತೊವ್ವೆ",
+            "telugu": "దోసకాయ పప్పు"
+        },
+        "region": "Andhra Pradesh",
+        "meal_type": "Lunch Side",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Toor Dal",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Yellow Cucumber (Dosakaya)",
+                "quantity": "1 cup diced"
+            },
+            {
+                "name": "Turmeric",
+                "quantity": "1/2 tsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 170,
+            "protein_g": 9,
+            "carbohydrates_g": 24,
+            "fat_g": 4,
+            "fiber_g": 7,
+            "iron_mg": 2.2,
+            "calcium_mg": 40,
+            "folate_mcg": 95,
+            "vitamin_c_mg": 15
+        },
+        "serving_size": "200 ml",
+        "preparation_time_minutes": 25,
+        "benefits": [
+            "Hydrating vegetable",
+            "High protein staple",
+            "Cooling effect on the body"
+        ],
+        "who_alignment": "Supports diverse vegetable intake with essential proteins.",
+        "cautions": "Ensure cucumber is not bitter.",
+        "best_time_to_eat": "1:00 PM"
+    },
+    {
+        "id": "SI046",
+        "name": {
+            "english": "Akki Roti with Dill Leaves",
+            "tamil": "அரிசி ரொட்டி",
+            "malayalam": "അക്കി റൊട്ടി",
+            "kannada": "ಅಕ್ಕಿ ರೊಟ್ಟಿ",
+            "telugu": "అక్కి రోటి"
+        },
+        "region": "Karnataka",
+        "meal_type": "Breakfast / Dinner",
+        "trimester": [
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Rice flour",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Dill leaves (Sabbasige)",
+                "quantity": "1/4 cup"
+            },
+            {
+                "name": "Grated Carrot",
+                "quantity": "2 tbsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 240,
+            "protein_g": 4,
+            "carbohydrates_g": 50,
+            "fat_g": 3,
+            "fiber_g": 4,
+            "iron_mg": 2.1,
+            "calcium_mg": 65,
+            "folate_mcg": 45,
+            "vitamin_c_mg": 12
+        },
+        "serving_size": "2 rotis",
+        "preparation_time_minutes": 20,
+        "benefits": [
+            "Dill leaves aid in digestion and postpartum lactation preparation",
+            "Gluten-free",
+            "Vegetable-enriched"
+        ],
+        "who_alignment": "Promotes the use of green leafy vegetables in staple foods.",
+        "cautions": "Use minimal oil; dill has a strong flavor that some may find nauseating in the 1st trimester.",
+        "best_time_to_eat": "8:30 AM"
+    },
+    {
+        "id": "SI047",
+        "name": {
+            "english": "Jolada Roti (Sorghum Bread)",
+            "tamil": "சோள ரொட்டி",
+            "malayalam": "ജോലദ റൊട്ടി",
+            "kannada": "ಜೋಳದ ರೊಟ್ಟಿ",
+            "telugu": "జొన్న రొట్టె"
+        },
+        "region": "Karnataka",
+        "meal_type": "Lunch",
+        "trimester": [
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Jowar flour",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Hot water",
+                "quantity": "as needed"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 190,
+            "protein_g": 6,
+            "carbohydrates_g": 40,
+            "fat_g": 2,
+            "fiber_g": 7,
+            "iron_mg": 3.4,
+            "calcium_mg": 25,
+            "folate_mcg": 35,
+            "vitamin_c_mg": 0
+        },
+        "serving_size": "2 rotis",
+        "preparation_time_minutes": 30,
+        "benefits": [
+            "High iron content to boost hemoglobin",
+            "Gluten-free and high fiber",
+            "Complex carbohydrates for steady energy"
+        ],
+        "who_alignment": "Supports WHO's recommendation for iron-rich cereal alternatives.",
+        "cautions": "Must be eaten with a moist curry as it is a 'dry' grain.",
+        "best_time_to_eat": "1:30 PM"
+    },
+    {
+        "id": "SI048",
+        "name": {
+            "english": "Majjige Huli (Buttermilk Veggie Curry)",
+            "tamil": "மோர் குழம்பு",
+            "malayalam": "മോര് കറി",
+            "kannada": "ಮಜ್ಜಿಗೆ ಹುಳಿ",
+            "telugu": "మజ్జిగ పులుసు"
+        },
+        "region": "Karnataka / South India",
+        "meal_type": "Lunch Side",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Ash Gourd",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Sour curd",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Coconut/Ginger/Cumin paste",
+                "quantity": "2 tbsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 150,
+            "protein_g": 5,
+            "carbohydrates_g": 12,
+            "fat_g": 9,
+            "fiber_g": 3,
+            "iron_mg": 1.2,
+            "calcium_mg": 160,
+            "folate_mcg": 30,
+            "vitamin_c_mg": 10
+        },
+        "serving_size": "200 ml",
+        "preparation_time_minutes": 25,
+        "benefits": [
+            "Probiotics for immunity",
+            "High calcium from curd",
+            "Ash gourd is cooling and hydrating"
+        ],
+        "who_alignment": "Encourages intake of fermented dairy products.",
+        "cautions": "Ensure the curd is pasteurized.",
+        "best_time_to_eat": "1:00 PM"
+    },
+    {
+        "id": "SI049",
+        "name": {
+            "english": "Garlic Rasam (Poondu Rasam)",
+            "tamil": "பூண்டு ரசம்",
+            "malayalam": "വെളുത്തുള്ളി രസം",
+            "kannada": "ಬೆಳ್ಳುಳ್ಳಿ ಸಾರು",
+            "telugu": "వెల్లుల్లి రసం"
+        },
+        "region": "South India",
+        "meal_type": "Lunch Appetizer",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Garlic",
+                "quantity": "8 cloves"
+            },
+            {
+                "name": "Tomato",
+                "quantity": "1"
+            },
+            {
+                "name": "Tamarind",
+                "quantity": "Small extract"
+            },
+            {
+                "name": "Black pepper/Cumin",
+                "quantity": "1 tsp each"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 45,
+            "protein_g": 1,
+            "carbohydrates_g": 8,
+            "fat_g": 1,
+            "fiber_g": 1,
+            "iron_mg": 0.8,
+            "calcium_mg": 30,
+            "folate_mcg": 15,
+            "vitamin_c_mg": 20
+        },
+        "serving_size": "150 ml",
+        "preparation_time_minutes": 15,
+        "benefits": [
+            "Garlic helps regulate blood pressure",
+            "Aids digestion and prevents gas",
+            "Relieves congestion/cold"
+        ],
+        "who_alignment": "Tamarind and spices serve as natural digestive aids.",
+        "cautions": "Do not consume on an empty stomach if you have severe gastritis.",
+        "best_time_to_eat": "1:00 PM"
+    },
+    {
+        "id": "SI050",
+        "name": {
+            "english": "Gongura Pappu (Hibiscus Leaf Dal)",
+            "tamil": "புளிச்சக்கீரை பருப்பு",
+            "malayalam": "പുളിച്ചീര പരിപ്പ്",
+            "kannada": "ಪುಂಡಿ ಪಲ್ಯ ತೊವ್ವೆ",
+            "telugu": "గోంగూర పప్పు"
+        },
+        "region": "Andhra Pradesh",
+        "meal_type": "Lunch",
+        "trimester": [
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Gongura (Sorrel) leaves",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Toor dal",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Green chili",
+                "quantity": "1"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 190,
+            "protein_g": 10,
+            "carbohydrates_g": 26,
+            "fat_g": 4,
+            "fiber_g": 6,
+            "iron_mg": 4.8,
+            "calcium_mg": 70,
+            "folate_mcg": 90,
+            "vitamin_c_mg": 35
+        },
+        "serving_size": "200 ml",
+        "preparation_time_minutes": 30,
+        "benefits": [
+            "Extremely high in iron",
+            "Vitamin C in leaves helps iron absorption",
+            "Tangy flavor helps with appetite"
+        ],
+        "who_alignment": "Excellent dietary source for preventing iron-deficiency anemia.",
+        "cautions": "Very sour; consume with rice and ghee to avoid acidity.",
+        "best_time_to_eat": "1:00 PM"
+    },
+    {
+        "id": "SI051",
+        "name": {
+            "english": "Keerai Masiyal (Mashed Greens)",
+            "tamil": "கீரை மசியல்",
+            "malayalam": "ചീര മസിയത്",
+            "kannada": "ಸೊಪ್ಪು ಮಸಿಯಲ್",
+            "telugu": "ఆకుకూర పప్పు"
+        },
+        "region": "Tamil Nadu",
+        "meal_type": "Lunch Side",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Amaranth or Arai Keerai",
+                "quantity": "2 cups"
+            },
+            {
+                "name": "Moong dal",
+                "quantity": "2 tbsp"
+            },
+            {
+                "name": "Garlic",
+                "quantity": "2 cloves"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 110,
+            "protein_g": 6,
+            "carbohydrates_g": 12,
+            "fat_g": 4,
+            "fiber_g": 7,
+            "iron_mg": 4.1,
+            "calcium_mg": 220,
+            "folate_mcg": 160,
+            "vitamin_c_mg": 30
+        },
+        "serving_size": "150g",
+        "preparation_time_minutes": 20,
+        "benefits": [
+            "Richest source of Folate",
+            "High calcium for maternal bone health",
+            "Easy to chew and digest"
+        ],
+        "who_alignment": "Critical food for 1st trimester neural tube development.",
+        "cautions": "Wash leaves thoroughly to remove all traces of soil.",
+        "best_time_to_eat": "1:30 PM"
+    },
+    {
+        "id": "SI052",
+        "name": {
+            "english": "Beetroot Halwa (Jaggery Based)",
+            "tamil": "பீட்ரூட் அல்வா",
+            "malayalam": "ബീറ്റ്റൂട്ട് ഹൽവ",
+            "kannada": "ಬೀಟ್ರೂಟ್ ಹಲ್ವಾ",
+            "telugu": "బీట్‌రూట్ హల్వా"
+        },
+        "region": "South India",
+        "meal_type": "Dessert",
+        "trimester": [
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Grated Beetroot",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Milk (pasteurized)",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Jaggery",
+                "quantity": "1/4 cup"
+            },
+            {
+                "name": "Ghee",
+                "quantity": "1 tsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 210,
+            "protein_g": 4,
+            "carbohydrates_g": 35,
+            "fat_g": 6,
+            "fiber_g": 3,
+            "iron_mg": 2.1,
+            "calcium_mg": 90,
+            "folate_mcg": 45,
+            "vitamin_c_mg": 5
+        },
+        "serving_size": "100g",
+        "preparation_time_minutes": 35,
+        "benefits": [
+            "Iron booster",
+            "Safe way to satisfy sweet cravings",
+            "High in fiber compared to flour-based sweets"
+        ],
+        "who_alignment": "Encourages nutrient-dense alternatives to refined sugar.",
+        "cautions": "Monitor portion size if at risk for gestational diabetes.",
+        "best_time_to_eat": "4:00 PM"
+    },
+    {
+        "id": "SI053",
+        "name": {
+            "english": "Spiced Paneer Cubes (Sautéed)",
+            "tamil": "பன்னீர் வறுவல்",
+            "malayalam": "പനീർ മെഴുക്കുപുരട്ടി",
+            "kannada": "ಪನೀರ್ ಫ್ರೈ",
+            "telugu": "పనీర్ వేపుడు"
+        },
+        "region": "Modern South",
+        "meal_type": "Snack / Side",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Fresh Paneer",
+                "quantity": "100g"
+            },
+            {
+                "name": "Turmeric/Cumin",
+                "quantity": "Pinch"
+            },
+            {
+                "name": "Olive oil/Ghee",
+                "quantity": "1 tsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 290,
+            "protein_g": 18,
+            "carbohydrates_g": 4,
+            "fat_g": 22,
+            "fiber_g": 0,
+            "iron_mg": 0.5,
+            "calcium_mg": 480,
+            "folate_mcg": 15,
+            "vitamin_c_mg": 0
+        },
+        "serving_size": "100g",
+        "preparation_time_minutes": 10,
+        "benefits": [
+            "Very high calcium for baby's teeth and bones",
+            "Excellent vegetarian protein",
+            "Quick and satiating"
+        ],
+        "who_alignment": "Meets calcium requirements for skeletal development.",
+        "cautions": "Use only pasteurized, fresh paneer; avoid raw consumption.",
+        "best_time_to_eat": "5:00 PM"
+    },
+    {
+        "id": "SI054",
+        "name": {
+            "english": "Soya Chunks Curry",
+            "tamil": "சோயா சங்க்ஸ் கறி",
+            "malayalam": "സോയ ചങ്ക്സ് കറി",
+            "kannada": "ಸೋಯಾ ಕರಿ",
+            "telugu": "సోయా చంక్స్ కర్రీ"
+        },
+        "region": "Modern South",
+        "meal_type": "Lunch / Dinner",
+        "trimester": [
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Soya Chunks",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Onion/Tomato",
+                "quantity": "1 each"
+            },
+            {
+                "name": "Garlic/Ginger",
+                "quantity": "1 tsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 210,
+            "protein_g": 22,
+            "carbohydrates_g": 15,
+            "fat_g": 5,
+            "fiber_g": 6,
+            "iron_mg": 4.5,
+            "calcium_mg": 80,
+            "folate_mcg": 50,
+            "vitamin_c_mg": 10
+        },
+        "serving_size": "200g",
+        "preparation_time_minutes": 25,
+        "benefits": [
+            "Highest vegetarian protein source",
+            "Excellent for fetal tissue growth",
+            "High iron content"
+        ],
+        "who_alignment": "Supports high-protein dietary needs in late pregnancy.",
+        "cautions": "Limit to 2-3 times a week due to phytoestrogens.",
+        "best_time_to_eat": "1:30 PM"
+    },
+    {
+        "id": "SI055",
+        "name": {
+            "english": "Barley Water (Unsweetened)",
+            "tamil": "பார்லி தண்ணீர்",
+            "malayalam": "ബാർലി വെള്ളം",
+            "kannada": "ಬಾರ್ಲಿ ನೀರು",
+            "telugu": "బార్లీ నీళ్లు"
+        },
+        "region": "Universal",
+        "meal_type": "Beverage",
+        "trimester": [
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Barley pearls",
+                "quantity": "2 tbsp"
+            },
+            {
+                "name": "Water",
+                "quantity": "3 cups"
+            },
+            {
+                "name": "Lemon slice",
+                "quantity": "1"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 60,
+            "protein_g": 1,
+            "carbohydrates_g": 14,
+            "fat_g": 0.2,
+            "fiber_g": 3,
+            "iron_mg": 0.6,
+            "calcium_mg": 15,
+            "folate_mcg": 10,
+            "vitamin_c_mg": 5
+        },
+        "serving_size": "300 ml",
+        "preparation_time_minutes": 20,
+        "benefits": [
+            "Natural diuretic",
+            "Reduces swelling/edema in feet",
+            "Flushes toxins from kidneys"
+        ],
+        "who_alignment": "Safe natural hydration for managing common pregnancy discomforts.",
+        "cautions": "Do not add sugar; consume in moderation.",
+        "best_time_to_eat": "11:00 AM"
+    },
+    {
+        "id": "SI056",
+        "name": {
+            "english": "Carrot Ginger Soup",
+            "tamil": "கேரட் இஞ்சி சூப்",
+            "malayalam": "ക്യാരറ്റ് ഇഞ്ചി സൂപ്പ്",
+            "kannada": "ಕ್ಯಾರೆಟ್ ಶುಂಠಿ ಸೂಪ್",
+            "telugu": "క్యారెట్ అల్లం సూప్"
+        },
+        "region": "Universal",
+        "meal_type": "Snack / Appetizer",
+        "trimester": [
+            "First"
+        ],
+        "ingredients": [
+            {
+                "name": "Carrots",
+                "quantity": "2"
+            },
+            {
+                "name": "Fresh Ginger",
+                "quantity": "1 inch"
+            },
+            {
+                "name": "Onion",
+                "quantity": "1 small"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 90,
+            "protein_g": 2,
+            "carbohydrates_g": 16,
+            "fat_g": 2,
+            "fiber_g": 4,
+            "iron_mg": 1.0,
+            "calcium_mg": 40,
+            "folate_mcg": 35,
+            "vitamin_c_mg": 25
+        },
+        "serving_size": "250 ml",
+        "preparation_time_minutes": 20,
+        "benefits": [
+            "Ginger suppresses nausea",
+            "Beta-carotene for fetal vision",
+            "Warm and soothing"
+        ],
+        "who_alignment": "WHO-endorsed use of ginger for emesis in pregnancy.",
+        "cautions": "Ensure carrots are washed and peeled.",
+        "best_time_to_eat": "6:00 PM"
+    },
+    {
+        "id": "SI057",
+        "name": {
+            "english": "Neer Dosa",
+            "tamil": "நீர் தோசை",
+            "malayalam": "നീർ ദോശ",
+            "kannada": "ನೀರ್ ದೋಸೆ",
+            "telugu": "నీర్ దోశ"
+        },
+        "region": "Karnataka",
+        "meal_type": "Breakfast / Dinner",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Rice (soaked)",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Coconut",
+                "quantity": "2 tbsp"
+            },
+            {
+                "name": "Water",
+                "quantity": "As needed"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 180,
+            "protein_g": 3,
+            "carbohydrates_g": 36,
+            "fat_g": 4,
+            "fiber_g": 1,
+            "iron_mg": 1.1,
+            "calcium_mg": 15,
+            "folate_mcg": 12,
+            "vitamin_c_mg": 0
+        },
+        "serving_size": "3 dosas",
+        "preparation_time_minutes": 15,
+        "benefits": [
+            "Extremely light on the stomach",
+            "Hydrating",
+            "Minimal oil used"
+        ],
+        "who_alignment": "Suitable for women with severe morning sickness needing light energy.",
+        "cautions": "Low in protein; pair with a dal or egg.",
+        "best_time_to_eat": "8:30 PM"
+    },
+    {
+        "id": "SI058",
+        "name": {
+            "english": "Steamed Sweet Corn with Pepper",
+            "tamil": "சோளம்",
+            "malayalam": "ചോളം പുഴുങ്ങിയത്",
+            "kannada": "ಸಿಹಿ ಜೋಳ",
+            "telugu": "మొక్కజొన్న"
+        },
+        "region": "Universal",
+        "meal_type": "Snack",
+        "trimester": [
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Sweet corn kernels",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Lemon juice",
+                "quantity": "1 tsp"
+            },
+            {
+                "name": "Black pepper",
+                "quantity": "1/2 tsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 140,
+            "protein_g": 4,
+            "carbohydrates_g": 30,
+            "fat_g": 1.5,
+            "fiber_g": 4,
+            "iron_mg": 0.8,
+            "calcium_mg": 5,
+            "folate_mcg": 65,
+            "vitamin_c_mg": 10
+        },
+        "serving_size": "150g",
+        "preparation_time_minutes": 10,
+        "benefits": [
+            "High in Folate",
+            "Fiber helps with digestion",
+            "Contains Lutein for eye health"
+        ],
+        "who_alignment": "Promotes whole vegetable snacking.",
+        "cautions": "Ensure corn is fresh; avoid canned corn with high sodium.",
+        "best_time_to_eat": "11:00 AM"
+    },
+    {
+        "id": "SI059",
+        "name": {
+            "english": "Dry Fruit and Nut Mix (Pregnancy Blend)",
+            "tamil": "உலர் பழங்கள்",
+            "malayalam": "ഡ്രൈ ഫ്രൂട്ട്സ്",
+            "kannada": "ಒಣ ಹಣ್ಣುಗಳು",
+            "telugu": "డ్రై ఫ్రూట్స్"
+        },
+        "region": "Universal",
+        "meal_type": "Snack",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Almonds (soaked)",
+                "quantity": "5"
+            },
+            {
+                "name": "Walnuts",
+                "quantity": "2"
+            },
+            {
+                "name": "Dates",
+                "quantity": "2"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 180,
+            "protein_g": 5,
+            "carbohydrates_g": 18,
+            "fat_g": 12,
+            "fiber_g": 4,
+            "iron_mg": 1.8,
+            "calcium_mg": 60,
+            "folate_mcg": 25,
+            "vitamin_c_mg": 1
+        },
+        "serving_size": "Handful (40g)",
+        "preparation_time_minutes": 2,
+        "benefits": [
+            "Omega-3 (DHA precursor) from walnuts",
+            "Energy from dates",
+            "Vit E for skin and hair"
+        ],
+        "who_alignment": "Healthy fats are essential for fetal brain development.",
+        "cautions": "Do not exceed quantity due to high caloric density; soak almonds to remove tannins.",
+        "best_time_to_eat": "7:00 AM"
+    },
+    {
+        "id": "SI060",
+        "name": {
+            "english": "Ragi Malt (Spiced Calcium Drink)",
+            "tamil": "கேழ்வரகு கஞ்சி",
+            "malayalam": "റാഗി കുറുക്ക്",
+            "kannada": "ರಾಗಿ ಅಂಬಲಿ",
+            "telugu": "రాగి జావ"
+        },
+        "region": "South India",
+        "meal_type": "Beverage",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Ragi flour",
+                "quantity": "2 tbsp"
+            },
+            {
+                "name": "Milk or Buttermilk",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Cardamom",
+                "quantity": "1 pinch"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 160,
+            "protein_g": 6,
+            "carbohydrates_g": 28,
+            "fat_g": 4,
+            "fiber_g": 5,
+            "iron_mg": 2.2,
+            "calcium_mg": 280,
+            "folate_mcg": 15,
+            "vitamin_c_mg": 2
+        },
+        "serving_size": "250 ml",
+        "preparation_time_minutes": 10,
+        "benefits": [
+            "Instant calcium and iron",
+            "Keeps body cool (with buttermilk)",
+            "Strengthens bones"
+        ],
+        "who_alignment": "Targets mineral deficiencies in maternal diets.",
+        "cautions": "Cook the flour thoroughly to prevent indigestion.",
+        "best_time_to_eat": "4:30 PM"
+    },
+    {
+        "id": "SI061",
+        "name": {
+            "english": "Millet Upma (Kodo/Foxtail)",
+            "tamil": "தினை உப்புமா",
+            "malayalam": "തിന ഉപ്പുമാവ്",
+            "kannada": "ನವಣೆ ಉಪ್ಪಿಟ್ಟು",
+            "telugu": "కొర్రల ఉప్మా"
+        },
+        "region": "South India",
+        "meal_type": "Breakfast",
+        "trimester": [
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Foxtail Millet",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Mixed Veggies",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Mustard/Curry leaves",
+                "quantity": "1 tsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 260,
+            "protein_g": 9,
+            "carbohydrates_g": 48,
+            "fat_g": 5,
+            "fiber_g": 8,
+            "iron_mg": 3.2,
+            "calcium_mg": 35,
+            "folate_mcg": 50,
+            "vitamin_c_mg": 12
+        },
+        "serving_size": "250g",
+        "preparation_time_minutes": 25,
+        "benefits": [
+            "Low GI grain prevents spikes",
+            "Rich in B-vitamins",
+            "High iron content"
+        ],
+        "who_alignment": "Encourages dietary diversification with ancient grains.",
+        "cautions": "Soak millet for 2 hours before cooking.",
+        "best_time_to_eat": "8:30 AM"
+    },
+    {
+        "id": "SI062",
+        "name": {
+            "english": "Cabbage Thoran (Kerala Style)",
+            "tamil": "முட்டைக்கோஸ் பொரியல்",
+            "malayalam": "ക്യാബേജ് തോരൻ",
+            "kannada": "ಎಲೆಕೋಸು ಪಲ್ಯ",
+            "telugu": "క్యాబేజీ వేపుడు"
+        },
+        "region": "Kerala",
+        "meal_type": "Lunch Side",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Shredded Cabbage",
+                "quantity": "2 cups"
+            },
+            {
+                "name": "Grated Coconut",
+                "quantity": "2 tbsp"
+            },
+            {
+                "name": "Turmeric",
+                "quantity": "1/4 tsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 95,
+            "protein_g": 2,
+            "carbohydrates_g": 8,
+            "fat_g": 6,
+            "fiber_g": 4,
+            "iron_mg": 0.9,
+            "calcium_mg": 45,
+            "folate_mcg": 45,
+            "vitamin_c_mg": 35
+        },
+        "serving_size": "150g",
+        "preparation_time_minutes": 15,
+        "benefits": [
+            "High Vitamin K for blood clotting",
+            "Folate and fiber rich",
+            "Antioxidant properties"
+        ],
+        "who_alignment": "Promotes cruciferous vegetable consumption.",
+        "cautions": "Wash cabbage very well; cook properly to avoid gas.",
+        "best_time_to_eat": "1:00 PM"
+    },
+    {
+        "id": "SI063",
+        "name": {
+            "english": "Inji Puli (Ginger Tamarind Jam)",
+            "tamil": "இஞ்சி புளி",
+            "malayalam": "ഇഞ്ചി പുളി",
+            "kannada": "ಶುಂಠಿ ಹುಳಿ",
+            "telugu": "అల్లం పచ్చడి"
+        },
+        "region": "Kerala",
+        "meal_type": "Condiment",
+        "trimester": [
+            "First"
+        ],
+        "ingredients": [
+            {
+                "name": "Ginger",
+                "quantity": "100g"
+            },
+            {
+                "name": "Tamarind",
+                "quantity": "50g"
+            },
+            {
+                "name": "Jaggery",
+                "quantity": "2 tbsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 35,
+            "protein_g": 0.5,
+            "carbohydrates_g": 8,
+            "fat_g": 0.5,
+            "fiber_g": 1,
+            "iron_mg": 0.5,
+            "calcium_mg": 10,
+            "folate_mcg": 5,
+            "vitamin_c_mg": 5
+        },
+        "serving_size": "1 tbsp",
+        "preparation_time_minutes": 40,
+        "benefits": [
+            "Natural remedy for nausea",
+            "Aids heavy digestion",
+            "Clears palate"
+        ],
+        "who_alignment": "Ginger is a first-line WHO treatment for morning sickness.",
+        "cautions": "High in acid/sugar; consume only in very small quantities.",
+        "best_time_to_eat": "1:30 PM (With lunch)"
+    },
+    {
+        "id": "SI064",
+        "name": {
+            "english": "Karnataka Kosambari (Moong Dal Salad)",
+            "tamil": "பருப்பு கோசம்பரி",
+            "malayalam": "പരിപ്പ് കൊസമ്പരി",
+            "kannada": "ಕೋಸಂಬರಿ",
+            "telugu": "కోసంబరి"
+        },
+        "region": "Karnataka",
+        "meal_type": "Lunch Side / Snack",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Split Moong Dal (soaked)",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Cucumber",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Carrot",
+                "quantity": "2 tbsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 130,
+            "protein_g": 8,
+            "carbohydrates_g": 18,
+            "fat_g": 3,
+            "fiber_g": 5,
+            "iron_mg": 2.1,
+            "calcium_mg": 25,
+            "folate_mcg": 90,
+            "vitamin_c_mg": 15
+        },
+        "serving_size": "150g",
+        "preparation_time_minutes": 10,
+        "benefits": [
+            "Raw enzymes (if dal is soaked properly)",
+            "Hydrating and crunchy",
+            "High protein"
+        ],
+        "who_alignment": "WHO warns against raw foods; for pregnancy safety, LIGHTLY STEAM the soaked dal for 2 mins.",
+        "cautions": "Do not eat raw dal if immunity is low; always blanch vegetables.",
+        "best_time_to_eat": "1:00 PM"
+    },
+    {
+        "id": "SI065",
+        "name": {
+            "english": "Sabudana Khichdi (Sago)",
+            "tamil": "ஜவ்வரிசி கிச்சடி",
+            "malayalam": "ചവ്വരി കിിച്ചടി",
+            "kannada": "ಸಬುದಾನ ಕಿಚಡಿ",
+            "telugu": "సగ్గుబియ్యం కిచిడి"
+        },
+        "region": "Universal / South",
+        "meal_type": "Breakfast / Snack",
+        "trimester": [
+            "First"
+        ],
+        "ingredients": [
+            {
+                "name": "Sabudana",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Peanuts (crushed)",
+                "quantity": "2 tbsp"
+            },
+            {
+                "name": "Potato",
+                "quantity": "1 small"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 320,
+            "protein_g": 3,
+            "carbohydrates_g": 65,
+            "fat_g": 6,
+            "fiber_g": 2,
+            "iron_mg": 1.2,
+            "calcium_mg": 20,
+            "folate_mcg": 15,
+            "vitamin_c_mg": 10
+        },
+        "serving_size": "250g",
+        "preparation_time_minutes": 15,
+        "benefits": [
+            "Instant energy",
+            "Easy on the stomach",
+            "Good for nausea days"
+        ],
+        "who_alignment": "Source of easily digestible carbohydrates.",
+        "cautions": "Low in nutrients; pair with curd or vegetables.",
+        "best_time_to_eat": "8:30 AM"
+    },
+    {
+        "id": "SI066",
+        "name": {
+            "english": "Rava Idli with Veggies",
+            "tamil": "ரவா இட்லி",
+            "malayalam": "റവ ഇഡ്ഡലി",
+            "kannada": "ರವೆ ಇಡ್ಲಿ",
+            "telugu": "రవ్వ ఇడ్లీ"
+        },
+        "region": "Karnataka",
+        "meal_type": "Breakfast",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Semolina (Rava)",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Curd",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Carrots/Peas",
+                "quantity": "1/4 cup"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 210,
+            "protein_g": 7,
+            "carbohydrates_g": 38,
+            "fat_g": 4,
+            "fiber_g": 3,
+            "iron_mg": 1.5,
+            "calcium_mg": 60,
+            "folate_mcg": 30,
+            "vitamin_c_mg": 8
+        },
+        "serving_size": "2 idlis",
+        "preparation_time_minutes": 20,
+        "benefits": [
+            "Quick energy",
+            "Lighter than rice idli",
+            "Veggies add fiber"
+        ],
+        "who_alignment": "Meets standards for steamed, safe breakfast options.",
+        "cautions": "Avoid if prone to acidity from curd.",
+        "best_time_to_eat": "8:30 AM"
+    },
+    {
+        "id": "SI067",
+        "name": {
+            "english": "Drumstick (Moringakka) Curry",
+            "tamil": "முருங்கைக்காய் குழம்பு",
+            "malayalam": "മുരിങ്ങക്കായ കറി",
+            "kannada": "ನುಗ್ಗೆಕಾಯಿ ಸಾರು",
+            "telugu": "మునగకాయ కూర"
+        },
+        "region": "South India",
+        "meal_type": "Lunch Side",
+        "trimester": [
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Drumsticks",
+                "quantity": "2 sticks"
+            },
+            {
+                "name": "Coconut milk",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Tomato/Onion",
+                "quantity": "1 each"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 160,
+            "protein_g": 4,
+            "carbohydrates_g": 14,
+            "fat_g": 10,
+            "fiber_g": 5,
+            "iron_mg": 1.2,
+            "calcium_mg": 150,
+            "folate_mcg": 30,
+            "vitamin_c_mg": 40
+        },
+        "serving_size": "200 ml",
+        "preparation_time_minutes": 25,
+        "benefits": [
+            "High in calcium for fetal skeleton",
+            "Vitamin C and minerals",
+            "Supports joint health"
+        ],
+        "who_alignment": "Encourages intake of mineral-rich local vegetables.",
+        "cautions": "Do not eat the outer woody skin; only the pulp and seeds.",
+        "best_time_to_eat": "1:00 PM"
+    },
+    {
+        "id": "SI068",
+        "name": {
+            "english": "Guava (Pink/White)",
+            "tamil": "கொய்யா",
+            "malayalam": "പേരയ്ക്ക",
+            "kannada": "ಸೀಬೆಹಣ್ಣು",
+            "telugu": "జామపండు"
+        },
+        "region": "Universal",
+        "meal_type": "Snack",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Ripe Guava",
+                "quantity": "1 medium"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 68,
+            "protein_g": 2.5,
+            "carbohydrates_g": 14,
+            "fat_g": 1,
+            "fiber_g": 9,
+            "iron_mg": 0.3,
+            "calcium_mg": 18,
+            "folate_mcg": 49,
+            "vitamin_c_mg": 220
+        },
+        "serving_size": "1 fruit",
+        "preparation_time_minutes": 2,
+        "benefits": [
+            "Extreme Vitamin C content (4x an orange)",
+            "Prevents constipation",
+            "Regulates blood sugar"
+        ],
+        "who_alignment": "Vitamin C is essential for placental health and iron absorption.",
+        "cautions": "Wash skin thoroughly; avoid if you have dental sensitivity to seeds.",
+        "best_time_to_eat": "11:00 AM"
+    },
+    {
+        "id": "SI069",
+        "name": {
+            "english": "Paneer Paratha (Whole Wheat)",
+            "tamil": "பன்னீர் பரோட்டா",
+            "malayalam": "പനീർ പറാത്ത",
+            "kannada": "ಪನೀರ್ ಪರಾಟ",
+            "telugu": "పనీర్ పరాఠా"
+        },
+        "region": "Modern South",
+        "meal_type": "Breakfast / Lunch",
+        "trimester": [
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Whole wheat flour",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Grated Paneer",
+                "quantity": "50g"
+            },
+            {
+                "name": "Coriander",
+                "quantity": "1 tbsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 280,
+            "protein_g": 12,
+            "carbohydrates_g": 35,
+            "fat_g": 10,
+            "fiber_g": 5,
+            "iron_mg": 2.1,
+            "calcium_mg": 240,
+            "folate_mcg": 40,
+            "vitamin_c_mg": 5
+        },
+        "serving_size": "1 large paratha",
+        "preparation_time_minutes": 20,
+        "benefits": [
+            "Protein and calcium dense",
+            "Complex carbs for energy",
+            "Very satiating"
+        ],
+        "who_alignment": "Balanced meal of grains and dairy.",
+        "cautions": "Use minimal ghee; avoid store-bought frozen versions.",
+        "best_time_to_eat": "1:00 PM"
+    },
+    {
+        "id": "SI070",
+        "name": {
+            "english": "Curried Chickpeas (Chana Masala - Mild)",
+            "tamil": "கொண்டைக்கடலை கறி",
+            "malayalam": "കടല കറി",
+            "kannada": "ಕಡಲೆಕಾಳು ಕರಿ",
+            "telugu": "శనగల కూర"
+        },
+        "region": "South India",
+        "meal_type": "Lunch / Dinner",
+        "trimester": [
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Chickpeas (soaked)",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Tomato/Onion",
+                "quantity": "1 each"
+            },
+            {
+                "name": "Ginger-garlic paste",
+                "quantity": "1 tsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 240,
+            "protein_g": 10,
+            "carbohydrates_g": 32,
+            "fat_g": 6,
+            "fiber_g": 9,
+            "iron_mg": 3.8,
+            "calcium_mg": 60,
+            "folate_mcg": 140,
+            "vitamin_c_mg": 12
+        },
+        "serving_size": "200g",
+        "preparation_time_minutes": 35,
+        "benefits": [
+            "High Folate and Fiber",
+            "Good plant protein source",
+            "Supports healthy weight gain"
+        ],
+        "who_alignment": "Meets dietary requirements for folate-rich legumes.",
+        "cautions": "Keep spices low to prevent late-pregnancy heartburn.",
+        "best_time_to_eat": "1:30 PM"
+    },
+    {
+        "id": "SI071",
+        "name": {
+            "english": "Jowar (Sorghum) Upma",
+            "tamil": "சோள உப்புமா",
+            "malayalam": "ജോള ഉപ്പുമാവ്",
+            "kannada": "ಜೋಳದ ಉಪ್ಪಿಟ್ಟು",
+            "telugu": "జొన్న ఉప్మా"
+        },
+        "region": "Karnataka / Andhra",
+        "meal_type": "Breakfast",
+        "trimester": [
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Jowar Rava (Sorghum grits)",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Vegetables",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Ghee",
+                "quantity": "1 tsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 240,
+            "protein_g": 8,
+            "carbohydrates_g": 42,
+            "fat_g": 5,
+            "fiber_g": 9,
+            "iron_mg": 3.5,
+            "calcium_mg": 30,
+            "folate_mcg": 40,
+            "vitamin_c_mg": 10
+        },
+        "serving_size": "250g",
+        "preparation_time_minutes": 25,
+        "benefits": [
+            "High iron grain",
+            "Gluten-free",
+            "Keeps you full for longer"
+        ],
+        "who_alignment": "Supports consumption of iron-rich indigenous grains.",
+        "cautions": "Requires more water than wheat upma to soften.",
+        "best_time_to_eat": "8:30 AM"
+    },
+    {
+        "id": "SI072",
+        "name": {
+            "english": "Raw Mango Dal (Mamidikaya Pappu)",
+            "tamil": "மாங்காய் பருப்பு",
+            "malayalam": "മാങ്ങ പരിപ്പ് കറി",
+            "kannada": "ಮಾವಿನಕಾಯಿ ತೊವ್ವೆ",
+            "telugu": "మామిడికాయ పప్పు"
+        },
+        "region": "Andhra Pradesh",
+        "meal_type": "Lunch Side",
+        "trimester": [
+            "First",
+            "Second"
+        ],
+        "ingredients": [
+            {
+                "name": "Toor Dal",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Raw Mango (peeled/chopped)",
+                "quantity": "1/4 cup"
+            },
+            {
+                "name": "Green chili",
+                "quantity": "1"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 180,
+            "protein_g": 9,
+            "carbohydrates_g": 24,
+            "fat_g": 4,
+            "fiber_g": 6,
+            "iron_mg": 2.5,
+            "calcium_mg": 30,
+            "folate_mcg": 85,
+            "vitamin_c_mg": 40
+        },
+        "serving_size": "200 ml",
+        "preparation_time_minutes": 30,
+        "benefits": [
+            "High Vitamin C aids iron absorption from dal",
+            "Tangy flavor reduces nausea",
+            "Refreshing"
+        ],
+        "who_alignment": "Vitamin C/Iron synergy is key to WHO nutritional goals.",
+        "cautions": "Avoid in the 3rd trimester if suffering from severe acid reflux.",
+        "best_time_to_eat": "1:00 PM"
+    },
+    {
+        "id": "SI073",
+        "name": {
+            "english": "Curd with Ground Flaxseeds",
+            "tamil": "தயிர் ஆளிவிதை உடன்",
+            "malayalam": "തൈര് ചണവിത്ത് ചേർത്ത്",
+            "kannada": "ಮೊಸರು ಅಗಸೆಬೀಜದೊಂದಿಗೆ",
+            "telugu": "అవిసె గింజలతో పెరుగు"
+        },
+        "region": "Universal",
+        "meal_type": "Snack",
+        "trimester": [
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Pasteurized Curd",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Ground Flaxseeds",
+                "quantity": "1 tsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 130,
+            "protein_g": 8,
+            "carbohydrates_g": 8,
+            "fat_g": 7,
+            "fiber_g": 2,
+            "iron_mg": 0.5,
+            "calcium_mg": 250,
+            "folate_mcg": 15,
+            "vitamin_c_mg": 1
+        },
+        "serving_size": "200g",
+        "preparation_time_minutes": 2,
+        "benefits": [
+            "Omega-3 Alpha-Linolenic Acid (ALA)",
+            "Probiotics and Calcium",
+            "Excellent for brain and gut"
+        ],
+        "who_alignment": "Provides essential fatty acids and minerals.",
+        "cautions": "Flaxseeds MUST be ground to be absorbed; do not exceed 1 tsp daily.",
+        "best_time_to_eat": "4:00 PM"
+    },
+    {
+        "id": "SI074",
+        "name": {
+            "english": "Vegetable Pulao (Brown Rice)",
+            "tamil": "காய்கறி சாதம்",
+            "malayalam": "വെജിറ്റബിൾ പുലാവ്",
+            "kannada": "ತರಕಾರಿ ಪಲಾವ್",
+            "telugu": "వెజిటబుల్ పులావ్"
+        },
+        "region": "South India",
+        "meal_type": "Lunch",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Brown Rice",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Mixed Veg (Peas, Beans, Carrot)",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Whole spices",
+                "quantity": "Minimal"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 320,
+            "protein_g": 7,
+            "carbohydrates_g": 58,
+            "fat_g": 6,
+            "fiber_g": 8,
+            "iron_mg": 2.8,
+            "calcium_mg": 40,
+            "folate_mcg": 70,
+            "vitamin_c_mg": 20
+        },
+        "serving_size": "300g",
+        "preparation_time_minutes": 40,
+        "benefits": [
+            "Complex carbs for sugar control",
+            "High fiber",
+            "Rich in minerals"
+        ],
+        "who_alignment": "Promotes unrefined whole grains.",
+        "cautions": "Soak brown rice for 1 hour for better texture and digestion.",
+        "best_time_to_eat": "1:30 PM"
+    },
+    {
+        "id": "SI075",
+        "name": {
+            "english": "Moong Dal Soup (Kattu)",
+            "tamil": "பருப்பு தண்ணி",
+            "malayalam": "പരിപ്പ് വെള്ളം",
+            "kannada": "ತೊವ್ವೆ ನೀರು",
+            "telugu": "కట్టు"
+        },
+        "region": "South India",
+        "meal_type": "Snack / Light Dinner",
+        "trimester": [
+            "First"
+        ],
+        "ingredients": [
+            {
+                "name": "Moong Dal (Yellow)",
+                "quantity": "1/4 cup"
+            },
+            {
+                "name": "Turmeric/Cumin",
+                "quantity": "Pinch"
+            },
+            {
+                "name": "Ghee",
+                "quantity": "1/2 tsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 90,
+            "protein_g": 5,
+            "carbohydrates_g": 12,
+            "fat_g": 2,
+            "fiber_g": 3,
+            "iron_mg": 1.2,
+            "calcium_mg": 20,
+            "folate_mcg": 60,
+            "vitamin_c_mg": 0
+        },
+        "serving_size": "200 ml",
+        "preparation_time_minutes": 15,
+        "benefits": [
+            "Most digestible protein",
+            "Soothing during illness/nausea",
+            "Hydrating"
+        ],
+        "who_alignment": "Meets guidelines for light, nutritious protein intake.",
+        "cautions": "None; very safe.",
+        "best_time_to_eat": "7:00 PM"
+    },
+    {
+        "id": "SI076",
+        "name": {
+            "english": "Steamed Banana (Nendran)",
+            "tamil": "நேந்திர பழம்",
+            "malayalam": "ഏത്തപ്പഴം പുഴുങ്ങിയത്",
+            "kannada": "ಬೇಯಿಸಿದ ಬಾಳೆಹಣ್ಣು",
+            "telugu": "ఉడికించిన అరటిపండు"
+        },
+        "region": "Kerala",
+        "meal_type": "Snack",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Ripe Nendran Banana",
+                "quantity": "1"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 180,
+            "protein_g": 2,
+            "carbohydrates_g": 45,
+            "fat_g": 0.5,
+            "fiber_g": 4,
+            "iron_mg": 1.5,
+            "calcium_mg": 10,
+            "folate_mcg": 35,
+            "vitamin_c_mg": 20
+        },
+        "serving_size": "1 banana",
+        "preparation_time_minutes": 10,
+        "benefits": [
+            "Excellent for healthy weight gain",
+            "Potassium for heart health",
+            "Easy to digest"
+        ],
+        "who_alignment": "Safe, nutrient-dense natural carbohydrate.",
+        "cautions": "High in natural sugar; avoid if you have GDM.",
+        "best_time_to_eat": "4:00 PM"
+    },
+    {
+        "id": "SI077",
+        "name": {
+            "english": "Thotakura Fry (Amaranth Leaves)",
+            "tamil": "முளைக்கீரை வறுவல்",
+            "malayalam": "ചീര മെഴുക്കുപുരട്ടി",
+            "kannada": "ಸೊಪ್ಪು ಪಲ್ಯ",
+            "telugu": "తోటకూర వేపుడు"
+        },
+        "region": "Andhra Pradesh",
+        "meal_type": "Lunch Side",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Amaranth leaves",
+                "quantity": "2 cups"
+            },
+            {
+                "name": "Garlic",
+                "quantity": "4 cloves"
+            },
+            {
+                "name": "Peanut powder",
+                "quantity": "1 tbsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 140,
+            "protein_g": 6,
+            "carbohydrates_g": 10,
+            "fat_g": 8,
+            "fiber_g": 6,
+            "iron_mg": 4.5,
+            "calcium_mg": 250,
+            "folate_mcg": 145,
+            "vitamin_c_mg": 45
+        },
+        "serving_size": "150g",
+        "preparation_time_minutes": 15,
+        "benefits": [
+            "Extremely high Iron and Calcium",
+            "Folate for baby's brain",
+            "Peanut adds healthy fats"
+        ],
+        "who_alignment": "Key dietary defense against anemia.",
+        "cautions": "Wash multiple times to ensure cleanliness.",
+        "best_time_to_eat": "1:00 PM"
+    },
+    {
+        "id": "SI078",
+        "name": {
+            "english": "Wheat Rava Payasam (Broken Wheat Kheer)",
+            "tamil": "கோதுமை ரவை பாயாசம்",
+            "malayalam": "ഗോതമ്പ് പായസം",
+            "kannada": "ಗೋಧಿ ಪಾಯಸ",
+            "telugu": "గోధుమ రవ్వ పాయసం"
+        },
+        "region": "South India",
+        "meal_type": "Dessert",
+        "trimester": [
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Broken Wheat (Dalia)",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Jaggery",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Milk",
+                "quantity": "1 cup"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 260,
+            "protein_g": 7,
+            "carbohydrates_g": 48,
+            "fat_g": 5,
+            "fiber_g": 4,
+            "iron_mg": 2.8,
+            "calcium_mg": 120,
+            "folate_mcg": 30,
+            "vitamin_c_mg": 0
+        },
+        "serving_size": "150 ml",
+        "preparation_time_minutes": 30,
+        "benefits": [
+            "Complex carb sweet",
+            "Iron and calcium rich",
+            "Energy dense"
+        ],
+        "who_alignment": "Promotes unrefined cereals over white rice.",
+        "cautions": "Ensure wheat is soft-cooked for digestion.",
+        "best_time_to_eat": "4:00 PM"
+    },
+    {
+        "id": "SI079",
+        "name": {
+            "english": "Oats Buttermilk Porridge",
+            "tamil": "ஓட்ஸ் கஞ்சி",
+            "malayalam": "ഓട്സ് കഞ്ഞി",
+            "kannada": "ಓಟ್ಸ್ ಗಂಜಿ",
+            "telugu": "ఓట్స్ జావ"
+        },
+        "region": "Modern South",
+        "meal_type": "Breakfast",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Rolled Oats",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Buttermilk",
+                "quantity": "1.5 cups"
+            },
+            {
+                "name": "Ginger/Curry leaves",
+                "quantity": "1 tsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 190,
+            "protein_g": 8,
+            "carbohydrates_g": 30,
+            "fat_g": 4,
+            "fiber_g": 5,
+            "iron_mg": 2.2,
+            "calcium_mg": 110,
+            "folate_mcg": 25,
+            "vitamin_c_mg": 2
+        },
+        "serving_size": "300 ml",
+        "preparation_time_minutes": 10,
+        "benefits": [
+            "Hydrating and cooling",
+            "Good for sugar management",
+            "High fiber"
+        ],
+        "who_alignment": "Meets guidelines for hydration and dietary fiber.",
+        "cautions": "Do not use flavored/sweetened oats.",
+        "best_time_to_eat": "8:30 AM"
+    },
+    {
+        "id": "SI080",
+        "name": {
+            "english": "Peanut Chikki (Jaggery Based)",
+            "tamil": "கடலை மிட்டாய்",
+            "malayalam": "കപ്പലണ്ടി മിഠായി",
+            "kannada": "ಶೇಂಗಾ ಚಿಕ್ಕಿ",
+            "telugu": "పల్లి పట్టీ"
+        },
+        "region": "South India",
+        "meal_type": "Snack",
+        "trimester": [
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Roasted Peanuts",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Jaggery",
+                "quantity": "1/2 cup"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 180,
+            "protein_g": 6,
+            "carbohydrates_g": 20,
+            "fat_g": 9,
+            "fiber_g": 2,
+            "iron_mg": 1.9,
+            "calcium_mg": 30,
+            "folate_mcg": 30,
+            "vitamin_c_mg": 0
+        },
+        "serving_size": "2 medium pieces (40g)",
+        "preparation_time_minutes": 20,
+        "benefits": [
+            "Protein and healthy fats",
+            "Iron boost from jaggery",
+            "Quick energy for fatigue"
+        ],
+        "who_alignment": "High-energy, nutrient-dense snack for late pregnancy.",
+        "cautions": "Hard texture; chew carefully. Avoid if you have nut allergies.",
+        "best_time_to_eat": "11:00 AM"
+    },
+    {
+        "id": "SI081",
+        "name": {
+            "english": "Appam with Vegetable Stew",
+            "tamil": "ஆப்பம் காய்கறி ஸ்டியூ",
+            "malayalam": "അപ്പവും വെജിറ്റബിൾ സ്റ്റ്യൂവും",
+            "kannada": "ಅಪ್ಪಂ ಮತ್ತು ವೆಜ್ ಸ್ಟ್ಯೂ",
+            "telugu": "అప్పం మరియు వెజ్ స్ట్యూ"
+        },
+        "region": "Kerala",
+        "meal_type": "Breakfast / Dinner",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Fermented rice batter",
+                "quantity": "2 cups"
+            },
+            {
+                "name": "Coconut milk",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Potato/Carrot/Peas",
+                "quantity": "1.5 cups"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 290,
+            "protein_g": 5,
+            "carbohydrates_g": 48,
+            "fat_g": 10,
+            "fiber_g": 4,
+            "iron_mg": 1.9,
+            "calcium_mg": 45,
+            "folate_mcg": 35,
+            "vitamin_c_mg": 12
+        },
+        "serving_size": "2 appams + 1 bowl stew",
+        "preparation_time_minutes": 30,
+        "benefits": [
+            "Fermented batter provides probiotics for gut health",
+            "Very easy to digest, ideal for morning sickness",
+            "Veggies provide essential vitamins"
+        ],
+        "who_alignment": "Aligns with recommendations for fermented foods to improve bioavailability of nutrients.",
+        "cautions": "Ensure the batter is not over-fermented to avoid extreme acidity.",
+        "best_time_to_eat": "8:30 AM"
+    },
+    {
+        "id": "SI082",
+        "name": {
+            "english": "Red Rice Poha (Aval) with Peanuts",
+            "tamil": "சிவப்பு அவல் உப்புமா",
+            "malayalam": "ചുവന്ന അവൽ ഉപ്പുമാവ്",
+            "kannada": "ಕೆಂಪು ಅವಲಕ್ಕಿ",
+            "telugu": "ఎర్ర అటుకుల ఉప్మా"
+        },
+        "region": "South India",
+        "meal_type": "Breakfast",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Red rice flakes",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Roasted Peanuts",
+                "quantity": "2 tbsp"
+            },
+            {
+                "name": "Lemon juice",
+                "quantity": "1 tsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 240,
+            "protein_g": 7,
+            "carbohydrates_g": 42,
+            "fat_g": 6,
+            "fiber_g": 5,
+            "iron_mg": 4.5,
+            "calcium_mg": 30,
+            "folate_mcg": 40,
+            "vitamin_c_mg": 15
+        },
+        "serving_size": "200g",
+        "preparation_time_minutes": 10,
+        "benefits": [
+            "Superior iron source compared to white rice",
+            "Peanuts add healthy fats and protein",
+            "Quick energy for pregnancy fatigue"
+        ],
+        "who_alignment": "Meets standards for dietary iron diversification to prevent anemia.",
+        "cautions": "Wash rice flakes gently to retain nutrients.",
+        "best_time_to_eat": "8:30 AM"
+    },
+    {
+        "id": "SI083",
+        "name": {
+            "english": "Cucumber Pulissery",
+            "tamil": "வெள்ளரிக்காய் புளிசேரி",
+            "malayalam": "വെള്ളരിക്ക പുളിശ്ശേരി",
+            "kannada": "ಸೌತೆಕಾಯಿ ಮೊಸರು ಸಾರು",
+            "telugu": "దోసకాయ పెరుగు పచ్చడి"
+        },
+        "region": "Kerala",
+        "meal_type": "Lunch Side",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Cucumber",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Thick Curd",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Coconut paste",
+                "quantity": "2 tbsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 140,
+            "protein_g": 6,
+            "carbohydrates_g": 10,
+            "fat_g": 9,
+            "fiber_g": 2,
+            "iron_mg": 0.8,
+            "calcium_mg": 180,
+            "folate_mcg": 20,
+            "vitamin_c_mg": 5
+        },
+        "serving_size": "200 ml",
+        "preparation_time_minutes": 20,
+        "benefits": [
+            "Probiotic rich for maternal immunity",
+            "Highly hydrating and cooling",
+            "Calcium boost for fetal bones"
+        ],
+        "who_alignment": "Encourages consumption of fresh, pasteurized dairy products.",
+        "cautions": "Do not boil after adding curd; it will curdle and lose probiotic benefits.",
+        "best_time_to_eat": "1:30 PM"
+    },
+    {
+        "id": "SI084",
+        "name": {
+            "english": "French Beans Thoran",
+            "tamil": "பீன்ஸ் பொரியல்",
+            "malayalam": "ബീൻസ് തോരൻ",
+            "kannada": "ಬೀನ್ಸ್ ಪಲ್ಯ",
+            "telugu": "బీన్స్ వేపుడు"
+        },
+        "region": "South India",
+        "meal_type": "Lunch Side",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Chopped Beans",
+                "quantity": "2 cups"
+            },
+            {
+                "name": "Grated Coconut",
+                "quantity": "2 tbsp"
+            },
+            {
+                "name": "Turmeric",
+                "quantity": "1/4 tsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 110,
+            "protein_g": 3,
+            "carbohydrates_g": 12,
+            "fat_g": 6,
+            "fiber_g": 6,
+            "iron_mg": 1.5,
+            "calcium_mg": 40,
+            "folate_mcg": 65,
+            "vitamin_c_mg": 10
+        },
+        "serving_size": "150g",
+        "preparation_time_minutes": 15,
+        "benefits": [
+            "Excellent folate source",
+            "High fiber prevents constipation",
+            "Micronutrient rich"
+        ],
+        "who_alignment": "Supports WHO goals for daily vegetable intake in pregnant women.",
+        "cautions": "Avoid overcooking to preserve folate content.",
+        "best_time_to_eat": "1:00 PM"
+    },
+    {
+        "id": "SI085",
+        "name": {
+            "english": "Anchovy (Netholi) Peera",
+            "tamil": "நெத்திலி மீன் பீரா",
+            "malayalam": "നെത്തോലി പീര",
+            "kannada": "ಕೊಲ್ಲಿ ಮೀನು ಪೀರಾ",
+            "telugu": "నెత్తాళ్ల పీరా"
+        },
+        "region": "Kerala",
+        "meal_type": "Lunch Side (Non-Veg)",
+        "trimester": [
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Anchovies (small fish)",
+                "quantity": "150g"
+            },
+            {
+                "name": "Grated Coconut",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Shallots",
+                "quantity": "5"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 210,
+            "protein_g": 18,
+            "carbohydrates_g": 4,
+            "fat_g": 14,
+            "fiber_g": 2,
+            "iron_mg": 2.2,
+            "calcium_mg": 400,
+            "folate_mcg": 10,
+            "vitamin_c_mg": 2
+        },
+        "serving_size": "100g",
+        "preparation_time_minutes": 20,
+        "benefits": [
+            "Massive calcium boost (eat with soft bones)",
+            "Rich in DHA for baby's brain",
+            "Low mercury risk"
+        ],
+        "who_alignment": "Meets guidelines for calcium and Omega-3 intake via safe, small fish.",
+        "cautions": "Ensure fish is thoroughly cleaned and fully cooked.",
+        "best_time_to_eat": "1:30 PM"
+    },
+    {
+        "id": "SI086",
+        "name": {
+            "english": "Kerala Egg Roast (Nadan Mutta Roast)",
+            "tamil": "முட்டை ரோஸ்ட்",
+            "malayalam": "മുട്ട റോസ്റ്റ്",
+            "kannada": "ಮೊಟ್ಟೆ ರೋಸ್ಟ್",
+            "telugu": "గుడ్డు రోస్ట్"
+        },
+        "region": "Kerala",
+        "meal_type": "Breakfast Side",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Boiled Eggs",
+                "quantity": "2"
+            },
+            {
+                "name": "Onion",
+                "quantity": "2 large"
+            },
+            {
+                "name": "Tomato",
+                "quantity": "1"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 220,
+            "protein_g": 13,
+            "carbohydrates_g": 10,
+            "fat_g": 14,
+            "fiber_g": 2,
+            "iron_mg": 1.8,
+            "calcium_mg": 60,
+            "folate_mcg": 45,
+            "vitamin_c_mg": 8
+        },
+        "serving_size": "1 bowl (2 eggs)",
+        "preparation_time_minutes": 25,
+        "benefits": [
+            "High choline for fetal brain development",
+            "Superior protein for tissue growth",
+            "Satisfies cravings"
+        ],
+        "who_alignment": "Eggs are a recommended protein source for maternal nutrition.",
+        "cautions": "Limit onions if prone to severe gastric reflux.",
+        "best_time_to_eat": "9:00 AM"
+    },
+    {
+        "id": "SI087",
+        "name": {
+            "english": "Yam and Raw Plantain Erissery",
+            "tamil": "சேனை வாழைக்காய் எரிசேரி",
+            "malayalam": "ചേനയും കായയും എരിശ്ശേരി",
+            "kannada": "ಗೆಡ್ಡೆ ಮತ್ತು ಬಾಳೆಕಾಯಿ ಕರಿ",
+            "telugu": "కంద అరటికాయ కూర"
+        },
+        "region": "Kerala",
+        "meal_type": "Lunch Side",
+        "trimester": [
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Yam",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Raw Plantain",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Black-eyed peas",
+                "quantity": "1/4 cup"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 240,
+            "protein_g": 6,
+            "carbohydrates_g": 38,
+            "fat_g": 8,
+            "fiber_g": 7,
+            "iron_mg": 2.5,
+            "calcium_mg": 65,
+            "folate_mcg": 40,
+            "vitamin_c_mg": 15
+        },
+        "serving_size": "200g",
+        "preparation_time_minutes": 40,
+        "benefits": [
+            "High fiber for gut health",
+            "Potassium prevents leg cramps",
+            "B-vitamins for energy"
+        ],
+        "who_alignment": "Meets standards for whole-food energy density.",
+        "cautions": "Ensure black-eyed peas are soaked to avoid gas.",
+        "best_time_to_eat": "1:00 PM"
+    },
+    {
+        "id": "SI088",
+        "name": {
+            "english": "Baked Nendran Banana",
+            "tamil": "நேந்திர பழம் ரோஸ்ட்",
+            "malayalam": "ഏത്തപ്പഴം ചുട്ടത്",
+            "kannada": "ಬೇಯಿಸಿದ ಬಾಳೆಹಣ್ಣು",
+            "telugu": "కాల్చిన అరటిపండు"
+        },
+        "region": "Kerala",
+        "meal_type": "Snack",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Ripe Nendran Banana",
+                "quantity": "1"
+            },
+            {
+                "name": "Ghee",
+                "quantity": "1 tsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 190,
+            "protein_g": 2,
+            "carbohydrates_g": 45,
+            "fat_g": 5,
+            "fiber_g": 4,
+            "iron_mg": 1.5,
+            "calcium_mg": 15,
+            "folate_mcg": 35,
+            "vitamin_c_mg": 22
+        },
+        "serving_size": "1 banana",
+        "preparation_time_minutes": 15,
+        "benefits": [
+            "Natural potassium boost",
+            "Gentle on the stomach",
+            "Quick source of energy"
+        ],
+        "who_alignment": "Promotes fruit consumption as a healthy snack alternative.",
+        "cautions": "Limit portion if monitoring weight or blood sugar.",
+        "best_time_to_eat": "4:00 PM"
+    },
+    {
+        "id": "SI089",
+        "name": {
+            "english": "Ragi Vermicelli (Semiya) Upma",
+            "tamil": "கேழ்வரகு சேமியா உப்புமா",
+            "malayalam": "റാഗി സേമിയ ഉപ്പുമാവ്",
+            "kannada": "ರಾಗಿ ಶಾವಿಗೆ ಉಪ್ಪಿಟ್ಟು",
+            "telugu": "రాగి సేమియా ఉప్మా"
+        },
+        "region": "South India",
+        "meal_type": "Breakfast",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Ragi vermicelli",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Mixed vegetables",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Lemon",
+                "quantity": "1/2"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 210,
+            "protein_g": 6,
+            "carbohydrates_g": 38,
+            "fat_g": 4,
+            "fiber_g": 5,
+            "iron_mg": 3.0,
+            "calcium_mg": 120,
+            "folate_mcg": 30,
+            "vitamin_c_mg": 10
+        },
+        "serving_size": "250g",
+        "preparation_time_minutes": 15,
+        "benefits": [
+            "Exceptional calcium for mother and baby",
+            "Easier to digest than whole ragi",
+            "Rich in minerals"
+        ],
+        "who_alignment": "Supports calcium intake for preventing pre-eclampsia.",
+        "cautions": "Avoid over-steaming to prevent stickiness.",
+        "best_time_to_eat": "8:30 AM"
+    },
+    {
+        "id": "SI090",
+        "name": {
+            "english": "Yellow Moong Dal Kanji",
+            "tamil": "பாசிப்பருப்பு கஞ்சி",
+            "malayalam": "ചെറുപയർ കഞ്ഞി",
+            "kannada": "ಹೆಸರು ಬೇಳೆ ಗಂಜಿ",
+            "telugu": "పెసర పప్పు గంజి"
+        },
+        "region": "South India",
+        "meal_type": "Breakfast / Dinner",
+        "trimester": [
+            "First"
+        ],
+        "ingredients": [
+            {
+                "name": "Moong Dal",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Rice (Matta)",
+                "quantity": "1/4 cup"
+            },
+            {
+                "name": "Ginger",
+                "quantity": "1 tsp grated"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 180,
+            "protein_g": 9,
+            "carbohydrates_g": 32,
+            "fat_g": 1,
+            "fiber_g": 4,
+            "iron_mg": 2.1,
+            "calcium_mg": 25,
+            "folate_mcg": 95,
+            "vitamin_c_mg": 2
+        },
+        "serving_size": "400 ml",
+        "preparation_time_minutes": 25,
+        "benefits": [
+            "Standard remedy for nausea and vomiting",
+            "Highly digestible protein",
+            "Hydrating and soothing"
+        ],
+        "who_alignment": "Meets guidelines for light intake during severe emesis.",
+        "cautions": "Serve warm, not hot.",
+        "best_time_to_eat": "8:00 PM"
+    },
+    {
+        "id": "SI091",
+        "name": {
+            "english": "Menthi (Fenugreek) Dal",
+            "tamil": "வெந்தயக் கீரை பருப்பு",
+            "malayalam": "ഉലുവച്ചീര പരിപ്പ്",
+            "kannada": "ಮೆಂತ್ಯ ಸೊಪ್ಪು ತೊವ್ವೆ",
+            "telugu": "మెంతి పప్పు"
+        },
+        "region": "Andhra Pradesh",
+        "meal_type": "Lunch Side",
+        "trimester": [
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Fresh Methi leaves",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Toor Dal",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Tomato",
+                "quantity": "1"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 190,
+            "protein_g": 11,
+            "carbohydrates_g": 26,
+            "fat_g": 4,
+            "fiber_g": 6,
+            "iron_mg": 4.8,
+            "calcium_mg": 85,
+            "folate_mcg": 140,
+            "vitamin_c_mg": 20
+        },
+        "serving_size": "200 ml",
+        "preparation_time_minutes": 30,
+        "benefits": [
+            "Regulates blood sugar levels",
+            "High iron and folate content",
+            "Prevents anemia and GDM"
+        ],
+        "who_alignment": "Effective for managing dietary glucose and mineral levels.",
+        "cautions": "None; highly recommended in the 2nd and 3rd trimesters.",
+        "best_time_to_eat": "1:00 PM"
+    },
+    {
+        "id": "SI092",
+        "name": {
+            "english": "Horse Gram (Kollu) Soup",
+            "tamil": "கொள்ளு சூப்",
+            "malayalam": "മുതിര സൂപ്പ്",
+            "kannada": "ಹುರುಳಿ ಸಾರು",
+            "telugu": "ఉలవ చారు"
+        },
+        "region": "Tamil Nadu / Karnataka",
+        "meal_type": "Snack / Appetizer",
+        "trimester": [
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Horse Gram",
+                "quantity": "1/4 cup"
+            },
+            {
+                "name": "Pepper/Cumin",
+                "quantity": "1 tsp each"
+            },
+            {
+                "name": "Garlic",
+                "quantity": "3 cloves"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 110,
+            "protein_g": 7,
+            "carbohydrates_g": 18,
+            "fat_g": 1,
+            "fiber_g": 4,
+            "iron_mg": 3.8,
+            "calcium_mg": 120,
+            "folate_mcg": 35,
+            "vitamin_c_mg": 5
+        },
+        "serving_size": "250 ml",
+        "preparation_time_minutes": 45,
+        "benefits": [
+            "Highest iron content among legumes",
+            "Prevents excessive weight gain",
+            "Relieves congestion"
+        ],
+        "who_alignment": "Powerful dietary source for iron deficiency management.",
+        "cautions": "Must be pressure cooked extremely well; skip if body heat is high.",
+        "best_time_to_eat": "11:30 AM"
+    },
+    {
+        "id": "SI093",
+        "name": {
+            "english": "Curry Leaf (Karuveppilai) Rice",
+            "tamil": "கறிவேப்பிலை சாதம்",
+            "malayalam": "കറിവേപ്പില ചോറ്",
+            "kannada": "ಕರಿಬೇವು ಅನ್ನ",
+            "telugu": "కరివేపాకు అన్నం"
+        },
+        "region": "Tamil Nadu",
+        "meal_type": "Lunch",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Rice",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Fresh Curry Leaf powder",
+                "quantity": "2 tbsp"
+            },
+            {
+                "name": "Ghee",
+                "quantity": "1 tsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 310,
+            "protein_g": 5,
+            "carbohydrates_g": 55,
+            "fat_g": 8,
+            "fiber_g": 4,
+            "iron_mg": 5.2,
+            "calcium_mg": 150,
+            "folate_mcg": 25,
+            "vitamin_c_mg": 10
+        },
+        "serving_size": "250g",
+        "preparation_time_minutes": 15,
+        "benefits": [
+            "Extreme iron and calcium concentration",
+            "Combats nausea",
+            "Promotes hair health during pregnancy"
+        ],
+        "who_alignment": "Promotes local iron-rich greens as primary nutrition source.",
+        "cautions": "Use fresh leaves for powder to maximize nutrition.",
+        "best_time_to_eat": "1:00 PM"
+    },
+    {
+        "id": "SI094",
+        "name": {
+            "english": "Saffron Cardamom Milk",
+            "tamil": "குங்குமப்பூ பால்",
+            "malayalam": "കുങ്കുമപ്പൂവ് പാൽ",
+            "kannada": "ಕುಂಕುಮ ಕೇಸರಿ ಹಾಲು",
+            "telugu": "కుంకుమపువ్వు పాలు"
+        },
+        "region": "Universal",
+        "meal_type": "Beverage",
+        "trimester": [
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Pasteurized Milk",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Saffron strands",
+                "quantity": "2"
+            },
+            {
+                "name": "Cardamom",
+                "quantity": "1 pinch"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 150,
+            "protein_g": 8,
+            "carbohydrates_g": 12,
+            "fat_g": 8,
+            "fiber_g": 0,
+            "iron_mg": 0.2,
+            "calcium_mg": 280,
+            "folate_mcg": 12,
+            "vitamin_c_mg": 1
+        },
+        "serving_size": "200 ml",
+        "preparation_time_minutes": 5,
+        "benefits": [
+            "Aids digestion and mood",
+            "Improves sleep quality",
+            "Massive calcium for baby's skeletal finalization"
+        ],
+        "who_alignment": "Safe calcium supplementation via dairy.",
+        "cautions": "Do not exceed 2-3 strands of saffron; ensure milk is boiled/pasteurized.",
+        "best_time_to_eat": "9:30 PM"
+    },
+    {
+        "id": "SI095",
+        "name": {
+            "english": "Pearl Millet (Bajra/Kambu) Koozh",
+            "tamil": "கம்பு கூழ்",
+            "malayalam": "കമ്പ് കുറുക്ക്",
+            "kannada": "ಸಜ್ಜೆ ಅಂಬಲಿ",
+            "telugu": "సజ్జ జావ"
+        },
+        "region": "Tamil Nadu / Andhra",
+        "meal_type": "Breakfast / Snack",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Pearl Millet flour",
+                "quantity": "2 tbsp"
+            },
+            {
+                "name": "Buttermilk",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Onion (optional)",
+                "quantity": "1 tbsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 170,
+            "protein_g": 6,
+            "carbohydrates_g": 30,
+            "fat_g": 3,
+            "fiber_g": 6,
+            "iron_mg": 4.0,
+            "calcium_mg": 110,
+            "folate_mcg": 35,
+            "vitamin_c_mg": 2
+        },
+        "serving_size": "300 ml",
+        "preparation_time_minutes": 20,
+        "benefits": [
+            "Highly cooling",
+            "Rich in iron and zinc",
+            "Easy on the gut"
+        ],
+        "who_alignment": "Indigenous grains help prevent micronutrient deficiencies.",
+        "cautions": "Soak millet well before grinding/cooking.",
+        "best_time_to_eat": "10:30 AM"
+    },
+    {
+        "id": "SI096",
+        "name": {
+            "english": "Moringa (Drumstick) Podi",
+            "tamil": "முருங்கை இலை பொடி",
+            "malayalam": "മുരിങ്ങയില പൊടി",
+            "kannada": "ನುಗ್ಗೆ ಸೊಪ್ಪಿನ ಪುಡಿ",
+            "telugu": "మునగాకు పొడి"
+        },
+        "region": "South India",
+        "meal_type": "Condiment",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Dried Moringa leaves",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Lentils (Urad/Chana)",
+                "quantity": "1/4 cup"
+            },
+            {
+                "name": "Dry ginger",
+                "quantity": "1/2 tsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 45,
+            "protein_g": 3,
+            "carbohydrates_g": 4,
+            "fat_g": 2,
+            "fiber_g": 2,
+            "iron_mg": 4.5,
+            "calcium_mg": 180,
+            "folate_mcg": 40,
+            "vitamin_c_mg": 15
+        },
+        "serving_size": "1 tbsp (with rice)",
+        "preparation_time_minutes": 20,
+        "benefits": [
+            "Natural multivitamin",
+            "Iron powerhouse",
+            "Anti-inflammatory"
+        ],
+        "who_alignment": "Promotes local superfoods for maternal health.",
+        "cautions": "Consume with a little ghee to aid nutrient absorption.",
+        "best_time_to_eat": "1:00 PM"
+    },
+    {
+        "id": "SI097",
+        "name": {
+            "english": "Steamed Mixed Sprouts",
+            "tamil": "முளைகட்டிய பயறு",
+            "malayalam": "മുളപ്പിച്ച പയർ",
+            "kannada": "ಮೊಳಕೆಕಾಳು ಸಲಾಡ್",
+            "telugu": "మొలకల మిశ్రమం"
+        },
+        "region": "Universal",
+        "meal_type": "Snack",
+        "trimester": [
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Moong/Chana/Lobia sprouts",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Lemon juice",
+                "quantity": "1 tsp"
+            },
+            {
+                "name": "Black salt",
+                "quantity": "Pinch"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 160,
+            "protein_g": 12,
+            "carbohydrates_g": 25,
+            "fat_g": 1,
+            "fiber_g": 8,
+            "iron_mg": 2.8,
+            "calcium_mg": 45,
+            "folate_mcg": 140,
+            "vitamin_c_mg": 20
+        },
+        "serving_size": "150g",
+        "preparation_time_minutes": 10,
+        "benefits": [
+            "High protein and enzyme activity",
+            "Rich in folate and Vit C",
+            "Very satiating"
+        ],
+        "who_alignment": "WHO STRICTLY ADVISES: Sprouts MUST be steamed/boiled for 5 mins to prevent food poisoning.",
+        "cautions": "Never eat raw sprouts during pregnancy.",
+        "best_time_to_eat": "4:30 PM"
+    },
+    {
+        "id": "SI098",
+        "name": {
+            "english": "Ginger Chutney (Allam Pachadi)",
+            "tamil": "இஞ்சி சட்னி",
+            "malayalam": "ഇഞ്ചി ചമ്മന്തി",
+            "kannada": "ಶುಂಠಿ ಚಟ್ನಿ",
+            "telugu": "అల్లం పచ్చడి"
+        },
+        "region": "Andhra Pradesh",
+        "meal_type": "Condiment",
+        "trimester": [
+            "First"
+        ],
+        "ingredients": [
+            {
+                "name": "Fresh Ginger",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Tamarind",
+                "quantity": "Small piece"
+            },
+            {
+                "name": "Jaggery",
+                "quantity": "2 tbsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 40,
+            "protein_g": 0.5,
+            "carbohydrates_g": 10,
+            "fat_g": 0.5,
+            "fiber_g": 1,
+            "iron_mg": 0.8,
+            "calcium_mg": 15,
+            "folate_mcg": 5,
+            "vitamin_c_mg": 5
+        },
+        "serving_size": "1 tbsp",
+        "preparation_time_minutes": 20,
+        "benefits": [
+            "Most effective for severe morning sickness",
+            "Aids in digesting heavy breakfasts",
+            "Increases appetite"
+        ],
+        "who_alignment": "Ginger is the gold standard for pregnancy nausea management.",
+        "cautions": "Limit to 1-2 tbsp due to tamarind/acid content.",
+        "best_time_to_eat": "8:30 AM"
+    },
+    {
+        "id": "SI099",
+        "name": {
+            "english": "Lemon Coriander Clear Soup",
+            "tamil": "எலுமிச்சை மல்லி சூப்",
+            "malayalam": "നാരങ്ങ മല്ലിയില സൂപ്പ്",
+            "kannada": "ನಿಂಬೆ ಕೊತ್ತಂಬರಿ ಸೂಪ್",
+            "telugu": "నిమ్మకాయ కొత్తిమీర సూప్"
+        },
+        "region": "Universal",
+        "meal_type": "Appetizer",
+        "trimester": [
+            "First"
+        ],
+        "ingredients": [
+            {
+                "name": "Fresh Coriander",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Lemon juice",
+                "quantity": "1 tbsp"
+            },
+            {
+                "name": "Ginger",
+                "quantity": "1 tsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 45,
+            "protein_g": 1,
+            "carbohydrates_g": 8,
+            "fat_g": 0.5,
+            "fiber_g": 2,
+            "iron_mg": 0.6,
+            "calcium_mg": 20,
+            "folate_mcg": 25,
+            "vitamin_c_mg": 45
+        },
+        "serving_size": "250 ml",
+        "preparation_time_minutes": 10,
+        "benefits": [
+            "Clears the palate",
+            "High Vitamin C and antioxidants",
+            "Helps with dehydration"
+        ],
+        "who_alignment": "Encourages hydration with nutrient-dense clear liquids.",
+        "cautions": "Drink warm; avoid adding too much salt.",
+        "best_time_to_eat": "12:30 PM"
+    },
+    {
+        "id": "SI100",
+        "name": {
+            "english": "Peanut Jaggery Laddu",
+            "tamil": "கடலை உருண்டை",
+            "malayalam": "കപ്പലണ്ടി ലഡ്ഡു",
+            "kannada": "ಶೇಂಗಾ ಉಂಡೆ",
+            "telugu": "పల్లి లడ్డు"
+        },
+        "region": "South India",
+        "meal_type": "Snack",
+        "trimester": [
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Roasted Peanuts",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Jaggery",
+                "quantity": "3/4 cup"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 180,
+            "protein_g": 6,
+            "carbohydrates_g": 22,
+            "fat_g": 9,
+            "fiber_g": 2,
+            "iron_mg": 2.2,
+            "calcium_mg": 30,
+            "folate_mcg": 35,
+            "vitamin_c_mg": 0
+        },
+        "serving_size": "1 laddu (40g)",
+        "preparation_time_minutes": 15,
+        "benefits": [
+            "Protein for fetal weight gain",
+            "Iron for maternal strength",
+            "Healthy fats for brain development"
+        ],
+        "who_alignment": "Recommended energy-dense snack for the 3rd trimester.",
+        "cautions": "Limit to one per day.",
+        "best_time_to_eat": "11:00 AM"
+    },
+    {
+        "id": "SI101",
+        "name": {
+            "english": "Ridge Gourd Chutney (Thogayal)",
+            "tamil": "பீர்கங்காய் துவையல்",
+            "malayalam": "പീച്ചിങ്ങ ചമ്മന്തി",
+            "kannada": "ಹೀರೆಕಾಯಿ ಚಟ್ನಿ",
+            "telugu": "బీరకాయ పచ్చడి"
+        },
+        "region": "Tamil Nadu / Andhra",
+        "meal_type": "Condiment / Side",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Ridge Gourd skins/pulp",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Urad Dal",
+                "quantity": "2 tbsp"
+            },
+            {
+                "name": "Green chili/Ginger",
+                "quantity": "minimal"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 85,
+            "protein_g": 4,
+            "carbohydrates_g": 10,
+            "fat_g": 3,
+            "fiber_g": 5,
+            "iron_mg": 1.5,
+            "calcium_mg": 35,
+            "folate_mcg": 45,
+            "vitamin_c_mg": 10
+        },
+        "serving_size": "2 tbsp",
+        "preparation_time_minutes": 15,
+        "benefits": [
+            "Hydrating vegetable",
+            "High fiber prevents pregnancy piles",
+            "Mildly spiced"
+        ],
+        "who_alignment": "Promotes intake of high-fiber local vegetables.",
+        "cautions": "Wash the gourd thoroughly before using the skin.",
+        "best_time_to_eat": "1:00 PM"
+    },
+    {
+        "id": "SI102",
+        "name": {
+            "english": "Garlic Pepper Rice",
+            "tamil": "பூண்டு மிளகு சாதம்",
+            "malayalam": "വെളുത്തുള്ളി കുരുമുളക് ചോറ്",
+            "kannada": "ಬೆಳ್ಳುಳ್ಳಿ ಮೆಣಸು ಅನ್ನ",
+            "telugu": "వెల్లుల్లి మిరియాల అన్నం"
+        },
+        "region": "South India",
+        "meal_type": "Lunch / Dinner",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Cooked Rice",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Garlic cloves",
+                "quantity": "10"
+            },
+            {
+                "name": "Black pepper powder",
+                "quantity": "1 tsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 310,
+            "protein_g": 6,
+            "carbohydrates_g": 55,
+            "fat_g": 7,
+            "fiber_g": 2,
+            "iron_mg": 1.2,
+            "calcium_mg": 40,
+            "folate_mcg": 20,
+            "vitamin_c_mg": 15
+        },
+        "serving_size": "250g",
+        "preparation_time_minutes": 15,
+        "benefits": [
+            "Boosts immunity naturally",
+            "Regulates blood pressure",
+            "Aids in digestion and gas relief"
+        ],
+        "who_alignment": "Garlic supports cardiovascular health during pregnancy.",
+        "cautions": "Reduce pepper if experiencing severe heartburn.",
+        "best_time_to_eat": "8:00 PM"
+    },
+    {
+        "id": "SI103",
+        "name": {
+            "english": "Baked Chana Dal Vadai",
+            "tamil": "பருப்பு வடை (பேக் செய்தது)",
+            "malayalam": "പരിപ്പ് വട (ബേക്ക് ചെയ്തത്)",
+            "kannada": "ವಡೆ (ಬೇಕ್ ಮಾಡಿದ್ದು)",
+            "telugu": "వడ (బేక్ చేసినది)"
+        },
+        "region": "South India",
+        "meal_type": "Snack",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Chana Dal",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Onion/Ginger",
+                "quantity": "1 tbsp"
+            },
+            {
+                "name": "Curry leaves",
+                "quantity": "few"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 140,
+            "protein_g": 7,
+            "carbohydrates_g": 22,
+            "fat_g": 3,
+            "fiber_g": 6,
+            "iron_mg": 2.5,
+            "calcium_mg": 25,
+            "folate_mcg": 85,
+            "vitamin_c_mg": 2
+        },
+        "serving_size": "2 medium vadas",
+        "preparation_time_minutes": 30,
+        "benefits": [
+            "Safe way to satisfy street food cravings",
+            "High protein and fiber",
+            "Low fat due to baking"
+        ],
+        "who_alignment": "Supports healthy heart and weight by avoiding deep frying.",
+        "cautions": "Ensure dal is soaked for 4 hours for digestion.",
+        "best_time_to_eat": "4:30 PM"
+    },
+    {
+        "id": "SI104",
+        "name": {
+            "english": "Custard Apple (Sitaphal)",
+            "tamil": "சீத்தாப்பழம்",
+            "malayalam": "സീതാപ്പഴം",
+            "kannada": "ಸೀತಾಫಲ",
+            "telugu": "సీతాఫలం"
+        },
+        "region": "Universal",
+        "meal_type": "Snack",
+        "trimester": [
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Ripe Custard Apple",
+                "quantity": "1 medium"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 100,
+            "protein_g": 2,
+            "carbohydrates_g": 25,
+            "fat_g": 0.5,
+            "fiber_g": 4,
+            "iron_mg": 0.8,
+            "calcium_mg": 25,
+            "folate_mcg": 15,
+            "vitamin_c_mg": 35
+        },
+        "serving_size": "1 fruit",
+        "preparation_time_minutes": 2,
+        "benefits": [
+            "Helps with healthy weight gain",
+            "Relieves leg cramps",
+            "High in Vitamin C and Magnesium"
+        ],
+        "who_alignment": "Encourages intake of seasonal, energy-dense fruits.",
+        "cautions": "Do not swallow seeds; avoid if you have gestational diabetes (GDM).",
+        "best_time_to_eat": "11:00 AM"
+    },
+    {
+        "id": "SI105",
+        "name": {
+            "english": "Dates and Walnut Smoothie",
+            "tamil": "பேரிச்சம்பழம் வாதுமை ஜூஸ்",
+            "malayalam": "ഈന്തപ്പഴം വാൾനട്ട് സ്മൂത്തി",
+            "kannada": "ಖರ್ಜೂರ ವಾಲ್ನಟ್ ಸ್ಮೂತಿ",
+            "telugu": "ఖర్జూరం వాల్నట్ స్మూతీ"
+        },
+        "region": "Modern South",
+        "meal_type": "Beverage / Snack",
+        "trimester": [
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Dates",
+                "quantity": "3"
+            },
+            {
+                "name": "Walnuts",
+                "quantity": "2"
+            },
+            {
+                "name": "Milk",
+                "quantity": "1 cup"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 280,
+            "protein_g": 10,
+            "carbohydrates_g": 35,
+            "fat_g": 14,
+            "fiber_g": 5,
+            "iron_mg": 2.2,
+            "calcium_mg": 300,
+            "folate_mcg": 30,
+            "vitamin_c_mg": 2
+        },
+        "serving_size": "250 ml",
+        "preparation_time_minutes": 5,
+        "benefits": [
+            "Dates aid in cervical ripening/labor preparation",
+            "Walnuts provide DHA for brain",
+            "Calcium powerhouse"
+        ],
+        "who_alignment": "Safe intake of healthy fats and natural energy for labor prep.",
+        "cautions": "Recommended specifically for the last 4 weeks of pregnancy.",
+        "best_time_to_eat": "4:00 PM"
+    },
+    {
+        "id": "SI106",
+        "name": {
+            "english": "Pumpkin Coconut Soup",
+            "tamil": "பூசணிக்காய் தேங்காய் சூப்",
+            "malayalam": "മത്തങ്ങ തേങ്ങപ്പാൽ സൂപ്പ്",
+            "kannada": "ಕುಂಬಳಕಾಯಿ ತೆಂಗಿನ ಹಾಲು ಸೂಪ್",
+            "telugu": "గుమ్మడికాయ కొబ్బరి పాలు సూప్"
+        },
+        "region": "Universal",
+        "meal_type": "Dinner Appetizer",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Yellow Pumpkin",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Coconut milk",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Cinnamon",
+                "quantity": "Pinch"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 140,
+            "protein_g": 2,
+            "carbohydrates_g": 12,
+            "fat_g": 10,
+            "fiber_g": 3,
+            "iron_mg": 1.2,
+            "calcium_mg": 40,
+            "folate_mcg": 30,
+            "vitamin_c_mg": 25
+        },
+        "serving_size": "250 ml",
+        "preparation_time_minutes": 20,
+        "benefits": [
+            "Rich in Vitamin A for baby's eyes",
+            "Soothing and mild",
+            "High in magnesium for sleep"
+        ],
+        "who_alignment": "Meets guidelines for Vitamin A rich vegetable intake.",
+        "cautions": "Ensure pumpkin is fresh and well-boiled.",
+        "best_time_to_eat": "7:00 PM"
+    },
+    {
+        "id": "SI107",
+        "name": {
+            "english": "Brown Rice Idli",
+            "tamil": "கைக்குத்தல் அரிசி இட்லி",
+            "malayalam": "തവിട് കളയാത്ത അരി ഇഡ്ഡലി",
+            "kannada": "ಕಂದು ಅಕ್ಕಿ ಇಡ್ಲಿ",
+            "telugu": "బ్రౌన్ రైస్ ఇడ్లీ"
+        },
+        "region": "South India",
+        "meal_type": "Breakfast",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Brown Rice",
+                "quantity": "2 cups"
+            },
+            {
+                "name": "Urad Dal",
+                "quantity": "1 cup"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 210,
+            "protein_g": 7,
+            "carbohydrates_g": 38,
+            "fat_g": 1.5,
+            "fiber_g": 5,
+            "iron_mg": 2.0,
+            "calcium_mg": 35,
+            "folate_mcg": 45,
+            "vitamin_c_mg": 0
+        },
+        "serving_size": "3 medium idlis",
+        "preparation_time_minutes": 20,
+        "benefits": [
+            "Low Glycemic Index grain",
+            "Sustained energy",
+            "Prevents constipation"
+        ],
+        "who_alignment": "Promotes unrefined cereals for better metabolic health.",
+        "cautions": "Requires 12+ hours of soaking for rice.",
+        "best_time_to_eat": "8:30 AM"
+    },
+    {
+        "id": "SI108",
+        "name": {
+            "english": "Curd with Chia Seeds",
+            "tamil": "தயிர் சியா விதைகளுடன்",
+            "malayalam": "തൈര് ചിയ വിത്ത് ചേർത്ത്",
+            "kannada": "ಮೊಸರು ಚಿಯಾ ಬೀಜದೊಂದಿಗೆ",
+            "telugu": "పెరుగు చియా గింజలతో"
+        },
+        "region": "Modern South",
+        "meal_type": "Snack",
+        "trimester": [
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Fresh Curd",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Soaked Chia Seeds",
+                "quantity": "1 tsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 160,
+            "protein_g": 9,
+            "carbohydrates_g": 8,
+            "fat_g": 8,
+            "fiber_g": 4,
+            "iron_mg": 1.1,
+            "calcium_mg": 280,
+            "folate_mcg": 20,
+            "vitamin_c_mg": 1
+        },
+        "serving_size": "200g",
+        "preparation_time_minutes": 5,
+        "benefits": [
+            "Omega-3 fatty acids for fetal eyes",
+            "High calcium and protein",
+            "Excellent for gut health"
+        ],
+        "who_alignment": "Source of ALA (essential fatty acids).",
+        "cautions": "Chia seeds must be soaked for 15 mins before adding.",
+        "best_time_to_eat": "4:00 PM"
+    },
+    {
+        "id": "SI109",
+        "name": {
+            "english": "Mixed Nut Brittle (Sugar-free/Jaggery)",
+            "tamil": "நட்ஸ் மிட்டாய்",
+            "malayalam": "നട്സ് മിഠായി",
+            "kannada": "ನಟ್ಸ್ ಚಿಕ್ಕಿ",
+            "telugu": "నట్స్ చిక్కీ"
+        },
+        "region": "South India",
+        "meal_type": "Snack",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Almonds/Walnuts/Peanuts",
+                "quantity": "1 cup total"
+            },
+            {
+                "name": "Jaggery",
+                "quantity": "1/2 cup"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 190,
+            "protein_g": 6,
+            "carbohydrates_g": 18,
+            "fat_g": 12,
+            "fiber_g": 3,
+            "iron_mg": 2.0,
+            "calcium_mg": 50,
+            "folate_mcg": 25,
+            "vitamin_c_mg": 0
+        },
+        "serving_size": "2 medium pieces",
+        "preparation_time_minutes": 25,
+        "benefits": [
+            "Healthy brain-boosting fats",
+            "Iron from jaggery",
+            "Helps fatigue"
+        ],
+        "who_alignment": "Nutrient-dense alternative to processed sweets.",
+        "cautions": "Chew well; avoid if you have sensitive teeth.",
+        "best_time_to_eat": "11:00 AM"
+    },
+    {
+        "id": "SI110",
+        "name": {
+            "english": "Vegetable Dalia (Broken Wheat) Upma",
+            "tamil": "கோதுமை ரவை கிச்சடி",
+            "malayalam": "ഗോതമ്പ് റവ ഉപ്പുമാവ്",
+            "kannada": "ಗೋಧಿ ರವೆ ಉಪ್ಪಿಟ್ಟು",
+            "telugu": "గోధుమ రవ్వ ఉప్మా"
+        },
+        "region": "South India",
+        "meal_type": "Breakfast / Dinner",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Broken Wheat",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Veggies (Peas/Carrot)",
+                "quantity": "1/2 cup"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 240,
+            "protein_g": 9,
+            "carbohydrates_g": 42,
+            "fat_g": 4,
+            "fiber_g": 9,
+            "iron_mg": 3.2,
+            "calcium_mg": 45,
+            "folate_mcg": 55,
+            "vitamin_c_mg": 15
+        },
+        "serving_size": "250g",
+        "preparation_time_minutes": 20,
+        "benefits": [
+            "Extremely high fiber grain",
+            "Prevents sugar spikes",
+            "Heart healthy"
+        ],
+        "who_alignment": "Whole grains meet 25-30g daily fiber goal.",
+        "cautions": "Cook well to avoid hard grains.",
+        "best_time_to_eat": "8:30 AM"
+    },
+    {
+        "id": "SI111",
+        "name": {
+            "english": "Amaranth (Thotakura) Soup",
+            "tamil": "முளைக்கீரை சூப்",
+            "malayalam": "ചീര സൂപ്പ്",
+            "kannada": "ದಂಟು ಸೊಪ್ಪಿನ ಸೂಪ್",
+            "telugu": "తోటకూర సూప్"
+        },
+        "region": "Andhra / South",
+        "meal_type": "Appetizer",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Amaranth leaves",
+                "quantity": "2 cups"
+            },
+            {
+                "name": "Garlic",
+                "quantity": "2 cloves"
+            },
+            {
+                "name": "Tomato",
+                "quantity": "1"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 75,
+            "protein_g": 4,
+            "carbohydrates_g": 10,
+            "fat_g": 2,
+            "fiber_g": 5,
+            "iron_mg": 4.2,
+            "calcium_mg": 220,
+            "folate_mcg": 150,
+            "vitamin_c_mg": 40
+        },
+        "serving_size": "250 ml",
+        "preparation_time_minutes": 15,
+        "benefits": [
+            "Folate concentration for cell division",
+            "High bioavailable calcium",
+            "Blood purifier"
+        ],
+        "who_alignment": "Promotes intake of folate-dense greens to prevent NTDs.",
+        "cautions": "Strain well to remove fibrous stems.",
+        "best_time_to_eat": "12:30 PM"
+    },
+    {
+        "id": "SI112",
+        "name": {
+            "english": "Toasted Phool Makhana with Turmeric",
+            "tamil": "தாமரை விதை வறுவல்",
+            "malayalam": "മഖാന വറുത്തത്",
+            "kannada": "ಮಖಾನಾ ರೋಸ್ಟ್",
+            "telugu": "మఖానా వేపుడు"
+        },
+        "region": "Universal",
+        "meal_type": "Snack",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Makhana",
+                "quantity": "2 cups"
+            },
+            {
+                "name": "Turmeric",
+                "quantity": "1/2 tsp"
+            },
+            {
+                "name": "Ghee",
+                "quantity": "1 tsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 110,
+            "protein_g": 3,
+            "carbohydrates_g": 20,
+            "fat_g": 3,
+            "fiber_g": 2,
+            "iron_mg": 1.2,
+            "calcium_mg": 70,
+            "folate_mcg": 10,
+            "vitamin_c_mg": 0
+        },
+        "serving_size": "30g",
+        "preparation_time_minutes": 10,
+        "benefits": [
+            "Safe, low-fat snacking",
+            "Calcium for maternal bone density",
+            "Turmeric for immunity"
+        ],
+        "who_alignment": "Meets standards for safe, non-toxic snacks.",
+        "cautions": "Do not add excess salt.",
+        "best_time_to_eat": "5:00 PM"
+    },
+    {
+        "id": "SI113",
+        "name": {
+            "english": "Spiced Lassi (Low Sugar)",
+            "tamil": "மசாலா லஸ்ஸி",
+            "malayalam": "മസാല ലസ്സി",
+            "kannada": "ಮಸಾಲೆ ಲಸ್ಸಿ",
+            "telugu": "మసాలా లస్సీ"
+        },
+        "region": "Universal",
+        "meal_type": "Beverage",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Curd",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Cumin powder",
+                "quantity": "1/4 tsp"
+            },
+            {
+                "name": "Cardamom",
+                "quantity": "1 pinch"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 140,
+            "protein_g": 8,
+            "carbohydrates_g": 10,
+            "fat_g": 7,
+            "fiber_g": 0,
+            "iron_mg": 0.5,
+            "calcium_mg": 240,
+            "folate_mcg": 15,
+            "vitamin_c_mg": 2
+        },
+        "serving_size": "250 ml",
+        "preparation_time_minutes": 5,
+        "benefits": [
+            "Probiotic for digestion",
+            "Instant calcium",
+            "Helps control heartburn"
+        ],
+        "who_alignment": "Supports safe intake of fermented dairy.",
+        "cautions": "Use pasteurized curd; avoid adding white sugar.",
+        "best_time_to_eat": "11:00 AM"
+    },
+    {
+        "id": "SI114",
+        "name": {
+            "english": "Steamed Sweet Potato with Jaggery",
+            "tamil": "சர்க்கரைவள்ளி கிழங்கு வெல்லத்துடன்",
+            "malayalam": "മധുരക്കിഴങ്ങ് ശർക്കര ചേർത്ത്",
+            "kannada": "ಬೆಲ್ಲದ ಸಿಹಿಗೆಣಸು",
+            "telugu": "బెల్లం చిలకడదుంప"
+        },
+        "region": "Universal",
+        "meal_type": "Snack",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Sweet Potato",
+                "quantity": "150g"
+            },
+            {
+                "name": "Jaggery syrup",
+                "quantity": "1 tsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 190,
+            "protein_g": 2,
+            "carbohydrates_g": 44,
+            "fat_g": 0.5,
+            "fiber_g": 6,
+            "iron_mg": 1.8,
+            "calcium_mg": 55,
+            "folate_mcg": 20,
+            "vitamin_c_mg": 35
+        },
+        "serving_size": "150g",
+        "preparation_time_minutes": 20,
+        "benefits": [
+            "Rich in beta-carotene for baby's vision",
+            "Iron from jaggery",
+            "Prevents constipation"
+        ],
+        "who_alignment": "Vitamin A rich root vegetable source.",
+        "cautions": "None; highly safe.",
+        "best_time_to_eat": "4:00 PM"
+    },
+    {
+        "id": "SI115",
+        "name": {
+            "english": "Finger Millet (Ragi) Dosa",
+            "tamil": "கேழ்வரகு தோசை",
+            "malayalam": "റാഗി ദോശ",
+            "kannada": "ರಾಗಿ ದೋಸೆ",
+            "telugu": "రాగి దోశ"
+        },
+        "region": "South India",
+        "meal_type": "Breakfast / Dinner",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Ragi Flour",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Rice Flour",
+                "quantity": "1/4 cup"
+            },
+            {
+                "name": "Curd",
+                "quantity": "2 tbsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 180,
+            "protein_g": 5,
+            "carbohydrates_g": 35,
+            "fat_g": 3,
+            "fiber_g": 7,
+            "iron_mg": 2.8,
+            "calcium_mg": 280,
+            "folate_mcg": 18,
+            "vitamin_c_mg": 0
+        },
+        "serving_size": "2 dosas",
+        "preparation_time_minutes": 15,
+        "benefits": [
+            "Massive calcium boost",
+            "Gluten-free energy",
+            "High iron"
+        ],
+        "who_alignment": "Targets mineral deficiencies through local grains.",
+        "cautions": "Ensure the batter is thin for crispy texture.",
+        "best_time_to_eat": "8:30 AM"
+    },
+    {
+        "id": "SI116",
+        "name": {
+            "english": "Moringa (Drumstick Leaf) Paratha",
+            "tamil": "முருங்கை கீரை சப்பாத்தி",
+            "malayalam": "മുരിങ്ങയില ചപ്പാത്തി",
+            "kannada": "ನುಗ್ಗೆ ಸೊಪ್ಪಿನ ಪರಾಟ",
+            "telugu": "మునగాకు పరాఠా"
+        },
+        "region": "Modern South",
+        "meal_type": "Breakfast / Lunch",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Whole Wheat Flour",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Fresh Moringa leaves",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Cumin",
+                "quantity": "1/2 tsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 240,
+            "protein_g": 8,
+            "carbohydrates_g": 38,
+            "fat_g": 6,
+            "fiber_g": 7,
+            "iron_mg": 4.8,
+            "calcium_mg": 180,
+            "folate_mcg": 45,
+            "vitamin_c_mg": 20
+        },
+        "serving_size": "2 parathas",
+        "preparation_time_minutes": 25,
+        "benefits": [
+            "Iron and Calcium dense meal",
+            "High fiber",
+            "B-vitamins for maternal energy"
+        ],
+        "who_alignment": "Aligns with iron-deficiency prevention goals.",
+        "cautions": "Sauté leaves slightly before mixing with dough to reduce bitterness.",
+        "best_time_to_eat": "1:00 PM"
+    },
+    {
+        "id": "SI117",
+        "name": {
+            "english": "Chickpea Flour (Besan) Cheela",
+            "tamil": "கடலை மாவு தோசை",
+            "malayalam": "കടല മാവ് ദോശ",
+            "kannada": "ಕಡಲೆ ಹಿಟ್ಟಿನ ದೋಸೆ",
+            "telugu": "శనగ పిండి దోశ"
+        },
+        "region": "Modern South",
+        "meal_type": "Breakfast / Snack",
+        "trimester": [
+            "First",
+            "Second",
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Besan",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Ajwain (Carom seeds)",
+                "quantity": "1/2 tsp"
+            },
+            {
+                "name": "Tomato/Onion",
+                "quantity": "1/4 cup"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 210,
+            "protein_g": 11,
+            "carbohydrates_g": 32,
+            "fat_g": 5,
+            "fiber_g": 6,
+            "iron_mg": 2.5,
+            "calcium_mg": 45,
+            "folate_mcg": 120,
+            "vitamin_c_mg": 10
+        },
+        "serving_size": "2 cheelas",
+        "preparation_time_minutes": 15,
+        "benefits": [
+            "High protein for fetal tissue",
+            "Folate rich",
+            "Ajwain prevents gastric issues"
+        ],
+        "who_alignment": "Meets guidelines for increased protein intake during pregnancy.",
+        "cautions": "None; easy and safe.",
+        "best_time_to_eat": "8:30 AM"
+    },
+    {
+        "id": "SI118",
+        "name": {
+            "english": "Coconut Milk Vegetable Stew",
+            "tamil": "தேங்காய் பால் ஸ்டியூ",
+            "malayalam": "തേങ്ങപ്പാൽ വെജിറ്റബിൾ സ്റ്റ്യൂ",
+            "kannada": "ತೆಂಗಿನ ಹಾಲಿನ ವೆಜ್ ಸ್ಟ್ಯೂ",
+            "telugu": "కొబ్బరి పాలు వెజ్ స్ట్యూ"
+        },
+        "region": "Kerala",
+        "meal_type": "Breakfast Side",
+        "trimester": [
+            "First"
+        ],
+        "ingredients": [
+            {
+                "name": "Mixed Veggies",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Coconut milk",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Ginger",
+                "quantity": "1 inch"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 160,
+            "protein_g": 3,
+            "carbohydrates_g": 12,
+            "fat_g": 12,
+            "fiber_g": 4,
+            "iron_mg": 1.2,
+            "calcium_mg": 45,
+            "folate_mcg": 30,
+            "vitamin_c_mg": 15
+        },
+        "serving_size": "200 ml",
+        "preparation_time_minutes": 20,
+        "benefits": [
+            "Soothing on the stomach during 1st trimester nausea",
+            "Hydrating",
+            "Provides healthy medium-chain fats"
+        ],
+        "who_alignment": "Safe, mild energy source for women with emesis.",
+        "cautions": "Keep spices minimal.",
+        "best_time_to_eat": "8:30 AM"
+    },
+    {
+        "id": "SI119",
+        "name": {
+            "english": "Dry Ginger (Sukku) Tea (Decaf)",
+            "tamil": "சுக்கு காபி / டீ",
+            "malayalam": "ചുക്ക് കാപ്പി",
+            "kannada": "ಶುಂಠಿ ಕಾಫಿ",
+            "telugu": "శొంఠి కాఫీ"
+        },
+        "region": "South India",
+        "meal_type": "Beverage",
+        "trimester": [
+            "First"
+        ],
+        "ingredients": [
+            {
+                "name": "Dry Ginger powder",
+                "quantity": "1/2 tsp"
+            },
+            {
+                "name": "Jaggery",
+                "quantity": "1 tsp"
+            },
+            {
+                "name": "Water",
+                "quantity": "1 cup"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 30,
+            "protein_g": 0.2,
+            "carbohydrates_g": 8,
+            "fat_g": 0,
+            "fiber_g": 0.5,
+            "iron_mg": 0.8,
+            "calcium_mg": 10,
+            "folate_mcg": 2,
+            "vitamin_c_mg": 0
+        },
+        "serving_size": "150 ml",
+        "preparation_time_minutes": 5,
+        "benefits": [
+            "WHO recognized remedy for morning sickness",
+            "Aids digestion",
+            "Relieves pregnancy-related cold symptoms"
+        ],
+        "who_alignment": "Ginger is the most recommended non-drug treatment for nausea.",
+        "cautions": "Do not add tea/caffeine; consume as a herbal infusion.",
+        "best_time_to_eat": "7:00 AM"
+    },
+    {
+        "id": "SI120",
+        "name": {
+            "english": "Dates and Almond Laddu",
+            "tamil": "பேரிச்சம்பழம் பாதாம் லட்டு",
+            "malayalam": "ഈന്തപ്പഴം ബദാം ലഡ്ഡു",
+            "kannada": "ಖರ್ಜೂರ ಬಾದಾಮಿ ಲಾಡು",
+            "telugu": "ఖర్జూరం బాదం లడ్డు"
+        },
+        "region": "Universal",
+        "meal_type": "Snack",
+        "trimester": [
+            "Third"
+        ],
+        "ingredients": [
+            {
+                "name": "Dates",
+                "quantity": "1 cup"
+            },
+            {
+                "name": "Almonds",
+                "quantity": "1/2 cup"
+            },
+            {
+                "name": "Ghee",
+                "quantity": "1 tbsp"
+            }
+        ],
+        "nutrition_per_serving": {
+            "calories": 160,
+            "protein_g": 4,
+            "carbohydrates_g": 20,
+            "fat_g": 9,
+            "fiber_g": 3,
+            "iron_mg": 1.8,
+            "calcium_mg": 60,
+            "folate_mcg": 15,
+            "vitamin_c_mg": 0
+        },
+        "serving_size": "1 laddu (35g)",
+        "preparation_time_minutes": 15,
+        "benefits": [
+            "Dates aid in labor preparation and cervical ripening",
+            "Iron for post-delivery recovery",
+            "Brain-boosting fats for baby"
+        ],
+        "who_alignment": "Safe, nutrient-dense food for late pregnancy energy needs.",
+        "cautions": "Recommended specifically for the 3rd trimester (last 4 weeks).",
+        "best_time_to_eat": "11:00 AM"
+    }
+]

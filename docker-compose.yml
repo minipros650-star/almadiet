@@ -1,0 +1,32 @@
+services:
+  db:
+    image: postgres:18
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: almadiet2026
+      POSTGRES_DB: almadiet
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build: ./backend
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql+asyncpg://postgres:almadiet2026@db:5432/almadiet
+      JWT_SECRET_KEY: almadiet-super-secret-jwt-key-2026
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  pgdata:
