@@ -173,7 +173,7 @@ docker compose up -d
 | **Onboarding** | 3-slide intro with orbiting emojis, animated gradient background |
 | **Login** | Floating logo, staggered field animations, async error handling |
 | **Register** | Region/language dropdowns with emojis, responsive layout |
-| **Home** | Daily health tips, quick actions, health summary, meal preview |
+| **Home** | Daily health tips, quick actions, health summaries, meal preview |
 | **Health Input** | Sectioned form, dietary preference cards, auto-generate toggle |
 | **Diet Plan** | Nutrient targets, emoji meal categories, staggered card animations |
 | **Meal Detail** | Nutrition grid, ingredients, benefits, WHO alignment, cautions |
