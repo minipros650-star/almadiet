@@ -1,0 +1,14 @@
+# Keep the deployment minimal: only the FastAPI backend is deployed.
+frontend/
+node_modules/
+.git/
+.github/
+**/__pycache__/
+*.pyc
+backend/almadiet.db
+backend/.env
+backend/data/
+backend/htmlcov/
+backend/.pytest_cache/
+docs/
+*.md

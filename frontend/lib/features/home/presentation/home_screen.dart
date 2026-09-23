@@ -184,7 +184,7 @@ class _QuickActions extends StatelessWidget {
       const SizedBox(width: 12),
       Expanded(child: _ActionCard(icon: Icons.restaurant_menu_rounded, label: l.tr('my_diet_plan'), color: AppColors.secondary, onTap: () => context.go('/diet'))),
       const SizedBox(width: 12),
-      Expanded(child: _ActionCard(icon: Icons.emergency_rounded, label: l.tr('emergency_help'), color: AppColors.accent, onTap: () => context.go('/emergency'))),
+      Expanded(child: _ActionCard(icon: Icons.health_and_safety_rounded, label: l.tr('emergency_help'), color: AppColors.accent, onTap: () => context.go('/urgent-help'))),
     ]);
   }
 }

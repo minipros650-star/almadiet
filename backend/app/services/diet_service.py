@@ -1,63 +1,82 @@
-"""
-AlmaDiet — Diet Service
-Generates personalized, trimester-specific diet plans using ML predictions
-and regional meal data. Handles plan retrieval and user feedback.
-Aligned with meals_dataset.json structure.
+"""AlmaDiet — Recommendation service (deterministic, safety-first).
+
+Pipeline (docs/ARCHITECTURE.md §2):
+  validation → allergy filter → dietary filter → condition filter →
+  food-safety filter → availability/content filter → nutritional selection →
+  7-day assembly → FINAL safety validation → explanation + sources.
+
+Allergy filtering happens BEFORE selection; a final validation re-checks
+every selected meal. ML plays no part in this path (ADR/0001).
 """
 
-import uuid
+from __future__ import annotations
+
+import copy
 import random
+import uuid
 from datetime import date, timedelta
 from typing import Optional
 
 from sqlalchemy import select
+from sqlalchemy.orm import selectinload
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.domain import conditions as conditions_domain
+from app.domain.content_state import is_recommendable
+from app.domain.gestational import TRIMESTER_LABELS, validate_gestational_age
+from app.models.allergen import MealAllergen
 from app.models.diet_plan import DietPlan
 from app.models.health_record import HealthRecord
 from app.models.meal import Meal
 from app.models.user import User
-from app.ml.predictor import predict_nutrient_priorities, get_top_nutrients
+from app.services.health_service import ConsentRequiredError, has_current_consent
 from app.services.image_service import build_image_url
+from app.services.safety_validator import MealView, SafetyValidator
 
-# ── Trimester-specific daily nutrient targets ─────────────────
-TRIMESTER_TARGETS = {
+# ── Transparent trimester nutrition focus (documented, explainable) ──────
+# Each focus carries a user-facing rationale. These are general education
+# statements, NOT personalized medical advice.
+TRIMESTER_FOCUS: dict[int, list[dict]] = {
+    1: [
+        {"nutrient": "folate", "column": "folate_mcg", "rationale": "folate is widely recommended in early pregnancy"},
+        {"nutrient": "fiber", "column": "fiber_g", "rationale": "gentler digestion is often helpful in the first trimester"},
+        {"nutrient": "iron", "column": "iron_mg", "rationale": "iron supports your changing blood volume"},
+    ],
+    2: [
+        {"nutrient": "iron", "column": "iron_mg", "rationale": "iron needs commonly rise in the second trimester"},
+        {"nutrient": "calcium", "column": "calcium_mg", "rationale": "calcium supports your baby's bone development"},
+        {"nutrient": "protein", "column": "protein_g", "rationale": "protein supports growth in the second trimester"},
+    ],
+    3: [
+        {"nutrient": "protein", "column": "protein_g", "rationale": "protein supports the rapid growth phase"},
+        {"nutrient": "iron", "column": "iron_mg", "rationale": "iron continues to support blood volume"},
+        {"nutrient": "calcium", "column": "calcium_mg", "rationale": "calcium supports bone development"},
+    ],
+}
+
+# Reference context values shown in the UI — explicitly not prescriptions.
+TRIMESTER_REFERENCE = {
     1: {"calories": 1800, "protein": 60, "iron": 27, "calcium": 1000},
     2: {"calories": 2200, "protein": 75, "iron": 30, "calcium": 1200},
-    3: {"calories": 2500, "protein": 85, "iron": 35, "calcium": 1300},
+    3: {"calories": 2200, "protein": 75, "iron": 27, "calcium": 1200},
 }
 
-# ── Nutrient column mapping in Meal model ─────────────────────
-NUTRIENT_COLUMNS = {
-    "calories": "calories",
-    "protein": "protein_g",
-    "iron": "iron_mg",
-    "calcium": "calcium_mg",
-    "folate": "folate_mcg",
-    "fiber": "fiber_g",
-    "vitamin_c": "vitamin_c_mg",
-}
-
-# ── Map trimester int → dataset string ────────────────────────
-TRIMESTER_MAP = {1: "First", 2: "Second", 3: "Third"}
-
-# ── Map meal_type queries to dataset patterns ─────────────────
 MEAL_TYPE_PATTERNS = {
-    "breakfast": ["Breakfast", "Breakfast / Dinner", "Breakfast / Snack", "Breakfast / Lunch"],
+    "breakfast": ["Breakfast", "Breakfast / Dinner", "Breakfast / Snack", "Breakfast / Lunch", "Breakfast Side"],
     "lunch": ["Lunch", "Lunch Side", "Lunch / Dinner", "Lunch Appetizer", "Breakfast / Lunch"],
-    "dinner": ["Lunch / Dinner", "Breakfast / Dinner", "Dinner Appetizer", "Snack / Light Dinner"],
+    "dinner": ["Lunch / Dinner", "Breakfast / Dinner", "Dinner Appetizer", "Snack / Light Dinner", "Lunch"],
     "snack": ["Snack", "Snack / Appetizer", "Snack / Side", "Mid-Morning Snack",
               "Breakfast / Snack", "Snack / Light Dinner", "Beverage", "Dessert",
-              "Condiment", "Lunch Side / Snack"],
+              "Lunch Side / Snack", "Beverage / Snack"],
 }
 
+SLOTS = ("breakfast", "lunch", "snack", "dinner")
 
-def _meal_to_dict(meal: Meal) -> dict:
-    """Convert a Meal ORM object to a serializable dict for plan storage."""
+
+def _meal_card(meal: Meal, why: list[str], cross_contact: list[str] | None = None) -> dict:
     return {
         "id": str(meal.id),
         "meal_id": str(meal.id),
-        "dataset_id": meal.dataset_id,
         "name": meal.name,
         "name_tamil": meal.name_tamil,
         "name_malayalam": meal.name_malayalam,
@@ -67,207 +86,361 @@ def _meal_to_dict(meal: Meal) -> dict:
         "meal_type": meal.meal_type,
         "calories": meal.calories,
         "protein_g": meal.protein_g,
+        "carbs_g": meal.carbs_g,
+        "fat_g": meal.fat_g,
+        "fiber_g": meal.fiber_g,
         "iron_mg": meal.iron_mg,
         "calcium_mg": meal.calcium_mg,
         "folate_mcg": meal.folate_mcg,
-        "fiber_g": meal.fiber_g,
-        "carbs_g": meal.carbs_g,
-        "fat_g": meal.fat_g,
         "vitamin_c_mg": meal.vitamin_c_mg,
+        "sodium_mg": meal.sodium_mg,
+        "sugar_g": meal.sugar_g,
         "is_vegetarian": meal.is_vegetarian,
-        "image_url": meal.image_url or build_image_url(meal.name, meal.region),
+        "allergens": meal.allergens,
         "ingredients": meal.ingredients,
         "serving_size": meal.serving_size,
         "preparation_time_minutes": meal.preparation_time_minutes,
         "benefits": meal.benefits,
-        "who_alignment": meal.who_alignment,
         "cautions": meal.cautions,
-        "best_time_to_eat": meal.best_time_to_eat,
+        "food_safety_notes": meal.food_safety_notes,
+        "substitutions": meal.substitutions,
+        "image_url": meal.image_url or build_image_url(meal.name, meal.region),
+        "source": meal.source,
+        "source_url": meal.source_url,
+        "evidence_version": meal.evidence_version,
+        "content_status": meal.content_status,
+        "why_suggested": why,
+        "cross_contact_warning": cross_contact or [],
     }
 
 
-async def _select_meals(
-    db: AsyncSession,
-    meal_type: str,
-    region: str,
-    trimester: int,
-    is_vegetarian: bool,
-    top_nutrients: list[str],
-    count: int = 2,
-    exclude_ids: set = None,
-) -> list[Meal]:
-    """
-    Select meals for a specific meal type, optimized by top nutrient priorities.
-    Applies region/trimester/diet filters, then scores by nutrient priority.
-    """
-    trimester_str = TRIMESTER_MAP.get(trimester, "First")
-    meal_type_patterns = MEAL_TYPE_PATTERNS.get(meal_type, [meal_type])
-
-    # Build query with region + trimester + meal_type patterns
-    query = select(Meal).where(
-        Meal.meal_type.in_(meal_type_patterns),
-        Meal.region.ilike(f"%{region}%"),
-        Meal.trimester_suitability.contains([trimester_str]),
+def _why_for(meal: Meal, record: HealthRecord | User | None, prefer: list[str], focus: list[dict]) -> list[str]:
+    """Deterministic, explainable reasons (no 'AI knows' language)."""
+    why: list[str] = []
+    is_veg_user = bool(getattr(record, "is_vegetarian", False)) or (
+        getattr(record, "dietary_preference", None) == "veg"
     )
-    if is_vegetarian:
-        query = query.where(Meal.is_vegetarian == True)
-    if exclude_ids:
-        query = query.where(~Meal.id.in_(exclude_ids))
+    if record is not None and is_veg_user and meal.is_vegetarian:
+        why.append("matches your vegetarian preference")
+    if "iron_rich" in prefer and meal.iron_mg >= 3:
+        why.append("contains documented iron-rich ingredients")
+    if "lower_sodium" in prefer and meal.sodium_mg <= 150:
+        why.append("chosen as a lower-sodium option")
+    if "lower_sugar" in prefer and meal.sugar_g <= 8:
+        why.append("chosen as a lower-sugar option")
+    if "gentle" in prefer and meal.meal_type not in ("Condiment",):
+        why.append("chosen as a gentler option")
+    for f in focus:
+        value = getattr(meal, f["column"], 0) or 0
+        if value >= 15:
+            why.append(f"good source of {f['nutrient']} — {f['rationale']}")
+            break
+    if not why:
+        why.append("matches your selected trimester and dietary preferences")
+    return why
 
-    result = await db.execute(query)
-    candidates = list(result.scalars().all())
 
-    if not candidates:
-        # Fallback: try without region filter
-        query = select(Meal).where(
-            Meal.meal_type.in_(meal_type_patterns),
-            Meal.trimester_suitability.contains([trimester_str]),
+class _CandidatePool:
+    """Per-slot candidate pools with rotation exclusion across the week."""
+
+    def __init__(self, meals_by_slot: dict[str, list[Meal]]) -> None:
+        self.by_slot = {slot: list(meals) for slot, meals in meals_by_slot.items()}
+
+    def take(self, slot: str, rng: random.Random, n: int, exclude_ids: set[str],
+             day_index: int = 1) -> list[Meal]:
+        pool = [m for m in self.by_slot.get(slot, []) if str(m.id) not in exclude_ids]
+        if not pool:
+            # Recycle: allow reuse only when the catalog is genuinely thin.
+            # Rotate by day so later days cycle through the catalog rather
+            # than repeating the same meals every day.
+            pool = list(self.by_slot.get(slot, []))
+            if pool:
+                shift = ((day_index - 1) * n) % len(pool)
+                pool = pool[shift:] + pool[:shift]
+        rng.shuffle(pool)
+        picked = pool[:n]
+        return picked
+
+
+async def _load_candidates(
+    db: AsyncSession,
+    validator: SafetyValidator,
+    record: HealthRecord,
+    user: User,
+    prefer: list[str],
+) -> dict[str, list[Meal]]:
+    """Load, then apply safety filters BEFORE selection."""
+    trimester_label = TRIMESTER_LABELS.get(record.trimester, "First")
+    veg_only = record.dietary_preference == "veg" or (
+        record.dietary_preference == "nonveg" and record.is_vegetarian
+    )
+
+    eager = selectinload(Meal.allergen_links).selectinload(MealAllergen.allergen)
+    is_pg = db.get_bind().dialect.name == "postgresql"
+    if is_pg:
+        result = await db.execute(
+            select(Meal).options(eager).where(Meal.trimester_suitability.contains([trimester_label]))
         )
-        if is_vegetarian:
-            query = query.where(Meal.is_vegetarian == True)
-        if exclude_ids:
-            query = query.where(~Meal.id.in_(exclude_ids))
-        result = await db.execute(query)
-        candidates = list(result.scalars().all())
+        all_meals = list(result.scalars().all())
+    else:
+        # SQLite (tests): fetch and filter in Python (no @> operator).
+        result = await db.execute(select(Meal).options(eager))
+        all_meals = [
+            m for m in result.scalars().all()
+            if trimester_label in (m.trimester_suitability or [])
+        ]
+    if not all_meals:
+        result = await db.execute(select(Meal).options(eager))
+        all_meals = list(result.scalars().all())
 
-    if not candidates:
-        return []
+    user_allergies = list(record.allergies or [])
+    user_conditions = list(record.medical_conditions or [])
 
-    # Score each candidate by how well it matches top nutrient priorities
-    def _score_meal(meal: Meal) -> float:
-        score = 0.0
-        for i, nutrient in enumerate(top_nutrients):
-            col = NUTRIENT_COLUMNS.get(nutrient)
-            if col:
-                value = getattr(meal, col, 0) or 0
-                weight = len(top_nutrients) - i  # Higher weight for higher priority
-                score += value * weight
-        return score
-
-    candidates.sort(key=_score_meal, reverse=True)
-
-    # Pick top candidates with some randomness for variety
-    top_pool = candidates[:max(count * 3, 6)]
-    selected = random.sample(top_pool, min(count, len(top_pool)))
-    return selected
+    pools: dict[str, list[Meal]] = {slot: [] for slot in SLOTS}
+    for meal in all_meals:
+        if veg_only and not meal.is_vegetarian:
+            continue
+        if meal.meal_type == "Dessert" and "Dessert" in conditions_domain.restrictions_for_conditions(user_conditions)["exclude_meal_types"]:
+            pass  # hard condition exclusion handled below via validator too
+        view = MealView.from_orm(meal)
+        result = validator.validate_meal(view, user_allergies, user_conditions)
+        if not result.allowed:
+            continue
+        if not conditions_domain.meal_matches_preference(
+            {"name": meal.name, "meal_type": meal.meal_type}, prefer
+        ):
+            continue
+        for slot, patterns in MEAL_TYPE_PATTERNS.items():
+            if meal.meal_type in patterns:
+                pools[slot].append(meal)
+                break
+    return pools
 
 
 async def generate_diet_plan(
     db: AsyncSession,
     user_id: uuid.UUID,
     health_record_id: uuid.UUID,
-) -> DietPlan:
-    """
-    Generate a personalized weekly diet plan based on health record and ML predictions.
-    """
-    # Fetch user and health record
-    user_result = await db.execute(select(User).where(User.id == user_id))
-    user = user_result.scalar_one_or_none()
+    validator: SafetyValidator,
+    seed: int | None = None,
+) -> tuple[DietPlan, list[str]]:
+    """Generate a genuine 7-day plan. Returns (plan, exclusions_summary_lines)."""
+    user = await db.get(User, user_id)
     if not user:
         raise ValueError("User not found")
 
-    hr_result = await db.execute(
+    # Same consent gate as health records — meal planning is a use of
+    # personal health data (docs/PRIVACY_AND_DATA.md).
+    if not await has_current_consent(db, user_id):
+        raise ConsentRequiredError()
+
+    result = await db.execute(
         select(HealthRecord).where(
-            HealthRecord.id == health_record_id,
-            HealthRecord.user_id == user_id,
+            HealthRecord.id == health_record_id, HealthRecord.user_id == user_id
         )
     )
-    health_record = hr_result.scalar_one_or_none()
-    if not health_record:
+    record = result.scalar_one_or_none()
+    if not record:
         raise ValueError("Health record not found")
 
-    # ── ML Prediction ────────────────────────────────────────
-    weight_gain = 0.0
-    if user.pre_pregnancy_weight_kg:
-        weight_gain = health_record.current_weight_kg - user.pre_pregnancy_weight_kg
+    # Centralized gestational consistency (backend gate; TEST 3).
+    validate_gestational_age(record.trimester, record.week_number)
 
-    priorities = predict_nutrient_priorities(
-        trimester=health_record.trimester,
-        week=health_record.week_number,
-        bmi=health_record.bmi or 24.0,
-        hemoglobin=health_record.hemoglobin,
-        blood_sugar=health_record.blood_sugar_fasting,
-        is_vegetarian=health_record.is_vegetarian,
-        region=user.region,
-        age=user.age or 28,
-        weight_gain=weight_gain,
+    user_conditions = list(record.medical_conditions or [])
+    condition_bundle = conditions_domain.restrictions_for_conditions(user_conditions)
+    prefer = condition_bundle["prefer"]
+
+    focus = TRIMESTER_FOCUS.get(record.trimester, TRIMESTER_FOCUS[2])
+    pools = await _load_candidates(db, validator, record, user, prefer)
+
+    rng = random.Random(seed if seed is not None else record.week_number)
+    days: list[dict] = []
+    used_ids: set[str] = set()
+
+    for day_index in range(1, 8):
+        day_meals: dict[str, list[dict]] = {}
+        for slot in SLOTS:
+            picked = _CandidatePool(pools).take(
+                slot, rng, n=2, exclude_ids=used_ids, day_index=day_index
+            )
+            cards = []
+            for meal in picked:
+                view = MealView.from_orm(meal)
+                final = validator.validate_meal(
+                    view, list(record.allergies or []), user_conditions
+                )
+                if not final.allowed:
+                    # FINAL SAFETY VALIDATION (TEST 11) — never include.
+                    continue
+                why = _why_for(meal, record, prefer, focus)
+                cards.append(_meal_card(meal, why, final.cross_contact))
+                used_ids.add(str(meal.id))
+            day_meals[slot] = cards
+        days.append({"day_index": day_index, "meals": day_meals})
+
+    # Exclusion summary for transparency.
+    total_candidates = sum(len(v) for v in pools.values())
+    exclusions = {
+        "candidate_pool_size": total_candidates,
+        "filters_applied": [
+            "allergy_hard_exclusion",
+            "dietary_preference",
+            *(["condition_safety"] if user_conditions else []),
+            "food_safety",
+            "content_status",
+        ],
+        "allergy_categories": sorted({a.lower() for a in (record.allergies or [])}),
+    }
+
+    reference = TRIMESTER_REFERENCE.get(record.trimester, TRIMESTER_REFERENCE[2])
+    alerts = list(condition_bundle["explain"])
+    alerts.append(
+        "Meal ideas are based on your selected preferences and available "
+        "nutrition information. This is general information, not a "
+        "prescription — discuss targets with your clinician."
     )
-    top_nutrients = get_top_nutrients(priorities, top_n=4)
-
-    # ── Generate alerts based on priorities ───────────────────
-    alerts = []
-    if priorities.get("iron", 0) > 7:
-        alerts.append("⚠️ Iron needs are elevated. Iron-rich meals prioritized.")
-    if priorities.get("folate", 0) > 7:
-        alerts.append("⚠️ Folate is critical this period. Folate-rich foods included.")
-    if priorities.get("calcium", 0) > 7:
-        alerts.append("⚠️ Calcium needs are high. Dairy and calcium-rich meals added.")
-    if priorities.get("fiber", 0) > 7:
-        alerts.append("🥬 Fiber needs elevated. High-fiber meals included for digestion.")
-
-    # ── Select meals per type ─────────────────────────────────
-    used_ids = set()
-
-    breakfast_meals_db = await _select_meals(
-        db, "breakfast", user.region, health_record.trimester,
-        health_record.is_vegetarian, top_nutrients, count=3, exclude_ids=used_ids,
-    )
-    used_ids.update(m.id for m in breakfast_meals_db)
-
-    lunch_meals_db = await _select_meals(
-        db, "lunch", user.region, health_record.trimester,
-        health_record.is_vegetarian, top_nutrients, count=3, exclude_ids=used_ids,
-    )
-    used_ids.update(m.id for m in lunch_meals_db)
-
-    dinner_meals_db = await _select_meals(
-        db, "dinner", user.region, health_record.trimester,
-        health_record.is_vegetarian, top_nutrients, count=3, exclude_ids=used_ids,
-    )
-    used_ids.update(m.id for m in dinner_meals_db)
-
-    snack_meals_db = await _select_meals(
-        db, "snack", user.region, health_record.trimester,
-        health_record.is_vegetarian, top_nutrients, count=2, exclude_ids=used_ids,
-    )
-
-    # ── Targets from trimester ────────────────────────────────
-    targets = TRIMESTER_TARGETS.get(health_record.trimester, TRIMESTER_TARGETS[2])
 
     today = date.today()
     plan = DietPlan(
         user_id=user_id,
         health_record_id=health_record_id,
-        trimester=health_record.trimester,
-        week_number=health_record.week_number,
-        breakfast_meals=[_meal_to_dict(m) for m in breakfast_meals_db],
-        lunch_meals=[_meal_to_dict(m) for m in lunch_meals_db],
-        dinner_meals=[_meal_to_dict(m) for m in dinner_meals_db],
-        snack_meals=[_meal_to_dict(m) for m in snack_meals_db],
-        target_calories=targets["calories"],
-        target_protein=targets["protein"],
-        target_iron=targets["iron"],
-        target_calcium=targets["calcium"],
+        trimester=record.trimester,
+        week_number=record.week_number,
+        days=days,
+        target_calories=reference["calories"],
+        target_protein=reference["protein"],
+        target_iron=reference["iron"],
+        target_calcium=reference["calcium"],
         dietary_alerts=alerts,
+        exclusions_applied=exclusions,
         user_corrections=[],
-        is_emergency_plan=False,
         plan_start=today,
-        plan_end=today + timedelta(days=7),
+        plan_end=today + timedelta(days=6),  # 7 days inclusive
     )
     db.add(plan)
+    await db.flush()
+    await db.refresh(plan)
+    return plan, alerts
+
+
+async def swap_meal(
+    db: AsyncSession,
+    user_id: uuid.UUID,
+    plan_id: uuid.UUID,
+    day_index: int,
+    slot: str,
+    current_meal_id: str,
+    validator: SafetyValidator,
+    seed: int | None = None,
+) -> Optional[DietPlan]:
+    """Swap one meal for another compatible meal — full safety re-run."""
+    if slot not in SLOTS:
+        raise ValueError("Invalid meal slot")
+    if not 1 <= day_index <= 7:
+        raise ValueError("Day index must be 1-7")
+
+    result = await db.execute(
+        select(DietPlan).where(DietPlan.id == plan_id, DietPlan.user_id == user_id)
+    )
+    plan = result.scalar_one_or_none()
+    if plan is None:
+        return None
+
+    result = await db.execute(
+        select(HealthRecord).where(
+            HealthRecord.id == plan.health_record_id, HealthRecord.user_id == user_id
+        )
+    )
+    record = result.scalar_one_or_none()
+
+    user = await db.get(User, user_id)
+    if record is not None:
+        user_conditions = list(record.medical_conditions or [])
+        user_allergies = list(record.allergies or [])
+        trimester = record.trimester
+    else:
+        # Personalized-plan path: safety context lives on the profile.
+        if plan.health_record_id is not None:
+            raise ValueError("Original health record no longer available")
+        if user is None:
+            raise ValueError("User not found")
+        user_conditions = []
+        user_allergies = list(user.declared_allergies or [])
+        trimester = plan.trimester
+    prefer = conditions_domain.restrictions_for_conditions(user_conditions)["prefer"]
+    focus = TRIMESTER_FOCUS.get(trimester, TRIMESTER_FOCUS[2])
+
+    # Mutate a DEEP COPY of the plan days: in-place mutation of the loaded
+    # JSON structure is invisible to the ORM's change detection (the "old"
+    # and "new" values would compare equal), so the swap would silently
+    # never persist.
+    days = copy.deepcopy(plan.days)
+    current_day = next(d for d in days if d["day_index"] == day_index)
+    current_ids = {
+        m["id"] for slot_meals in current_day["meals"].values() for m in slot_meals
+    }
+
+    trimester_label = TRIMESTER_LABELS.get(trimester, "First")
+    eager = selectinload(Meal.allergen_links).selectinload(MealAllergen.allergen)
+    if db.get_bind().dialect.name == "postgresql":
+        result = await db.execute(
+            select(Meal).options(eager).where(Meal.trimester_suitability.contains([trimester_label]))
+        )
+        candidates = list(result.scalars().all())
+    else:
+        result = await db.execute(select(Meal).options(eager))
+        candidates = [
+            m for m in result.scalars().all()
+            if trimester_label in (m.trimester_suitability or [])
+        ]
+
+    patterns = MEAL_TYPE_PATTERNS[slot]
+    rng = random.Random(seed if seed is not None else int(uuid.uuid4().int % 1e9))
+
+    replacement_card = None
+    for meal in rng.sample(candidates, len(candidates)) if candidates else []:
+        if str(meal.id) in current_ids or str(meal.id) == current_meal_id:
+            continue
+        if meal.meal_type not in patterns:
+            continue
+        view = MealView.from_orm(meal)
+        final = validator.validate_meal(view, user_allergies, user_conditions)
+        if not final.allowed:
+            continue
+        if not conditions_domain.meal_matches_preference(
+            {"name": meal.name, "meal_type": meal.meal_type}, prefer
+        ):
+            continue
+        why = _why_for(meal, record or user, prefer, focus)
+        why.append(
+            "swapped in as an alternative for the same meal slot — all your "
+            "safety filters were re-applied"
+        )
+        replacement_card = _meal_card(meal, why, final.cross_contact)
+        break
+
+    if replacement_card is None:
+        raise ValueError("No safe alternative meal is available for this slot")
+
+    # Replace only the swapped card within the same slot.
+    slot_cards = current_day["meals"][slot]
+    new_slot_cards = [
+        replacement_card if m["id"] == current_meal_id else m for m in slot_cards
+    ]
+    if all(m["id"] != replacement_card["id"] for m in new_slot_cards):
+        # current_meal_id not present — replace the first card.
+        new_slot_cards = [replacement_card] + new_slot_cards[1:]
+    current_day["meals"][slot] = new_slot_cards
+
+    plan.days = days
     await db.flush()
     await db.refresh(plan)
     return plan
 
 
-async def get_diet_plans(
-    db: AsyncSession, user_id: uuid.UUID
-) -> list[DietPlan]:
-    """Get all diet plans for a user, ordered by creation date."""
+async def get_diet_plans(db: AsyncSession, user_id: uuid.UUID) -> list[DietPlan]:
     result = await db.execute(
-        select(DietPlan)
-        .where(DietPlan.user_id == user_id)
-        .order_by(DietPlan.created_at.desc())
+        select(DietPlan).where(DietPlan.user_id == user_id).order_by(DietPlan.created_at.desc())
     )
     return list(result.scalars().all())
 
@@ -275,35 +448,19 @@ async def get_diet_plans(
 async def get_diet_plan_by_id(
     db: AsyncSession, plan_id: uuid.UUID, user_id: uuid.UUID
 ) -> Optional[DietPlan]:
-    """Get a specific diet plan."""
     result = await db.execute(
-        select(DietPlan).where(
-            DietPlan.id == plan_id,
-            DietPlan.user_id == user_id,
-        )
+        select(DietPlan).where(DietPlan.id == plan_id, DietPlan.user_id == user_id)
     )
     return result.scalar_one_or_none()
 
 
 async def submit_feedback(
-    db: AsyncSession,
-    user_id: uuid.UUID,
-    plan_id: uuid.UUID,
-    feedback: str,
-    rating: int,
+    db: AsyncSession, user_id: uuid.UUID, plan_id: uuid.UUID, feedback: str, rating: int
 ) -> DietPlan:
-    """Add user feedback/corrections to a diet plan."""
-    result = await db.execute(
-        select(DietPlan).where(
-            DietPlan.id == plan_id,
-            DietPlan.user_id == user_id,
-        )
-    )
-    plan = result.scalar_one_or_none()
+    plan = await get_diet_plan_by_id(db, plan_id, user_id)
     if plan is None:
         raise ValueError("Diet plan not found")
-
-    corrections = plan.user_corrections or []
+    corrections = list(copy.deepcopy(plan.user_corrections or []))
     corrections.append({
         "feedback": feedback,
         "rating": rating,

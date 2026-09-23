@@ -112,27 +112,55 @@ class _LoginScreenState extends ConsumerState<LoginScreen> with TickerProviderSt
 
                         const SizedBox(height: 28),
 
-                        // Login button
+                        // Sign in with Google (Supabase OAuth)
                         _AnimatedField(
                           delay: 500,
                           child: SizedBox(
                             height: 58,
-                            child: ElevatedButton(
+                            child: ElevatedButton.icon(
+                              icon: Container(
+                                width: 26,
+                                height: 26,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(13),
+                                ),
+                                padding: const EdgeInsets.all(5),
+                                child: const Text('G', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w800, color: Color(0xFF4285F4))),
+                              ),
                               onPressed: authState.isLoading ? null : () async {
-                                final ok = await ref.read(authStateProvider.notifier).login(_emailCtrl.text.trim(), _passCtrl.text);
+                                final ok = await ref.read(authStateProvider.notifier).login();
                                 if (ok && context.mounted) context.go('/home');
                               },
                               style: ElevatedButton.styleFrom(
+                                backgroundColor: AppColors.primary,
+                                foregroundColor: Colors.white,
                                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
                                 elevation: 4,
                                 shadowColor: AppColors.primary.withValues(alpha: 0.3),
                               ),
-                              child: authState.isLoading
+                              label: authState.isLoading
                                   ? const SizedBox(width: 24, height: 24, child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2.5))
                                   : Text(l.tr('sign_in'), style: const TextStyle(fontSize: 17)),
                             ),
                           ),
                         ),
+                        const SizedBox(height: 12),
+                        Text(
+                          'Continue with Google — sign in or create your account',
+                          style: TextStyle(fontSize: 12.5, color: AppColors.textSecondary),
+                          textAlign: TextAlign.center,
+                        ),
+                        const SizedBox(height: 8),
+                        if (authState.error != null)
+                          Padding(
+                            padding: const EdgeInsets.only(top: 4),
+                            child: Text(
+                              authState.error!,
+                              style: const TextStyle(color: AppColors.error, fontSize: 13),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
                         const SizedBox(height: 28),
 
                         // Register link

@@ -91,22 +91,38 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> with TickerProv
                     child: Text(authState.error!, style: const TextStyle(color: AppColors.error, fontSize: 13), textAlign: TextAlign.center),
                   ),
 
-                // Submit button
+                // Create account with Google (Supabase OAuth)
                 SizedBox(
                   height: 58,
-                  child: ElevatedButton(
+                  child: ElevatedButton.icon(
+                    icon: Container(
+                      width: 26,
+                      height: 26,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(13),
+                      ),
+                      padding: const EdgeInsets.all(5),
+                      child: const Text('G', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w800, color: Color(0xFF4285F4))),
+                    ),
                     onPressed: authState.isLoading ? null : () async {
-                      final ok = await ref.read(authStateProvider.notifier).register(
-                        email: _emailCtrl.text.trim(), password: _passCtrl.text, name: _nameCtrl.text.trim(),
-                        region: _region, language: _language, age: int.tryParse(_ageCtrl.text),
-                      );
+                      final ok = await ref.read(authStateProvider.notifier).register();
                       if (ok && context.mounted) context.go('/home');
                     },
-                    style: ElevatedButton.styleFrom(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)), elevation: 4, shadowColor: AppColors.primary.withValues(alpha: 0.3)),
-                    child: authState.isLoading
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColors.primary,
+                      foregroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)), elevation: 4, shadowColor: AppColors.primary.withValues(alpha: 0.3)),
+                    label: authState.isLoading
                         ? const SizedBox(width: 24, height: 24, child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2.5))
                         : Text('${l.tr('create_account')} ✨', style: const TextStyle(fontSize: 17)),
                   ),
+                ),
+                const SizedBox(height: 10),
+                Text(
+                  'Your Google account creates your AlmaDiet profile — add pregnancy details next.',
+                  style: TextStyle(fontSize: 12, color: AppColors.textSecondary),
+                  textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 24),
 

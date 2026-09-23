@@ -5,20 +5,19 @@ MealImage ORM Model — Caches AI-generated meal images.
 import uuid
 from datetime import datetime
 from sqlalchemy import String, Text, DateTime, ForeignKey, func
-from sqlalchemy.dialects.postgresql import UUID
+from app.database import Base, GUID, JSONType
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from app.database import Base
 
 
 class MealImage(Base):
     __tablename__ = "meal_images"
 
     id: Mapped[uuid.UUID] = mapped_column(
-        UUID(as_uuid=True), primary_key=True, default=uuid.uuid4
+        GUID(), primary_key=True, default=uuid.uuid4
     )
     meal_id: Mapped[uuid.UUID] = mapped_column(
-        UUID(as_uuid=True), ForeignKey("meals.id", ondelete="CASCADE"), nullable=False, index=True
+        GUID(), ForeignKey("meals.id", ondelete="CASCADE"), nullable=False, index=True
     )
     image_url: Mapped[str] = mapped_column(String(500), nullable=False)
     prompt_used: Mapped[str | None] = mapped_column(Text, nullable=True)

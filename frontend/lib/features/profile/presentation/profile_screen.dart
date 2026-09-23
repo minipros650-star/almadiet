@@ -1,12 +1,14 @@
+import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../../core/theme/app_colors.dart';
-import '../../../core/utils/responsive.dart';
 import '../../../core/utils/api_client.dart';
+import '../../../core/utils/responsive.dart';
 import '../../../core/localization/app_localizations.dart';
 import '../../../providers/auth_provider.dart';
 import '../../../providers/locale_provider.dart';
@@ -163,6 +165,36 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> with SingleTicker
             ),
             const SizedBox(height: 32),
 
+            // ── Privacy: my data ──
+            Container(
+              padding: const EdgeInsets.all(18),
+              decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(20), boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.04), blurRadius: 12)]),
+              child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                Row(children: [
+                  Icon(Icons.shield_outlined, color: AppColors.primary, size: 22),
+                  const SizedBox(width: 10),
+                  Text(l.tr('my_data'), style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
+                ]),
+                const SizedBox(height: 14),
+                Row(children: [
+                  Expanded(child: OutlinedButton.icon(
+                    onPressed: _exportData,
+                    icon: const Icon(Icons.download_rounded, size: 18),
+                    label: Text(l.tr('export_data'), style: const TextStyle(fontSize: 13)),
+                    style: OutlinedButton.styleFrom(foregroundColor: AppColors.primary, side: BorderSide(color: AppColors.primary.withValues(alpha: 0.4)), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
+                  )),
+                  const SizedBox(width: 10),
+                  Expanded(child: OutlinedButton.icon(
+                    onPressed: _confirmDeleteAccount,
+                    icon: const Icon(Icons.delete_forever_rounded, size: 18),
+                    label: Text(l.tr('delete_account'), style: const TextStyle(fontSize: 13)),
+                    style: OutlinedButton.styleFrom(foregroundColor: AppColors.error, side: BorderSide(color: AppColors.error.withValues(alpha: 0.4)), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
+                  )),
+                ]),
+              ]),
+            ),
+            const SizedBox(height: 32),
+
             // ── Logout ──
             SizedBox(
               height: 52,
@@ -182,6 +214,94 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> with SingleTicker
             ),
           ]),
         ),
+      ),
+    );
+  }
+
+  /// Download the user's data export (JSON) from the backend.
+  Future<void> _exportData() async {
+    final l = AppLocalizations.of(context);
+    try {
+      final api = ref.read(apiClientProvider);
+      final res = await api.dio.get('/api/v1/privacy/export');
+      final encoded = const JsonEncoder.withIndent('  ').convert(res.data);
+      final dir = await getTemporaryDirectory();
+      final file = File('${dir.path}/almadiet-data-export.json');
+      await file.writeAsString(encoded);
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text('${l.tr('export_ready')}: ${file.path}'),
+        backgroundColor: AppColors.success,
+      ));
+    } catch (_) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text(l.tr('error_generic')),
+        backgroundColor: AppColors.error,
+      ));
+    }
+  }
+
+  /// Account deletion with explicit confirmation — irreversible.
+  Future<void> _confirmDeleteAccount() async {
+    final l = AppLocalizations.of(context);
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        title: Text(l.tr('delete_account_title')),
+        content: Text(l.tr('delete_account_msg')),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(ctx, false), child: Text(l.tr('stay'))),
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, true),
+            style: TextButton.styleFrom(foregroundColor: AppColors.error),
+            child: Text(l.tr('delete_confirm')),
+          ),
+        ],
+      ),
+    );
+    if (confirmed != true) return;
+    try {
+      final api = ref.read(apiClientProvider);
+      await api.dio.delete('/api/v1/privacy/account');
+      await ref.read(authStateProvider.notifier).logout();
+      if (!mounted) return;
+      context.go('/login');
+    } catch (_) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text(l.tr('error_generic')),
+        backgroundColor: AppColors.error,
+      ));
+    }
+  }
+
+  /// Persist profile changes via authenticated PATCH. Success is shown only
+  /// after the backend confirms; failures surface a retryable message.
+  Future<void> _saveProfile({
+    required String name,
+    required String phone,
+    required String age,
+    required String height,
+    required String weight,
+  }) async {
+    final l = AppLocalizations.of(context);
+    final data = <String, dynamic>{};
+    if (name.isNotEmpty) data['name'] = name;
+    if (phone.isNotEmpty) data['phone'] = phone;
+    if (age.isNotEmpty) data['age'] = int.tryParse(age);
+    if (height.isNotEmpty) data['height_cm'] = double.tryParse(height);
+    if (weight.isNotEmpty) data['pre_pregnancy_weight_kg'] = double.tryParse(weight);
+
+    if (data.isEmpty) return;
+
+    final (ok, error) = await ref.read(authStateProvider.notifier).updateProfile(data);
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(ok ? l.tr('profile_updated') : (error ?? l.tr('profile_updated'))),
+        backgroundColor: ok ? AppColors.success : AppColors.error,
       ),
     );
   }
@@ -220,23 +340,14 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> with SingleTicker
               height: 52,
               child: ElevatedButton(
                 onPressed: () async {
-                  final api = ref.read(apiClientProvider);
-                  try {
-                    final data = <String, dynamic>{};
-                    if (nameCtrl.text.isNotEmpty) data['name'] = nameCtrl.text;
-                    if (phoneCtrl.text.isNotEmpty) data['phone'] = phoneCtrl.text;
-                    if (ageCtrl.text.isNotEmpty) data['age'] = int.tryParse(ageCtrl.text);
-                    if (heightCtrl.text.isNotEmpty) data['height_cm'] = double.tryParse(heightCtrl.text);
-                    if (weightCtrl.text.isNotEmpty) data['pre_pregnancy_weight_kg'] = double.tryParse(weightCtrl.text);
-                    await api.dio.put('/api/auth/me', data: data);
-                    // Refresh profile
-                    final res = await api.dio.get('/api/auth/me');
-                    ref.read(authStateProvider.notifier).login(res.data['email'], ''); // Will fail but state gets refreshed
-                  } catch (_) {}
-                  if (ctx.mounted) Navigator.pop(ctx);
-                  if (mounted) {
-                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l.tr('profile_updated')), backgroundColor: AppColors.success));
-                  }
+                  Navigator.pop(ctx);
+                  await _saveProfile(
+                    name: nameCtrl.text,
+                    phone: phoneCtrl.text,
+                    age: ageCtrl.text,
+                    height: heightCtrl.text,
+                    weight: weightCtrl.text,
+                  );
                 },
                 child: Text(l.tr('save_changes')),
               ),

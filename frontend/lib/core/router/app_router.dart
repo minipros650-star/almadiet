@@ -9,9 +9,11 @@ import '../../features/home/presentation/home_screen.dart';
 import '../../features/health_input/presentation/health_input_screen.dart';
 import '../../features/diet_plan/presentation/diet_plan_screen.dart';
 import '../../features/diet_plan/presentation/meal_detail_screen.dart';
-import '../../features/emergency/presentation/emergency_screen.dart';
+import '../../features/urgent_help/presentation/urgent_help_screen.dart';
 import '../../features/profile/presentation/profile_screen.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
+import '../../features/onboarding/presentation/consent_screen.dart';
+import '../../features/onboarding/presentation/profile_completion_screen.dart';
 import '../theme/app_colors.dart';
 import '../localization/app_localizations.dart';
 import '../../providers/auth_provider.dart';
@@ -49,11 +51,24 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       if (location == '/splash') return null;
 
       // Public routes that don't need auth
-      final publicRoutes = ['/onboarding', '/login', '/register'];
+      final publicRoutes = ['/onboarding', '/login', '/register', '/consent'];
       final isPublicRoute = publicRoutes.contains(location);
 
-      // If authenticated and on a public route, go to home
-      if (isAuthenticated && isPublicRoute) return '/home';
+      // If authenticated and on a public route, go to home — unless consent
+      // is still required, in which case consent itself is the destination.
+      if (isAuthenticated && isPublicRoute) {
+        // The consent screen is where a consent-gated user must stay; never
+        // bounce them away from it (that would create a redirect loop).
+        if (location == '/consent') return null;
+        if (authState.consentRequired) return '/consent';
+        return '/home';
+      }
+
+      // Consent gate: an authenticated user who has not accepted the current
+      // consent version cannot proceed anywhere else.
+      if (isAuthenticated && authState.consentRequired) {
+        return '/consent';
+      }
 
       // If not authenticated and on a protected route, go to login
       if (!isAuthenticated && !isPublicRoute) return '/login';
@@ -82,6 +97,15 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         pageBuilder: (context, state) => _fadeSlideTransition(const OnboardingScreen(), state),
       ),
       GoRoute(
+        path: '/consent',
+        pageBuilder: (context, state) => _fadeSlideTransition(const ConsentScreen(), state),
+      ),
+      GoRoute(
+        path: '/profile-completion',
+        pageBuilder: (context, state) =>
+            _fadeSlideTransition(const ProfileCompletionScreen(), state),
+      ),
+      GoRoute(
         path: '/login',
         pageBuilder: (context, state) => _fadeSlideTransition(const LoginScreen(), state),
       ),
@@ -101,8 +125,8 @@ final appRouterProvider = Provider<GoRouter>((ref) {
             pageBuilder: (context, state) => _fadeSlideTransition(const DietPlanScreen(), state),
           ),
           GoRoute(
-            path: '/emergency',
-            pageBuilder: (context, state) => _fadeSlideTransition(const EmergencyScreen(), state),
+            path: '/urgent-help',
+            pageBuilder: (context, state) => _fadeSlideTransition(const UrgentHelpScreen(), state),
           ),
           GoRoute(
             path: '/profile',
@@ -190,7 +214,7 @@ class HomeShell extends StatelessWidget {
 
   static int _indexFromLocation(String location) {
     if (location.startsWith('/diet')) return 1;
-    if (location.startsWith('/emergency')) return 2;
+    if (location.startsWith('/urgent-help')) return 2;
     if (location.startsWith('/profile')) return 3;
     return 0;
   }
@@ -220,7 +244,7 @@ class HomeShell extends StatelessWidget {
               children: [
                 _NavItem(icon: Icons.home_rounded, label: l.tr('home'), isSelected: currentIndex == 0, onTap: () => context.go('/home')),
                 _NavItem(icon: Icons.restaurant_menu_rounded, label: l.tr('diet'), isSelected: currentIndex == 1, onTap: () => context.go('/diet')),
-                _NavItem(icon: Icons.emergency_rounded, label: l.tr('emergency'), isSelected: currentIndex == 2, onTap: () => context.go('/emergency')),
+                _NavItem(icon: Icons.health_and_safety_rounded, label: l.tr('urgent_help'), isSelected: currentIndex == 2, onTap: () => context.go('/urgent-help')),
                 _NavItem(icon: Icons.person_rounded, label: l.tr('profile'), isSelected: currentIndex == 3, onTap: () => context.go('/profile')),
               ],
             ),
