@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import pytest
 
-from app.auth.password import hash_password, needs_rehash, validate_password_strength, verify_password
+from app.auth.password import hash_password, validate_password_strength, verify_password
 
 
 def test_argon2_hash_and_verify():
@@ -36,7 +36,7 @@ def test_access_token_roundtrip():
 
 def test_expired_token_rejected():
     """TEST 6 (unit): expired tokens are never accepted."""
-    from jose import jwt as jose_jwt
+    import jwt as jose_jwt
     from app.config import settings
     from app.auth.jwt_handler import verify_access_token
     from datetime import datetime, timedelta, timezone

@@ -13,9 +13,10 @@ import secrets
 import uuid
 from datetime import datetime, timedelta, timezone
 
+import jwt
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
-from jose import JWTError, jwt
+from jwt import InvalidTokenError as JWTError
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -29,6 +30,7 @@ security = HTTPBearer(auto_error=False)
 
 # ── Access tokens ────────────────────────────────────────────────────────
 
+
 def create_access_token(user_id: uuid.UUID) -> str:
     now = datetime.now(timezone.utc)
     payload = {
@@ -38,7 +40,9 @@ def create_access_token(user_id: uuid.UUID) -> str:
         "exp": now + timedelta(minutes=settings.JWT_ACCESS_TOKEN_EXPIRE_MINUTES),
         "jti": secrets.token_hex(8),
     }
-    return jwt.encode(payload, settings.JWT_SECRET_KEY, algorithm=settings.JWT_ALGORITHM)
+    return jwt.encode(
+        payload, settings.JWT_SECRET_KEY, algorithm=settings.JWT_ALGORITHM
+    )
 
 
 def verify_access_token(token: str) -> str | None:
@@ -59,6 +63,7 @@ def verify_access_token(token: str) -> str | None:
 
 # ── Refresh tokens (opaque, hashed at rest, rotating) ────────────────────
 
+
 def _hash_token(raw: str) -> str:
     return hashlib.sha256(raw.encode("utf-8")).hexdigest()
 
@@ -76,25 +81,32 @@ def generate_refresh_token() -> tuple[str, str]:
     return raw, _hash_token(raw)
 
 
-async def issue_refresh_token(db: AsyncSession, user_id: uuid.UUID, family_id: uuid.UUID | None = None) -> str:
+async def issue_refresh_token(
+    db: AsyncSession, user_id: uuid.UUID, family_id: uuid.UUID | None = None
+) -> str:
     family_id = family_id or uuid.uuid4()
     raw, token_hash = generate_refresh_token()
     row = RefreshToken(
         user_id=user_id,
         token_hash=token_hash,
         family_id=family_id,
-        expires_at=datetime.now(timezone.utc) + timedelta(days=settings.REFRESH_TOKEN_EXPIRE_DAYS),
+        expires_at=datetime.now(timezone.utc)
+        + timedelta(days=settings.REFRESH_TOKEN_EXPIRE_DAYS),
     )
     db.add(row)
     await db.flush()
     return raw
 
 
-async def rotate_refresh_token(db: AsyncSession, raw_token: str) -> tuple[User, str] | None:
+async def rotate_refresh_token(
+    db: AsyncSession, raw_token: str
+) -> tuple[User, str] | None:
     """Validate + rotate. On reuse of a rotated/revoked token the whole
     family is revoked (theft detection). Returns (user, new_raw) or None."""
     token_hash = _hash_token(raw_token)
-    result = await db.execute(select(RefreshToken).where(RefreshToken.token_hash == token_hash))
+    result = await db.execute(
+        select(RefreshToken).where(RefreshToken.token_hash == token_hash)
+    )
     row = result.scalar_one_or_none()
     if row is None:
         return None
@@ -117,7 +129,9 @@ async def rotate_refresh_token(db: AsyncSession, raw_token: str) -> tuple[User, 
 
 async def revoke_token(db: AsyncSession, raw_token: str) -> bool:
     token_hash = _hash_token(raw_token)
-    result = await db.execute(select(RefreshToken).where(RefreshToken.token_hash == token_hash))
+    result = await db.execute(
+        select(RefreshToken).where(RefreshToken.token_hash == token_hash)
+    )
     row = result.scalar_one_or_none()
     if row is None or row.revoked_at is not None:
         return False
@@ -162,6 +176,7 @@ async def revoke_all_user_tokens(db: AsyncSession, user_id: uuid.UUID) -> int:
 
 
 # ── FastAPI dependency ───────────────────────────────────────────────────
+
 
 async def get_current_user(
     credentials: HTTPAuthorizationCredentials | None = Depends(security),
@@ -229,9 +244,13 @@ async def get_current_user(
     try:
         user_id = uuid.UUID(user_id_str)
     except ValueError:
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid session")
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid session"
+        )
 
     user = await db.get(User, user_id)
     if user is None:
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid session")
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid session"
+        )
     return user

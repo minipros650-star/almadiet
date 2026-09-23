@@ -7,7 +7,7 @@
       "use": "@vercel/python",
       "config": {
         "maxDuration": 30,
-        "includeFiles": "backend/app/**"
+        "includeFiles": "backend/**"
       }
     }
   ],
