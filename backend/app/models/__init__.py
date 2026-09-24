@@ -12,6 +12,8 @@ from app.models.health_record import HealthRecord
 from app.models.meal import Meal
 from app.models.allergen import Allergen, MealAllergen
 from app.models.content_version import ContentVersion
+from app.models.content_role import ContentRoleGrant
+from app.models.content_transition import ContentTransition
 from app.models.diet_plan import DietPlan
 from app.models.urgent_note import UrgentHelpNote
 from app.models.meal_image import MealImage
@@ -37,6 +39,8 @@ __all__ = [
     "Allergen",
     "MealAllergen",
     "ContentVersion",
+    "ContentRoleGrant",
+    "ContentTransition",
     "DietPlan",
     "UrgentHelpNote",
     "MealImage",

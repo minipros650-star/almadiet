@@ -173,3 +173,58 @@ def test_settings_normalizes_prisma_style_pooler_url(monkeypatch):
     assert s.DATABASE_URL == (
         "postgresql+asyncpg://postgres.abc:pw@aws-0-ap-south-1.pooler.supabase.com:6543/postgres"
     )
+
+
+# ── Content review policy ─────────────────────────────────────────────────
+
+
+def test_separation_of_duties_is_on_by_default(monkeypatch):
+    monkeypatch.setenv("ENVIRONMENT", "development")
+    monkeypatch.delenv("CONTENT_REQUIRE_SEPARATION_OF_DUTIES", raising=False)
+    assert _make_settings(monkeypatch).CONTENT_REQUIRE_SEPARATION_OF_DUTIES is True
+
+
+def test_production_cannot_relax_separation_of_duties(monkeypatch):
+    """Like CONTENT_INCLUDE_STATUSES, production may only tighten."""
+    monkeypatch.setenv("ENVIRONMENT", "production")
+    monkeypatch.setenv("DEBUG", "false")
+    monkeypatch.setenv("JWT_SECRET_KEY", "z" * 48)
+    monkeypatch.setenv("ALLOWED_ORIGINS", "https://app.example.com")
+    monkeypatch.setenv("CONTENT_REQUIRE_SEPARATION_OF_DUTIES", "false")
+    assert _make_settings(monkeypatch).CONTENT_REQUIRE_SEPARATION_OF_DUTIES is True
+
+
+def test_development_may_relax_separation_of_duties(monkeypatch):
+    monkeypatch.setenv("ENVIRONMENT", "development")
+    monkeypatch.setenv("CONTENT_REQUIRE_SEPARATION_OF_DUTIES", "false")
+    assert _make_settings(monkeypatch).CONTENT_REQUIRE_SEPARATION_OF_DUTIES is False
+
+
+def test_reviewer_bootstrap_allowlist_is_ignored_in_production(monkeypatch):
+    """Production review authority must be a database grant, not an env var."""
+    import app.auth.content_authz as authz
+
+    monkeypatch.setenv("BOOTSTRAP_ADMIN_EMAILS", "admin@example.com")
+    monkeypatch.setattr(authz.settings, "ENVIRONMENT", "production")
+    assert authz._dev_bootstrap_emails() == set()
+
+
+def test_reviewer_bootstrap_allowlist_applies_in_development(monkeypatch):
+    import app.auth.content_authz as authz
+
+    monkeypatch.setenv("BOOTSTRAP_ADMIN_EMAILS", "admin@example.com,lead@example.com")
+    monkeypatch.setattr(authz.settings, "ENVIRONMENT", "development")
+    assert authz._dev_bootstrap_emails() == {"admin@example.com", "lead@example.com"}
+
+
+def test_no_application_code_reads_reviewer_emails():
+    """The email allowlist must not remain a review authority anywhere."""
+    import pathlib
+
+    app_dir = pathlib.Path(__file__).resolve().parent.parent / "app"
+    offenders = [
+        str(path.relative_to(app_dir))
+        for path in app_dir.rglob("*.py")
+        if "REVIEWER_EMAILS" in path.read_text(encoding="utf-8")
+    ]
+    assert offenders == [], f"REVIEWER_EMAILS is still read by: {offenders}"

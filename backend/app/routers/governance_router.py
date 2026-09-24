@@ -9,13 +9,12 @@ Reviewer-only control plane for the recommendation architecture:
   APPROVE (only when the run passed all gates). No auto-promotion.
 * Retiring a model flips its status; approval rows are never edited.
 
-All endpoints require the reviewer gate (REVIEWER_EMAILS; dev bootstrap
-allowlist). Regular users receive 403.
+All endpoints require the reviewer gate: a database-granted content staff role
+(content_role_grants). Regular users receive 403.
 """
 
 from __future__ import annotations
 
-import os
 from datetime import datetime, timezone
 
 from fastapi import APIRouter, Depends, HTTPException, status
@@ -23,8 +22,7 @@ from pydantic import BaseModel, Field
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.auth.jwt_handler import get_current_user
-from app.config import settings
+from app.auth.content_authz import require_reviewer
 from app.database import get_db
 from app.models.evidence import (
     ModelEvaluationRun,
@@ -36,21 +34,8 @@ from app.services.audit_service import EventCodes, record_event
 router = APIRouter(prefix="/api/v1/governance", tags=["Governance (admin)"])
 
 
-def require_reviewer(user: object = Depends(get_current_user)) -> object:
-    reviewer_emails = {
-        e.strip().lower()
-        for e in os.getenv("REVIEWER_EMAILS", "").split(",")
-        if e.strip()
-    }
-    if settings.ENVIRONMENT == "development" and not reviewer_emails:
-        reviewer_emails = {
-            e.strip().lower()
-            for e in os.getenv("BOOTSTRAP_ADMIN_EMAILS", "admin@example.com").split(",")
-            if e.strip()
-        }
-    if getattr(user, "email", "").lower() not in reviewer_emails:
-        raise HTTPException(status.HTTP_403_FORBIDDEN, detail="Reviewer privileges required")
-    return user
+# require_reviewer (imported above) is the reviewer gate for these routes:
+# a database-granted content role, resolved from the validated token.
 
 
 def _now() -> datetime:

@@ -15,6 +15,10 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.config import settings
 from app.domain.allergens import DISPLAY_NAMES, AllergenCategory, allergens_for_ingredients
+from app.domain.clinical_claims import (
+    BANNED_CLAIMS,  # noqa: F401 — re-exported for callers that import it here
+    sanitize_patient_fields,
+)
 from app.domain.content_state import ContentStatus
 from app.models.allergen import Allergen, MealAllergen
 from app.models.meal import Meal
@@ -29,13 +33,9 @@ NON_VEG_KEYWORDS = {
     "liver", "netholi", "mathi", "meen", "mutta",
 }
 
-# Claim phrases prohibited in seed content (ADR/0001).
-BANNED_CLAIMS = (
-    "clinically approved", "medically approved", "who approved",
-    "who certified", "doctor approved", "clinically validated",
-    "medically validated", "clinically proven", "medically proven",
-    "ai doctor", "clinical ai",
-)
+# The clinical-claim policy (phrases, sanitizer and the patient-visible field
+# inventory) lives in app/domain/clinical_claims.py. BANNED_CLAIMS is imported
+# above and re-exported here for backwards compatibility.
 
 
 def _infer_vegetarian(item: dict) -> bool:
@@ -49,19 +49,6 @@ def _infer_vegetarian(item: dict) -> bool:
             if kw in ing_name:
                 return False
     return True
-
-
-def _strip_banned_claims(text: str | None) -> str | None:
-    """Remove unsourced clinical-claim sentences from free text."""
-    if not text:
-        return text
-    cleaned_lines = []
-    for line in text.replace("; ", ".\n").split(". "):
-        low = line.lower()
-        if any(claim in low for claim in BANNED_CLAIMS):
-            continue
-        cleaned_lines.append(line.strip().rstrip("."))
-    return ". ".join(x for x in cleaned_lines if x) or None
 
 
 async def _ensure_allergen_rows(db: AsyncSession) -> dict[str, Allergen]:
@@ -168,7 +155,9 @@ async def seed_meals(db: AsyncSession) -> int:
         trimester_list = trimester_raw if isinstance(trimester_raw, list) else [trimester_raw]
 
         ingredients = item.get("ingredients") or []
-        cautions = _strip_banned_claims(item.get("cautions"))
+        # Raw text goes in; sanitize_patient_fields() below applies the
+        # clinical-claim policy to every patient-visible prose field.
+        cautions = item.get("cautions")
 
         meal = Meal(
             dataset_id=item.get("id"),
@@ -207,6 +196,14 @@ async def seed_meals(db: AsyncSession) -> int:
             image_url=item.get("image_url") or build_image_url(english_name, item.get("region", "")),
             is_vegetarian=_infer_vegetarian(item),
         )
+        removed_claims = sanitize_patient_fields(meal)
+        if removed_claims:
+            logger.warning(
+                "Stripped unsourced clinical claims from meal %s: %s",
+                english_name,
+                sorted(removed_claims),
+            )
+
         db.add(meal)
         await db.flush()
 

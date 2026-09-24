@@ -4,6 +4,9 @@ Proves, without touching production, that an import through the project's own
 ``seed_meals`` path lands every meal in the review queue, produces allergen
 links that are complete with respect to the safety matcher, carries no
 unsourced clinical claims, and stays invisible until a clinician approves it.
+
+The final test closes the loop: imported content can be promoted, and only
+through the role-gated review then publication workflow.
 """
 
 from __future__ import annotations
@@ -145,23 +148,56 @@ async def test_approved_content_is_the_only_thing_that_becomes_visible(db_sessio
     assert [m.id for m in visible] == [meal.id]
 
 
-@pytest.mark.xfail(
-    strict=True,
-    reason="No endpoint or service moves a meal from REVIEW_REQUIRED to REVIEWED, so "
-           "approve_meal() cannot promote freshly imported content: the clinician "
-           "approval path is unpassable and imported meals stay invisible forever.",
-)
 async def test_clinician_can_promote_a_freshly_imported_meal(db_session):
+    """The review -> publication workflow can promote imported content.
+
+    This is the counterpart to the import gate: content lands in
+    REVIEW_REQUIRED and can only become visible through two distinct,
+    role-granted acts.
+    """
     from sqlalchemy import select
 
+    from app.domain.content_roles import ContentRole
     from app.models.meal import Meal
-    from app.services.meal_service import approve_meal, get_meals
+    from app.models.user import User
+    from app.services.content_review_service import (
+        ReviewActor,
+        grant_role,
+        publish_meal,
+        review_meal,
+    )
+    from app.services.meal_service import get_meals
 
     await _import(db_session)
     meal = (await db_session.execute(select(Meal))).scalars().first()
 
-    approved = await approve_meal(db_session, meal.id, reviewer="clinician@almadiet.test")
+    reviewer = User(
+        email="rev@almadiet.test", password_hash="x", name="Reviewer",
+        region="kerala", language="en",
+    )
+    publisher = User(
+        email="pub@almadiet.test", password_hash="x", name="Publisher",
+        region="kerala", language="en",
+    )
+    db_session.add_all([reviewer, publisher])
+    await db_session.flush()
+    await grant_role(db_session, user_id=reviewer.id, role=ContentRole.REVIEWER)
+    await grant_role(db_session, user_id=publisher.id, role=ContentRole.PUBLISHER)
+
+    await review_meal(
+        db_session,
+        meal_id=meal.id,
+        actor=ReviewActor(reviewer.id, reviewer.email, ContentRole.REVIEWER),
+        rationale="imported row checked",
+    )
+    await publish_meal(
+        db_session,
+        meal_id=meal.id,
+        actor=ReviewActor(publisher.id, publisher.email, ContentRole.PUBLISHER),
+        rationale="clinically appropriate",
+    )
     await db_session.commit()
 
-    assert approved.content_status == "PUBLISHED"
-    assert [m.id for m in await get_meals(db_session, include_statuses=["PUBLISHED"])] == [meal.id]
+    assert meal.content_status == "PUBLISHED"
+    visible = await get_meals(db_session, include_statuses=["PUBLISHED"])
+    assert [m.id for m in visible] == [meal.id]

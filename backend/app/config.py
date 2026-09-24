@@ -264,6 +264,18 @@ class Settings:
             [s.strip() for s in include.split(",") if s.strip()] or None
         )
 
+        # Separation of duties: the person who moves a meal through review
+        # must not be the person who declares it clinically publishable.
+        # Production can only TIGHTEN this, never relax it — the same rule
+        # CONTENT_INCLUDE_STATUSES follows. Relaxing it in development/test
+        # is allowed so single-operator flows stay testable.
+        requested_separation = os.getenv(
+            "CONTENT_REQUIRE_SEPARATION_OF_DUTIES", "true"
+        ).lower() == "true"
+        self.CONTENT_REQUIRE_SEPARATION_OF_DUTIES: bool = (
+            requested_separation or self.IS_PRODUCTION
+        )
+
         # ── Evidence research pipeline (admin-only, offline) ──
         # Retrieval may ONLY target these domains; anything else raises.
         # Applies to both the URL fetcher and (if ever configured) any

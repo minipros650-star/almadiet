@@ -2,7 +2,7 @@
 
 Admin/reviewer-only. Every endpoint requires:
   * the ``ENABLE_EVIDENCE_PIPELINE`` feature flag (default OFF), and
-  * a reviewer identity (REVIEWER_EMAILS / bootstrap dev allowlist).
+  * a database-granted content staff role (see app/auth/content_authz.py).
 
 There is deliberately NO endpoint that turns evidence into user-facing
 recommendations: approved claims are consumed internally by the
@@ -18,7 +18,7 @@ from pydantic import BaseModel, Field
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.auth.jwt_handler import get_current_user
+from app.auth.content_authz import require_reviewer
 from app.config import settings
 from app.database import get_db
 from app.domain import evidence as ev
@@ -45,21 +45,8 @@ def require_evidence_pipeline():
         )
 
 
-def require_reviewer(user: object = Depends(get_current_user)) -> object:
-    reviewer_emails = {
-        e.strip().lower()
-        for e in __import__("os").getenv("REVIEWER_EMAILS", "").split(",")
-        if e.strip()
-    }
-    if settings.ENVIRONMENT == "development" and not reviewer_emails:
-        reviewer_emails = {
-            e.strip().lower()
-            for e in __import__("os").getenv("BOOTSTRAP_ADMIN_EMAILS", "admin@example.com").split(",")
-            if e.strip()
-        }
-    if getattr(user, "email", "").lower() not in reviewer_emails:
-        raise HTTPException(status.HTTP_403_FORBIDDEN, detail="Reviewer privileges required")
-    return user
+# require_reviewer (imported above) is the reviewer gate for these routes:
+# a database-granted content role, resolved from the validated token.
 
 
 class SourceIntakeRequest(BaseModel):
