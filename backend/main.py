@@ -65,8 +65,13 @@ app = FastAPI(
     ),
     version=app_version,
     lifespan=lifespan,
+    # Production disables the interactive docs as hardening. The schema
+    # endpoint has to be disabled with them: leaving /openapi.json public
+    # published the entire API surface anyway, defeating the point of hiding
+    # /docs and /redoc.
     docs_url="/docs" if not settings.IS_PRODUCTION else None,
     redoc_url=None,
+    openapi_url="/openapi.json" if not settings.IS_PRODUCTION else None,
 )
 
 # ── CORS (allowlist; wildcard rejected in production by config) ──────────
