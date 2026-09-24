@@ -1,15 +1,31 @@
-# Python
+# ── Secrets / environment (never commit) ─────────────────────
+.env
+.env.*
+!.env.example
+frontend/env.local.json
+
+# ── Local databases (never commit) ───────────────────────────
+*.db
+*.sqlite
+*.sqlite3
+
+# ── Vercel local state ───────────────────────────────────────
+.vercel/
+
+# ── Python ───────────────────────────────────────────────────
 __pycache__/
 *.pyc
 *.pyo
 venv/
-.env
+.venv/
 
-# ML model artifacts
+# ── ML model artifacts ───────────────────────────────────────
 backend/app/ml/*.pkl
 backend/app/ml/*.joblib
 
-# Flutter
+# ── Flutter ──────────────────────────────────────────────────
+.dart_tool/
+build/
 frontend/.dart_tool/
 frontend/.packages
 frontend/build/
@@ -19,17 +35,14 @@ frontend/android/.gradle/
 frontend/android/local.properties
 frontend/windows/flutter/ephemeral/
 
-# IDE
+# ── IDE / OS ─────────────────────────────────────────────────
 .idea/
 .vscode/
 *.iml
-
-# OS
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# Docker
+# ── Docker / tooling state ───────────────────────────────────
 pgdata/
-
-.venv/
+.freebuff/

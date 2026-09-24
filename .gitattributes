@@ -1,0 +1,9 @@
+# Normalize all text files to LF in the index and working tree.
+# Binary files are auto-detected and left untouched.
+* text=auto eol=lf
+
+# Migration files must stay byte-identical to the live Supabase history
+# (which stores LF). Explicit rules keep them deterministic.
+supabase/migrations/*.sql text eol=lf
+*.sh text eol=lf
+*.bat text eol=crlf

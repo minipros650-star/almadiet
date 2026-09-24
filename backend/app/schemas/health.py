@@ -1,27 +1,28 @@
-"""
-Health Pydantic Schemas — Monthly health data validation.
-"""
+"""Health Pydantic schemas."""
+
+from __future__ import annotations
+
+from datetime import datetime
+from typing import Optional
+from uuid import UUID
 
 from pydantic import BaseModel, Field
-from typing import Optional
-from datetime import datetime
-from uuid import UUID
 
 
 class HealthRecordCreate(BaseModel):
     trimester: int = Field(..., ge=1, le=3)
     week_number: int = Field(..., ge=1, le=42)
     current_weight_kg: float = Field(..., ge=30, le=200)
-    bmi: Optional[float] = None
+    bmi: Optional[float] = Field(None, ge=10, le=60)
     blood_pressure_sys: Optional[float] = Field(None, ge=60, le=250)
     blood_pressure_dia: Optional[float] = Field(None, ge=40, le=150)
     hemoglobin: Optional[float] = Field(None, ge=3, le=20)
-    blood_sugar_fasting: Optional[float] = Field(None, ge=30, le=500)
+    blood_sugar_fasting: Optional[float] = Field(None, ge=20, le=600)
+    # Free-text accepted; normalized to category codes server-side.
     allergies: Optional[list[str]] = []
     medical_conditions: Optional[list[str]] = []
-    is_vegetarian: bool = False
     dietary_preference: str = Field(default="nonveg", pattern="^(veg|nonveg|eggetarian)$")
-    notes: Optional[str] = None
+    notes: Optional[str] = Field(None, max_length=2000)
 
 
 class HealthRecordResponse(BaseModel):
@@ -45,17 +46,12 @@ class HealthRecordResponse(BaseModel):
     model_config = {"from_attributes": True}
 
 
-class HealthAnalysis(BaseModel):
-    """Analysis of user's health data with corrections/alerts."""
-    bmi_status: str  # underweight | normal | overweight | obese
-    bmi_message: str
-    weight_gain_status: str  # low | normal | high
-    weight_gain_message: str
-    bp_status: str  # normal | elevated | high
-    bp_message: str
-    hemoglobin_status: str  # low | normal | high
-    hemoglobin_message: str
-    blood_sugar_status: str  # normal | high
-    blood_sugar_message: str
-    corrections: list[str]  # List of user mistakes to correct
-    alerts: list[str]  # Dietary alerts
+class DiscussionPointsResponse(BaseModel):
+    """Informational only — no diagnosis, no corrections."""
+
+    record_id: UUID
+    suggestions: list[str]
+    disclaimer: str = (
+        "These are general reference-range notes, not an interpretation of "
+        "your results. Please discuss them with your doctor or midwife."
+    )

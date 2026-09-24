@@ -1,17 +1,19 @@
 services:
   db:
-    image: postgres:18
+    image: postgres:16
     restart: always
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: almadiet2026
-      POSTGRES_DB: almadiet
+      POSTGRES_USER: ${POSTGRES_USER:-almadiet}
+      # Provide real values in .env (never committed). Compose reads .env
+      # automatically from the project root.
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: ${POSTGRES_DB:-almadiet}
     ports:
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-almadiet} -d ${POSTGRES_DB:-almadiet}"]
       interval: 5s
       timeout: 5s
       retries: 5
@@ -21,12 +23,18 @@ services:
     restart: always
     ports:
       - "8000:8000"
+    env_file:
+      - .env
     environment:
-      DATABASE_URL: postgresql+asyncpg://postgres:almadiet2026@db:5432/almadiet
-      JWT_SECRET_KEY: almadiet-super-secret-jwt-key-2026
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-almadiet}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB:-almadiet}
+      # JWT_SECRET_KEY etc. come from .env via env_file. In production the
+      # app fails fast if they are missing or insecure.
     depends_on:
       db:
         condition: service_healthy
+    command: >
+      sh -c "alembic upgrade head &&
+             uvicorn main:app --host 0.0.0.0 --port 8000"
 
 volumes:
   pgdata:
