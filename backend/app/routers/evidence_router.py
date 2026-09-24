@@ -168,7 +168,7 @@ async def decide_claim(
     decision = ClinicalReviewDecision(
         claim_id=claim.id,
         decision=data.decision,
-        reviewed_by=getattr(reviewer, "email", "unknown"),
+        reviewed_by=getattr(getattr(reviewer, "user", None), "email", None) or reviewer.label,
         rationale=data.rationale,
     )
     db.add(decision)

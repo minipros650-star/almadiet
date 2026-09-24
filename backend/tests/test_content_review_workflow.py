@@ -359,6 +359,31 @@ class TestContentBlockers:
         resp = await self._attempt_review(client, db_engine, meal_id)
         assert resp.status_code == 200, resp.text
 
+    async def test_duplicate_links_are_not_dangling(self, client, seeded_db, db_engine):
+        """Regression: the importer legitimately stores several link rows for
+        one category (multiple ingredient terms match it). Counting them as
+        dangling once made every such meal un-promotable."""
+        meal_id = await _add_meal(
+            db_engine,
+            name="Peanut Rice",
+            ingredients=[{"name": "Peanut", "quantity": "2 tbsp"}],
+        )
+        await _link_allergen(db_engine, meal_id, "peanut", "Peanut")
+        await _link_allergen(db_engine, meal_id, "peanut", "groundnut")
+
+        resp = await self._attempt_review(client, db_engine, meal_id)
+        assert resp.status_code == 200, resp.text
+        body = resp.json()
+        blocker = next(
+            (
+                b
+                for b in body.get("details", {}).get("blockers", [])
+                if b["code"] == "MISSING_ALLERGEN_LINKS"
+            ),
+            None,
+        )
+        assert blocker is None
+
     async def test_claim_in_benefits_blocks(self, client, seeded_db, db_engine):
         meal_id = await _add_meal(
             db_engine, benefits=["Clinically proven to prevent anaemia"]

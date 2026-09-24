@@ -26,7 +26,7 @@ from dataclasses import dataclass
 from datetime import datetime, timezone
 
 from fastapi import HTTPException, status
-from sqlalchemy import select
+from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.config import settings
@@ -192,7 +192,15 @@ def _detected_allergens(meal: Meal) -> set[str]:
 
 
 async def _linked_allergen_categories(db: AsyncSession, meal_id: uuid.UUID) -> tuple[set[str], int]:
-    rows = (
+    """(categories linked, count of dangling link rows).
+
+    A dangling link is a ``meal_allergens`` row whose ``allergen_id`` does
+    not resolve to an ``allergens`` row — a data-integrity fault. Duplicate
+    links (two ingredient terms matching the same category, which the
+    importer legitimately produces) are NOT dangling; counting them so once
+    made every such meal un-promotable.
+    """
+    joined = (
         await db.execute(
             select(Allergen.category)
             .select_from(MealAllergen)
@@ -202,10 +210,12 @@ async def _linked_allergen_categories(db: AsyncSession, meal_id: uuid.UUID) -> t
     ).scalars().all()
     total_links = (
         await db.execute(
-            select(MealAllergen.allergen_id).where(MealAllergen.meal_id == meal_id)
+            select(func.count())
+            .select_from(MealAllergen)
+            .where(MealAllergen.meal_id == meal_id)
         )
-    ).scalars().all()
-    return set(rows), len(total_links)
+    ).scalar() or 0
+    return set(joined), max(total_links - len(joined), 0)
 
 
 async def publication_blockers(db: AsyncSession, meal: Meal) -> list[dict]:
@@ -241,16 +251,15 @@ async def publication_blockers(db: AsyncSession, meal: Meal) -> list[dict]:
         )
 
     detected = _detected_allergens(meal)
-    linked, total_links = await _linked_allergen_categories(db, meal.id)
+    linked, dangling = await _linked_allergen_categories(db, meal.id)
     missing = sorted(detected - linked)
-    dangling = total_links - len(linked)
     if missing or dangling:
         blockers.append(
             {
                 "code": Blocker.MISSING_ALLERGEN_LINKS,
                 "message": "Allergen links do not cover what the safety matcher detects.",
                 "missing_categories": missing,
-                "dangling_links": max(dangling, 0),
+                "dangling_links": dangling,
             }
         )
 

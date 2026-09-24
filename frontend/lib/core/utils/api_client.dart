@@ -55,7 +55,13 @@ class ApiClient {
         final isAuthEndpoint =
             path.contains('/auth/login') || path.contains('/auth/register');
 
-        if ((status == 401 || status == 403) && !isAuthEndpoint) {
+        // 401 = authentication failed (expired/invalid token) — refresh and
+        // retry once. 403 = authentication SUCCEEDED but policy denied the
+        // action (e.g. CLINICIAN_REVIEW_REQUIRED, ROLE_REQUIRED): refreshing
+        // can never change the answer, so 403 must flow to the screen as a
+        // blocked state. Treating it as auth failure caused an infinite
+        // refresh → retry → sign-out → restore → reload loop.
+        if (status == 401 && !isAuthEndpoint) {
           final retried = error.requestOptions.extra['_retriedAuth'] == true;
           if (!retried && !_refreshing) {
             final refreshed = await _tryRefreshSession();
@@ -65,7 +71,7 @@ class ApiClient {
             }
             // Refresh failed — the session is over.
             _notifySessionExpired();
-          } else if (status == 401) {
+          } else {
             _notifySessionExpired();
           }
         }

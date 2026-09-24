@@ -109,11 +109,13 @@ async def activate_policy(
     for other in others.scalars():
         other.status = "RETIRED"
     policy.status = "ACTIVE"
-    policy.approved_by = getattr(reviewer, "email", "unknown")
+    # ContentActor exposes the token-derived identity via .user (and .label);
+    # a bare .email lookup silently stamps "unknown" into the approval trail.
+    policy.approved_by = getattr(getattr(reviewer, "user", None), "email", None) or reviewer.label
     policy.approved_at = _now()
     await db.flush()
     await record_event(
-        db, EventCodes.CONTENT_STATUS_CHANGED, getattr(reviewer, "id", None),
+        db, EventCodes.CONTENT_STATUS_CHANGED, getattr(reviewer, "user", None) and reviewer.user.id,
         {"kind": "safety_policy_activated", "policy": f"{policy_id}@{version}",
          "rationale": data.rationale},
     )
@@ -233,11 +235,11 @@ async def approve_model(
             detail="Model cannot be approved without a GATES_PASSED evaluation run",
         )
     model.status = "APPROVED"
-    model.approved_by = getattr(reviewer, "email", "unknown")
+    model.approved_by = getattr(getattr(reviewer, "user", None), "email", None) or reviewer.label
     model.approved_at = _now()
     await db.flush()
     await record_event(
-        db, EventCodes.CONTENT_STATUS_CHANGED, getattr(reviewer, "id", None),
+        db, EventCodes.CONTENT_STATUS_CHANGED, getattr(reviewer, "user", None) and reviewer.user.id,
         {"kind": "model_approved", "model": f"{model.model_name}@{model.model_version}",
          "rationale": data.rationale},
     )
