@@ -11,11 +11,15 @@ Never silently generate insecure production secrets.
 
 from __future__ import annotations
 
+import logging
 import os
 import secrets
 from pathlib import Path
 
 from dotenv import load_dotenv
+from sqlalchemy.engine import make_url
+
+logger = logging.getLogger("almadiet")
 
 env_path = Path(__file__).resolve().parent.parent / ".env"
 load_dotenv(dotenv_path=env_path)
@@ -38,6 +42,131 @@ def resolve_supabase_keys(getenv=os.getenv) -> tuple[str, str]:
     return publishable, secret
 
 
+# ── Database URL normalization ────────────────────────────────
+# This application is async-only: PostgreSQL via asyncpg, SQLite via aiosqlite.
+# Connection strings copied verbatim from the Supabase dashboard (or any
+# Heroku-style provider) use the plain `postgresql://` / legacy `postgres://`
+# scheme, which SQLAlchemy resolves to the SYNC psycopg2 driver. That driver is
+# deliberately not a dependency here, so such a URL crashed the whole process at
+# import time with a cryptic `ModuleNotFoundError: No module named 'psycopg2'`
+# (every route, including /healthz, returned FUNCTION_INVOCATION_FAILED).
+# Normalizing lets a stock provider URI work unchanged.
+ASYNC_PG_DRIVER = "postgresql+asyncpg"
+
+_SYNC_PG_SCHEMES = (
+    "postgresql+psycopg2://",
+    "postgresql+psycopg://",
+    "postgres://",
+    "postgresql://",
+)
+
+# Second half of the same problem: SQLAlchemy's asyncpg dialect does
+# `opts.update(url.query)` (sqlalchemy/dialects/postgresql/asyncpg.py), so EVERY
+# query-string parameter in DATABASE_URL is forwarded verbatim to
+# ``asyncpg.connect()``. Provider/ORM-only parameters are therefore fatal — the
+# classic one is Prisma's ``?pgbouncer=true`` on a Supabase *pooler* URI, which
+# raised ``TypeError: connect() got an unexpected keyword argument 'pgbouncer'``
+# on the first query. Only keywords the driver actually understands are kept;
+# PgBouncer safety is already handled properly in app/database.py via
+# ``statement_cache_size=0`` / ``prepared_statement_cache_size=0``.
+_ASYNC_PG_CONNECT_PARAMS = frozenset(
+    {
+        # asyncpg.connect() keyword arguments
+        "command_timeout",
+        "connection_class",
+        "database",
+        "direct_tls",
+        "dsn",
+        "host",
+        "krbsrvname",
+        "loop",
+        "max_cacheable_statement_size",
+        "max_cached_statement_lifetime",
+        "passfile",
+        "password",
+        "port",
+        "record_class",
+        "server_settings",
+        "ssl",
+        "statement_cache_size",
+        "target_session_attrs",
+        "timeout",
+        "user",
+        # popped by SQLAlchemy's asyncpg adapt layer before asyncpg.connect()
+        "prepared_statement_cache_size",
+        "async_fallback",
+    }
+)
+
+
+def _sanitize_pg_query(url: str) -> str:
+    """Keep only asyncpg-understood DATABASE_URL query parameters.
+
+    Parsing goes through SQLAlchemy's own URL parser rather than
+    ``urllib.parse.urlsplit``: ``urlsplit`` raises on a generated password that
+    contains ``[``/``]`` (it tries to read the netloc as a bracketed IPv6
+    address), while SQLAlchemy accepts it. Re-rendering through SQLAlchemy also
+    percent-encodes such a password, i.e. repairs the URL.
+
+    ``sslmode`` (the libpq/psycopg2 spelling) is translated to asyncpg's ``ssl``
+    so an explicit TLS requirement is honoured rather than silently dropped.
+    """
+    try:
+        parsed = make_url(url)
+    except Exception as exc:  # sqlalchemy.exc.ArgumentError
+        raise ConfigError(
+            "DATABASE_URL is not a valid database URL. Percent-encode any "
+            "special characters in the password and try again."
+        ) from exc
+
+    if not parsed.query:
+        return url
+
+    has_ssl = any(key.lower() == "ssl" for key in parsed.query)
+    kept: dict[str, str] = {}
+    dropped: list[str] = []
+    for key, value in parsed.query.items():
+        lowered = key.lower()
+        if lowered == "sslmode":
+            if not has_ssl:
+                kept["ssl"] = value
+            continue
+        if lowered in _ASYNC_PG_CONNECT_PARAMS:
+            kept[key] = value
+        else:
+            dropped.append(key)
+
+    if dropped:
+        logger.warning(
+            "Ignoring DATABASE_URL parameter(s) not supported by the asyncpg "
+            "driver: %s",
+            ", ".join(sorted(set(dropped))),
+        )
+
+    return parsed.set(query=kept).render_as_string(hide_password=False)
+
+
+def normalize_database_url(url: str) -> str:
+    """Make a provider-issued PostgreSQL URL safe for this async-only app.
+
+    Rewrites a sync-driver scheme (``postgresql://``, ``postgres://``,
+    ``postgresql+psycopg2://``) to asyncpg and removes query parameters the
+    asyncpg driver cannot accept. Non-PostgreSQL URLs (e.g. the
+    ``sqlite+aiosqlite://`` used by tests and CI) are returned unchanged, as are
+    URLs that already name an explicit driver.
+    """
+    raw = (url or "").strip()
+    if not raw or raw.startswith("sqlite"):
+        return raw
+    for scheme in _SYNC_PG_SCHEMES:
+        if raw.startswith(scheme):
+            raw = ASYNC_PG_DRIVER + "://" + raw[len(scheme) :]
+            break
+    if not raw.startswith(f"{ASYNC_PG_DRIVER}://"):
+        return raw
+    return _sanitize_pg_query(raw)
+
+
 # Secrets known to be shipped as defaults in code/history — never acceptable
 # in production. (Keeping the legacy default listed here lets us detect an
 # unrotated deployment.)
@@ -57,9 +186,11 @@ class Settings:
         self.IS_PRODUCTION: bool = self.ENVIRONMENT == "production"
 
         # ── Database ──────────────────────────────────────────
-        self.DATABASE_URL: str = os.getenv(
-            "DATABASE_URL",
-            "postgresql+asyncpg://postgres:postgres@localhost:5432/almadiet",
+        self.DATABASE_URL: str = normalize_database_url(
+            os.getenv(
+                "DATABASE_URL",
+                "postgresql+asyncpg://postgres:postgres@localhost:5432/almadiet",
+            )
         )
 
         # ── JWT / auth ────────────────────────────────────────

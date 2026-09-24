@@ -18,15 +18,18 @@ from pathlib import Path
 BACKEND_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(BACKEND_DIR))
 
-from app.config import settings  # noqa: E402
+from app.config import normalize_database_url, settings  # noqa: E402
 from app.database import async_session_maker  # noqa: E402
 from app.services.meal_service import get_meal_count, seed_meals  # noqa: E402
 
 
 async def main() -> None:
-    # Allow DATABASE_URL override without touching config defaults.
+    # Allow DATABASE_URL override without touching config defaults. Normalize
+    # here too: this assignment bypasses Settings.__init__.
     if os.getenv("DATABASE_URL"):
-        settings.DATABASE_URL = os.getenv("DATABASE_URL")  # type: ignore[attr-defined]
+        settings.DATABASE_URL = normalize_database_url(  # type: ignore[attr-defined]
+            os.getenv("DATABASE_URL", "")
+        )
         import importlib
 
         import app.database as database_module
