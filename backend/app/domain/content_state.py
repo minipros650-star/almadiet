@@ -65,14 +65,17 @@ def is_recommendable(status: str, include_statuses: frozenset[str] | set[str] | 
 def statuses_from_config(config_str: str, production: bool) -> frozenset[str]:
     """Resolve include-statuses from a config string.
 
-    In production the override can only ever NARROW to PUBLISHED — a comma
-    list that does not include PUBLISHED is ignored for safety.
+    Production is PUBLISHED-only, full stop. The override may never *widen*
+    the set of states that can enter recommendations, so a production value
+    such as ``REVIEWED,PUBLISHED`` is not honouring the narrower intent — it
+    is simply ignored. Development/test may widen so single-operator flows
+    stay workable.
     """
+    if production:
+        return frozenset({ContentStatus.PUBLISHED.value})
     if not config_str:
-        return frozenset({ContentStatus.PUBLISHED.value}) if production else DEFAULT_INCLUDE_STATUSES
+        return DEFAULT_INCLUDE_STATUSES
     requested = {s.strip().upper() for s in config_str.split(",") if s.strip()}
     valid = {s.value for s in ContentStatus}
     resolved = requested & valid
-    if production and ContentStatus.PUBLISHED.value not in resolved:
-        return frozenset({ContentStatus.PUBLISHED.value})
     return frozenset(resolved) if resolved else frozenset({ContentStatus.PUBLISHED.value})

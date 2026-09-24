@@ -16,9 +16,10 @@ import os
 from dataclasses import dataclass
 
 from fastapi import Depends, HTTPException, status
+from fastapi.security import HTTPAuthorizationCredentials
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.auth.jwt_handler import get_current_user
+from app.auth.jwt_handler import get_current_user, security
 from app.config import settings
 from app.database import get_db
 from app.domain.content_roles import CONTENT_STAFF_ROLES, ContentRole
@@ -83,6 +84,33 @@ def require_content_role(*allowed: ContentRole):
         )
 
     return dependency
+
+
+async def optional_content_actor(
+    credentials: HTTPAuthorizationCredentials | None = Depends(security),
+    db: AsyncSession = Depends(get_db),
+) -> ContentActor | None:
+    """Resolve content-staff identity WITHOUT requiring it.
+
+    Public catalogue reads stay public: an anonymous caller gets ``None`` and
+    is therefore restricted to PUBLISHED content. A *present but invalid*
+    token still raises 401 — an expired session is never silently downgraded
+    to anonymous, which would make a failing token look like a successful
+    anonymous request.
+    """
+    if credentials is None or not credentials.credentials:
+        return None
+
+    user = await get_current_user(credentials=credentials, db=db)
+    granted = await content_review_service.active_roles(db, user.id)
+    for role in sorted(CONTENT_STAFF_ROLES, key=lambda r: r.value):
+        if role.value in granted:
+            return ContentActor(user=user, role=role)
+
+    if (user.email or "").strip().lower() in _dev_bootstrap_emails():
+        return ContentActor(user=user, role=ContentRole.REVIEWER)
+
+    return None
 
 
 #: Any content staff member (reviewer or publisher). Used by the governance and

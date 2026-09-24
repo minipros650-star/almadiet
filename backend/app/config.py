@@ -259,10 +259,22 @@ class Settings:
         )
 
         # ── Content governance ────────────────────────────────
+        # Development may WIDEN which content states ordinary callers can
+        # see, so single-operator flows stay workable. Production may only
+        # narrow: an override there can never expose unreviewed content, so
+        # the resolved set is always exactly PUBLISHED. See
+        # app/domain/content_visibility for the read-path policy.
         include = os.getenv("CONTENT_INCLUDE_STATUSES", "")
-        self.CONTENT_INCLUDE_STATUSES: list[str] | None = (
-            [s.strip() for s in include.split(",") if s.strip()] or None
-        )
+        requested_includes = [s.strip().upper() for s in include.split(",") if s.strip()]
+        if self.IS_PRODUCTION and requested_includes != ["PUBLISHED"]:
+            if requested_includes:
+                logger.warning(
+                    "CONTENT_INCLUDE_STATUSES=%r is ignored in production: "
+                    "only PUBLISHED content is visible to ordinary callers.",
+                    include,
+                )
+            requested_includes = ["PUBLISHED"]
+        self.CONTENT_INCLUDE_STATUSES: list[str] | None = requested_includes or None
 
         # Separation of duties: the person who moves a meal through review
         # must not be the person who declares it clinically publishable.

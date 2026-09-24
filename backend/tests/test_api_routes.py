@@ -23,11 +23,15 @@ async def test_images_all_route_resolves(client, seeded_db):
 
 
 async def test_meal_uuid_route_works(client, seeded_db):
-    """TEST 9: generic UUID route still resolves."""
+    """TEST 9: generic UUID route still resolves for published content.
+
+    ``make_meal`` defaults to REVIEWED, which is *not* publicly readable —
+    see tests/test_meal_visibility.py for that rule.
+    """
     from app.database import async_session_maker
 
     async with async_session_maker() as session:
-        meal = make_meal(name="Route Test Meal")
+        meal = make_meal(name="Route Test Meal", content_status="PUBLISHED")
         session.add(meal)
         await session.commit()
         meal_id = meal.id
@@ -35,6 +39,21 @@ async def test_meal_uuid_route_works(client, seeded_db):
     resp = await client.get(f"/api/v1/meals/{meal_id}")
     assert resp.status_code == 200
     assert resp.json()["name"] == "Route Test Meal"
+
+
+async def test_unreviewed_meal_is_a_404_to_anonymous(client, seeded_db):
+    """Regression: this route served REVIEW_REQUIRED content in production."""
+    from app.database import async_session_maker
+
+    async with async_session_maker() as session:
+        meal = make_meal(name="Unreviewed Meal")  # defaults to REVIEWED work state
+        session.add(meal)
+        await session.commit()
+        meal_id = meal.id
+
+    resp = await client.get(f"/api/v1/meals/{meal_id}")
+    assert resp.status_code == 404
+    assert resp.json()["error"]["code"] == "NOT_FOUND"
 
 
 async def test_non_uuid_meal_id_is_422(client):

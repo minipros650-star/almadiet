@@ -43,9 +43,18 @@ def test_dev_default_includes_reviewed():
 
 
 def test_prod_config_cannot_widen():
-    assert statuses_from_config("REVIEWED,REVIEW_REQUIRED", production=True) == {"PUBLISHED"} or \
-           "PUBLISHED" in statuses_from_config("REVIEWED,PUBLISHED", production=True)
+    """Production is PUBLISHED-only — an override may never widen the set."""
+    assert statuses_from_config("REVIEWED,REVIEW_REQUIRED", production=True) == {"PUBLISHED"}
+    assert statuses_from_config("REVIEWED,PUBLISHED", production=True) == {"PUBLISHED"}
     assert statuses_from_config("REVIEW_REQUIRED", production=True) == {"PUBLISHED"}
+    assert statuses_from_config("", production=True) == {"PUBLISHED"}
+
+
+def test_dev_config_may_widen():
+    from app.domain.content_state import DEFAULT_INCLUDE_STATUSES
+
+    assert statuses_from_config("REVIEW_REQUIRED", production=False) == {"REVIEW_REQUIRED"}
+    assert statuses_from_config("", production=False) == DEFAULT_INCLUDE_STATUSES
 
 
 def test_seed_imports_are_never_published():
