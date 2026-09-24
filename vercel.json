@@ -12,6 +12,7 @@
     }
   ],
   "routes": [
+    { "src": "/", "dest": "backend/api/index.py" },
     { "src": "/api/v1/(.*)", "dest": "backend/api/index.py" },
     { "src": "/healthz", "dest": "backend/api/index.py" },
     { "src": "/(docs|openapi.json|redoc)", "dest": "backend/api/index.py" }

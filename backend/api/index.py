@@ -11,8 +11,17 @@ No startup work happens here beyond what main.py already guards:
 import os
 import sys
 
-# Ensure `backend` is importable regardless of the invocation cwd.
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+# Single path base: the repository root is the Vercel Root Directory, so every
+# path in vercel.json is relative to it and this entrypoint is deployed to
+# `/var/task/backend/api/index.py`. `main.py` and the `app` package live one
+# directory up (`backend/`), so BOTH directories must be importable — resolving
+# only this file's own directory made `from main import app` fail with
+# ModuleNotFoundError inside the function.
+_HERE = os.path.dirname(os.path.abspath(__file__))
+_BACKEND_DIR = os.path.dirname(_HERE)
+for _path in (_BACKEND_DIR, _HERE):
+    if _path not in sys.path:
+        sys.path.insert(0, _path)
 
 from main import app  # noqa: E402,F401  (FastAPI ASGI application)
 
